@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic portfolio of an ecologist working at the intersection of macroecology, biodiversity conservation, climate change and ecological niche modelling.">
-  <title>Flávio Mota — Ecology & Conservation</title>
+  <meta name="description" content="Portfólio acadêmico de um ecólogo que atua na interface entre macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.">
+  <title>Flávio Mota — Ecologia e Conservação</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -22,6 +22,12 @@
     nav{position:sticky;top:0;z-index:20;background:rgba(247,248,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,223,.8)}
     .navin{height:74px;display:flex;align-items:center;justify-content:space-between}
     .brand{font-weight:700;letter-spacing:-.02em}
+    .language-switcher{display:flex;gap:4px;align-items:center;margin-left:18px}
+    .language-switcher a{font-size:.72rem;font-weight:700;letter-spacing:.05em;padding:6px 8px;border-radius:8px;color:var(--muted)}
+    .language-switcher a:hover,.language-switcher a.active{background:var(--mint);color:var(--leaf-dark)}
+    .navin{gap:14px}
+    @media(max-width:850px){.language-switcher{margin-left:auto}}
+
     .brand span{color:var(--leaf)}
     .links{display:flex;gap:26px;font-size:.92rem;color:#52645e}
     .links a:hover{color:var(--leaf)}
@@ -85,6 +91,21 @@
     .cta p{color:#cfe0d9;max-width:620px}
     footer{padding:35px 0 55px;color:var(--muted);font-size:.85rem}
     .footerin{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+
+    .profilebar{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .social{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid var(--line);background:white;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--leaf-dark);transition:.2s}
+    .social:hover{background:var(--mint);transform:translateY(-1px)}
+    .social .dot{width:7px;height:7px;border-radius:50%;background:var(--leaf)}
+    .gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:250px 250px;gap:14px}
+    .photo{position:relative;overflow:hidden;border-radius:24px;background:#dfe8e3;border:1px solid var(--line)}
+    .photo:first-child{grid-row:span 2}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+    .photo:hover img{transform:scale(1.04)}
+    .photo figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(24,51,45,.82);color:white;padding:8px 11px;border-radius:12px;font-size:.75rem;backdrop-filter:blur(8px)}
+    .photo-note{color:var(--muted);font-size:.84rem;margin-top:14px}
+    @media(max-width:850px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 200px 200px}.photo:first-child{grid-row:span 1;grid-column:span 2}}
+    @media(max-width:520px){.gallery{display:block}.photo{height:240px;margin-bottom:12px}}
+
     @media(max-width:850px){
       .links{display:none}.menu{display:block}
       .hero-grid,.about-grid{grid-template-columns:1fr}.research-grid,.tools{grid-template-columns:1fr}
@@ -104,9 +125,10 @@
   <div class="wrap navin">
     <a class="brand" href="#top">Flávio <span>Mota</span></a>
     <div class="links">
-      <a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a>
-      <a href="#publications">Publications</a><a href="#tools">Tools</a>
+      <a href="#about">Sobre</a><a href="#research">Pesquisa</a><a href="#experience">Experiência</a>
+      <a href="#publications">Publicações</a><a href="#gallery">Galeria</a><a href="#tools">Ferramentas</a>
     </div>
+<div class="language-switcher" aria-label="Seleção de idioma"><a class="active" href="index.html">PT</a><a href="en/index.html">EN</a><a href="es/index.html">ES</a></div>
     <button class="menu" aria-label="Menu">☰</button>
   </div>
 </nav>
@@ -115,14 +137,21 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">Ecology · Conservation · Spatial Ecology</div>
-        <h1>Understanding biodiversity in a <em>changing world.</em></h1>
-        <p class="lead">Ecologist working at the intersection of macroecology, climate change, biodiversity conservation, ecological niche modelling and geospatial analysis.</p>
+        <div class="eyebrow">Ecologia · Conservação · Ecologia Espacial</div>
+        <h1>Compreendendo a biodiversidade em um <em>mundo em transformação.</em></h1>
+        <p class="lead">Ecólogo que atua na interface entre macroecologia, mudanças climáticas, conservação da biodiversidade, modelagem de nicho ecológico e análise geoespacial.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#research">Explore research</a>
-          <a class="btn" href="#publications">Selected publications</a>
+          <a class="btn primary" href="#research">Conheça a pesquisa</a>
+          <a class="btn" href="#publications">Publicações selecionadas</a>
         </div>
       </div>
+        <div class="profilebar" aria-label="Perfis acadêmicos e sociais">
+          <a class="social" href="https://orcid.org/0000-0002-0308-7151" target="_blank" rel="noopener"><span class="dot"></span>ORCID</a>
+          <a class="social" href="https://www.researchgate.net/profile/Flavio-Mota-3" target="_blank" rel="noopener"><span class="dot"></span>ResearchGate</a>
+          <a class="social" href="https://www.linkedin.com/in/motafmm/" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+          <a class="social" href="https://www.instagram.com/fmota.eco/" target="_blank" rel="noopener"><span class="dot"></span>Instagram</a>
+          <a class="social" href="http://lattes.cnpq.br/9344931186718462" target="_blank" rel="noopener"><span class="dot"></span>Lattes</a>
+        </div>
       <div class="hero-card" aria-label="Abstract ecological illustration">
         <svg viewBox="0 0 520 430" role="img">
           <defs>
@@ -151,7 +180,7 @@
           </g>
           <text x="34" y="45" fill="#18332d" font-family="DM Sans" font-size="13" font-weight="700" letter-spacing="2">BIODIVERSITY • SPACE • CLIMATE</text>
         </svg>
-        <div class="card-note">A visual identity inspired by landscapes, spatial patterns and ecological change.</div>
+        <div class="card-note">Uma identidade visual inspirada em paisagens, padrões espaciais e mudanças ecológicas.</div>
       </div>
     </div>
   </section>
@@ -159,19 +188,19 @@
   <section id="about" class="tint">
     <div class="wrap about-grid">
       <div>
-        <div class="eyebrow">About</div>
-        <p class="quote">Research that connects ecological theory, spatial data and conservation questions.</p>
+        <div class="eyebrow">Sobre</div>
+        <p class="quote">Pesquisa que conecta teoria ecológica, dados espaciais e questões de conservação.</p>
         <div class="facts">
-          <div class="fact"><strong>14</strong><span>articles in journals</span></div>
-          <div class="fact"><strong>1</strong><span>article accepted for publication</span></div>
-          <div class="fact"><strong>3</strong><span>R/spatial software projects</span></div>
-          <div class="fact"><strong>76</strong><span>Google Scholar citations in the CV snapshot</span></div>
+          <div class="fact"><strong>14</strong><span>artigos em periódicos</span></div>
+          <div class="fact"><strong>1</strong><span>artigo aceito para publicação</span></div>
+          <div class="fact"><strong>3</strong><span>projetos de software em R/espacial</span></div>
+          <div class="fact"><strong>76</strong><span>citações no Google Scholar no registro do currículo</span></div>
         </div>
       </div>
       <div>
-        <p>My work focuses on understanding how environmental change reshapes biodiversity across space and time. My research combines ecological niche modelling, macroecology, spatial analysis and biodiversity metrics to investigate species distributions, community structure and conservation priorities.</p>
-        <p>I have worked across questions involving habitat loss and fragmentation, climate-change impacts on birds and broader biodiversity, as well as ecological responses in human-impacted landscapes such as the Rio Doce basin.</p>
-        <p>The academic trajectory documented in the CV includes a PhD in Ecology and Biodiversity Conservation, a postdoctoral period, research positions and teaching activities in ecology and ecological niche modelling.</p>
+        <p>Meu trabalho busca compreender como as mudanças ambientais reorganizam a biodiversidade no espaço e no tempo. Minha pesquisa combina modelagem de nicho ecológico, macroecologia, análise espacial e métricas de biodiversidade para investigar distribuições de espécies, estrutura de comunidades e prioridades de conservação.</p>
+        <p>Tenho trabalhado com questões relacionadas à perda e fragmentação de habitat, aos impactos das mudanças climáticas sobre aves e a biodiversidade em geral, além de respostas ecológicas em paisagens impactadas por atividades humanas, como a bacia do Rio Doce.</p>
+        <p>A trajetória acadêmica documentada no currículo inclui doutorado em Ecologia e Conservação da Biodiversidade, período de pós-doutorado, posições de pesquisa e atividades de ensino em ecologia e modelagem de nicho ecológico.</p>
       </div>
     </div>
   </section>
@@ -179,16 +208,16 @@
   <section id="research">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Research</div><h2>Questions I work on</h2></div>
-        <p>A research portfolio centered on biodiversity responses to environmental change, with a strong spatial and quantitative component.</p>
+        <div><div class="eyebrow">Pesquisa</div><h2>Temas que investigo</h2></div>
+        <p>Um portfólio de pesquisa centrado nas respostas da biodiversidade às mudanças ambientais, com forte componente espacial e quantitativo.</p>
       </div>
       <div class="research-grid">
-        <article class="research"><div class="num">01</div><h3>Climate change & biodiversity</h3><p>Assessing how future climatic conditions may alter species distributions, community composition and biodiversity patterns.</p></article>
-        <article class="research"><div class="num">02</div><h3>Ecological niche modelling</h3><p>Using species distribution and niche models to explore present and future suitable areas and conservation scenarios.</p></article>
-        <article class="research"><div class="num">03</div><h3>Macroecology & spatial ecology</h3><p>Investigating large-scale biodiversity patterns through spatial data, ecological traits and evolutionary information.</p></article>
-        <article class="research"><div class="num">04</div><h3>Habitat loss & fragmentation</h3><p>Studying how habitat transformation and fragmentation affect species distributions and ecological patterns.</p></article>
-        <article class="research"><div class="num">05</div><h3>Conservation planning</h3><p>Translating spatial biodiversity projections into priorities and evidence useful for conservation and restoration.</p></article>
-        <article class="research"><div class="num">06</div><h3>Geospatial biodiversity analysis</h3><p>Applying GIS, raster analysis and biodiversity metrics to connect ecological processes with landscape patterns.</p></article>
+        <article class="research"><div class="num">01</div><h3>Mudanças climáticas e biodiversidade</h3><p>Avaliando como as condições climáticas futuras podem alterar distribuições de espécies, composição de comunidades e padrões de biodiversidade.</p></article>
+        <article class="research"><div class="num">02</div><h3>Modelagem de nicho ecológico</h3><p>Uso de modelos de distribuição de espécies e nicho para explorar áreas adequadas atuais e futuras e cenários de conservação.</p></article>
+        <article class="research"><div class="num">03</div><h3>Macroecologia e ecologia espacial</h3><p>Investigando padrões de biodiversidade em grande escala por meio de dados espaciais, atributos ecológicos e informações evolutivas.</p></article>
+        <article class="research"><div class="num">04</div><h3>Perda e fragmentação de habitat</h3><p>Estudando como a transformação e a fragmentação de habitats afetam distribuições de espécies e padrões ecológicos.</p></article>
+        <article class="research"><div class="num">05</div><h3>Planejamento da conservação</h3><p>Transformando projeções espaciais de biodiversidade em prioridades e evidências úteis para conservação e restauração.</p></article>
+        <article class="research"><div class="num">06</div><h3>Análise geoespacial da biodiversidade</h3><p>Aplicando SIG, análise de rasters e métricas de biodiversidade para conectar processos ecológicos a padrões de paisagem.</p></article>
       </div>
     </div>
   </section>
@@ -196,16 +225,16 @@
   <section id="experience" class="tint">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Experience</div><h2>Academic path</h2></div>
-        <p>Selected milestones from the academic and professional trajectory recorded in the August 2026 CV.</p>
+        <div><div class="eyebrow">Experiência</div><h2>Trajetória acadêmica</h2></div>
+        <p>Principais marcos da trajetória acadêmica e profissional registrados no currículo de agosto de 2026.</p>
       </div>
       <div class="timeline">
-        <div class="time"><div class="year">2025 — present</div><h3>Researcher · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</h3><p>Research and geospatial analyses for biodiversity conservation, including work connected to climate change and biodiversity.</p></div>
-        <div class="time"><div class="year">2026 — present</div><h3>Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</h3><p>Teaching ecological niche modelling and species distribution.</p></div>
-        <div class="time"><div class="year">2020 — 2025</div><h3>Research & teaching · Universidade Estadual de Santa Cruz (UESC)</h3><p>Research in ecology and biodiversity conservation, alongside teaching activities in general ecology and related topics.</p></div>
-        <div class="time"><div class="year">2024 — 2025</div><h3>Postdoctoral researcher · Universidade Federal de Minas Gerais (UFMG)</h3><p>Postdoctoral research supported by FAPEMIG.</p></div>
-        <div class="time"><div class="year">2020 — 2024</div><h3>PhD in Ecology and Biodiversity Conservation · UESC</h3><p>Doctoral research on the impacts of climate change on bird diversity.</p></div>
-        <div class="time"><div class="year">2015 — 2017</div><h3>MSc in Biodiversity and Natural Resources Use · UNIMONTES</h3><p>Research on habitat fragmentation and loss of potential distribution area.</p></div>
+        <div class="time"><div class="year">2025 — atual</div><h3>Pesquisador · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</h3><p>Pesquisa e análises geoespaciais voltadas à conservação da biodiversidade, incluindo estudos relacionados às mudanças climáticas.</p></div>
+        <div class="time"><div class="year">2026 — atual</div><h3>Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</h3><p>Ensino de modelagem de nicho ecológico e distribuição de espécies.</p></div>
+        <div class="time"><div class="year">2020 — 2025</div><h3>Pesquisa e ensino · Universidade Estadual de Santa Cruz (UESC)</h3><p>Pesquisa em ecologia e conservação da biodiversidade, associada a atividades de ensino em ecologia geral e temas relacionados.</p></div>
+        <div class="time"><div class="year">2024 — 2025</div><h3>Pesquisador de pós-doutorado · Universidade Federal de Minas Gerais (UFMG)</h3><p>Pesquisa de pós-doutorado apoiada pela FAPEMIG.</p></div>
+        <div class="time"><div class="year">2020 — 2024</div><h3>Doutorado em Ecologia e Conservação da Biodiversidade · UESC</h3><p>Pesquisa de doutorado sobre os impactos das mudanças climáticas na diversidade de aves.</p></div>
+        <div class="time"><div class="year">2015 — 2017</div><h3>Mestrado em Biodiversidade e Uso dos Recursos Naturais · UNIMONTES</h3><p>Pesquisa sobre fragmentação de habitat e perda de área de distribuição potencial.</p></div>
       </div>
     </div>
   </section>
@@ -213,16 +242,16 @@
   <section id="publications">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Selected publications</div><h2>From species to landscapes</h2></div>
-        <p>Selected works from the CV, prioritizing climate change, biodiversity, ecological modelling and human impacts.</p>
+        <div><div class="eyebrow">Publicações selecionadas</div><h2>De espécies a paisagens</h2></div>
+        <p>Trabalhos selecionados do currículo, com foco em mudanças climáticas, biodiversidade, modelagem ecológica e impactos humanos.</p>
       </div>
       <div class="pubs">
-        <article class="pub"><div class="meta">2026 · Journal of Applied Entomology</div><h3>Projected climate suitable area for Apis mellifera in mining-affected landscapes in southeast Brazil</h3><p>Mota, F. M. M. and collaborators.</p><div class="tagrow"><span class="tag">Climate change</span><span class="tag">Bees</span><span class="tag">SDM</span></div></article>
-        <article class="pub"><div class="meta">2026 · Forest Ecology and Management</div><h3>Unveiling the hidden consequences of mining tailings on ecosystem processes: Disruption of decomposition of native species in the Rio Doce watershed</h3><p>Collaborative research on ecological consequences of mining impacts.</p><div class="tagrow"><span class="tag">Rio Doce</span><span class="tag">Mining</span><span class="tag">Ecology</span></div></article>
-        <article class="pub"><div class="meta">2025 · Biological Invasions</div><h3>Climate-driven distribution shifts of invasive earthworm species in a river basin affected by mining tailings</h3><p>Research connecting invasive species, climate change and environmental disturbance.</p><div class="tagrow"><span class="tag">Invasion</span><span class="tag">Climate</span><span class="tag">Rio Doce</span></div></article>
-        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Climate-driven distributional shifts of invasive earthworm species</h3><p>Spatially explicit assessment of distributional responses to changing climate.</p><div class="tagrow"><span class="tag">Macroecology</span><span class="tag">SDM</span></div></article>
-        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Climate change impacts on the multiple facets of forest bird diversity in a biodiversity hotspot within the Atlantic Forest</h3><p>Study of potential climate impacts on forest bird diversity.</p><div class="tagrow"><span class="tag">Birds</span><span class="tag">Atlantic Forest</span></div></article>
-        <article class="pub"><div class="meta">2024 · Ecography</div><h3>divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</h3><p>An open computational contribution for raster-based biodiversity analyses.</p><div class="tagrow"><span class="tag">R</span><span class="tag">Biodiversity metrics</span><span class="tag">Open tools</span></div></article>
+        <article class="pub"><div class="meta">2026 · Journal of Applied Entomology</div><h3>Projected climate suitable area for Apis mellifera in mining-affected landscapes in southeast Brazil</h3><p>Mota, F. M. M. e colaboradores.</p><div class="tagrow"><span class="tag">Mudanças climáticas</span><span class="tag">Abelhas</span><span class="tag">SDM</span></div></article>
+        <article class="pub"><div class="meta">2026 · Forest Ecologia and Management</div><h3>Unveiling the hidden consequences of mining tailings on ecosystem processes: Disruption of decomposition of native species in the Rio Doce watershed</h3><p>Pesquisa colaborativa sobre as consequências ecológicas dos impactos da mineração.</p><div class="tagrow"><span class="tag">Rio Doce</span><span class="tag">Mineração</span><span class="tag">Ecologia</span></div></article>
+        <article class="pub"><div class="meta">2025 · Biological Invasõess</div><h3>Clima-driven distribution shifts of invasive earthworm species in a river basin affected by mining tailings</h3><p>Pesquisa que relaciona espécies invasoras, mudanças climáticas e perturbações ambientais.</p><div class="tagrow"><span class="tag">Invasões</span><span class="tag">Clima</span><span class="tag">Rio Doce</span></div></article>
+        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Clima-driven distributional shifts of invasive earthworm species</h3><p>Avaliação espacialmente explícita das respostas de distribuição às mudanças climáticas.</p><div class="tagrow"><span class="tag">Macroecologia</span><span class="tag">SDM</span></div></article>
+        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Mudanças climáticas impacts on the multiple facets of forest bird diversity in a biodiversity hotspot within the Mata Atlântica</h3><p>Estudo dos potenciais impactos climáticos sobre a diversidade de aves florestais.</p><div class="tagrow"><span class="tag">Aves</span><span class="tag">Mata Atlântica</span></div></article>
+        <article class="pub"><div class="meta">2024 · Ecography</div><h3>divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</h3><p>Contribuição computacional aberta para análises de biodiversidade baseadas em rasters.</p><div class="tagrow"><span class="tag">R</span><span class="tag">Métricas de biodiversidade</span><span class="tag">Ferramentas abertas</span></div></article>
       </div>
     </div>
   </section>
@@ -230,28 +259,45 @@
   <section class="tint">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Research snapshot</div><h2>At a glance</h2></div>
-        <p>Production totals reported in the CV generated on 18 August 2026.</p>
+        <div><div class="eyebrow">Panorama da pesquisa</div><h2>Em números</h2></div>
+        <p>Totais de produção registrados no currículo gerado em 18 de agosto de 2026.</p>
       </div>
       <div class="stats">
-        <div class="stat"><strong>14</strong><span>journal articles</span></div>
-        <div class="stat"><strong>1</strong><span>accepted article</span></div>
-        <div class="stat"><strong>3</strong><span>unregistered software projects</span></div>
-        <div class="stat"><strong>3</strong><span>completed undergraduate supervisions</span></div>
+        <div class="stat"><strong>14</strong><span>artigos em periódicos</span></div>
+        <div class="stat"><strong>1</strong><span>artigo aceito</span></div>
+        <div class="stat"><strong>3</strong><span>projetos de software não registrados</span></div>
+        <div class="stat"><strong>3</strong><span>orientações de graduação concluídas</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Campo e divulgação</div><h2>Ciência além do escritório</h2></div>
+        <p>Uma seleção visual de momentos de campo, ensino, divulgação científica e vida acadêmica.</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo"><img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Fieldwork photograph" loading="lazy"><figcaption>Trabalho de campo e pesquisa em biodiversidade</figcaption></figure>
+        <figure class="photo"><img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Drone used for ecological spatial analysis" loading="lazy"><figcaption>Geoprocessamento e ecologia espacial</figcaption></figure>
+        <figure class="photo"><img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Academic event photograph" loading="lazy"><figcaption>Eventos acadêmicos</figcaption></figure>
+        <figure class="photo"><img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Workshop and outreach photograph" loading="lazy"><figcaption>Ensino e divulgação científica</figcaption></figure>
+        <figure class="photo"><img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Academic experience photograph" loading="lazy"><figcaption>Experiência acadêmica internacional</figcaption></figure>
+      </div>
+      <p class="photo-note">As imagens são carregadas a partir dos endereços fornecidos para este site.</p>
     </div>
   </section>
 
   <section id="tools">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Open & applied tools</div><h2>Code for biodiversity</h2></div>
-        <p>The CV records software and technical work that support reproducible biodiversity analyses.</p>
+        <div><div class="eyebrow">Ferramentas abertas e aplicadas</div><h2>Código para a biodiversidade</h2></div>
+        <p>O currículo registra softwares e trabalhos técnicos que apoiam análises reprodutíveis de biodiversidade.</p>
       </div>
       <div class="tools">
-        <article class="tool"><h3>divraster</h3><p>Diversity metrics calculations for rasterized data — taxonomic, functional and phylogenetic diversity.</p></article>
-        <article class="tool"><h3>phyloraster</h3><p>Evolutionary diversity metrics for raster data.</p></article>
-        <article class="tool"><h3>SESraster</h3><p>Raster randomization for null-hypothesis testing.</p></article>
+        <article class="tool"><h3>divraster</h3><p>Cálculo de métricas de diversidade para dados rasterizados — diversidade taxonômica, funcional e filogenética.</p></article>
+        <article class="tool"><h3>phyloraster</h3><p>Métricas de diversidade evolutiva para dados rasterizados.</p></article>
+        <article class="tool"><h3>SESraster</h3><p>Randomização de rasters para testes de hipóteses nulas.</p></article>
       </div>
     </div>
   </section>
@@ -260,8 +306,8 @@
     <div class="wrap">
       <div class="cta">
         <div class="cta-grid">
-          <div><h2>Interested in ecology, biodiversity and environmental change?</h2><p>This website is designed as a concise academic portfolio, complementing the full curriculum and publication record.</p></div>
-          <a class="btn" style="background:white;border-color:white;color:var(--leaf-dark)" href="#top">Back to top ↑</a>
+          <div><h2>Interessado em ecologia, biodiversidade e mudanças ambientais?</h2><p>Este site foi desenvolvido como um portfólio acadêmico conciso, complementando o currículo completo e o registro de publicações.</p></div>
+          <a class="btn" style="background:white;border-color:white;color:var(--leaf-dark)" href="#top">Voltar ao topo ↑</a>
         </div>
       </div>
     </div>
@@ -270,8 +316,8 @@
 
 <footer>
   <div class="wrap footerin">
-    <span>© 2026 · Flávio Mota · Ecology & Conservation</span>
-    <span>Academic portfolio · Built with a clean, content-first approach</span>
+    <span>© 2026 · Flávio Mota · Ecologia e Conservação</span>
+    <span><a href="https://orcid.org/0000-0002-0308-7151" target="_blank" rel="noopener">ORCID</a> · <a href="https://www.researchgate.net/profile/Flavio-Mota-3" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://www.linkedin.com/in/motafmm/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.instagram.com/fmota.eco/" target="_blank" rel="noopener">Instagram</a> · <a href="http://lattes.cnpq.br/9344931186718462" target="_blank" rel="noopener">Lattes</a></span>
   </div>
 </footer>
 
