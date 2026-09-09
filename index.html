@@ -70,21 +70,38 @@
     .time .year{color:var(--leaf);font-weight:700;font-size:.86rem}
     .time h3{font-size:1.08rem;margin:5px 0}
     .time p{margin:0;color:var(--muted);max-width:780px}
-    .pubs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .pub{background:white;border:1px solid var(--line);border-radius:20px;padding:24px}
-    .pub .meta{font-size:.78rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-    .pub h3{font-size:1.05rem;margin:10px 0 8px}
-    .pub p{margin:0;color:var(--muted);font-size:.88rem}
-    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-    .tag{font-size:.74rem;background:var(--mint);padding:5px 9px;border-radius:999px;color:var(--leaf-dark)}
+    .pubs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .pub{background:white;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
+    .pub:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
+    .pub .meta{font-size:.78rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .pub h3{font-size:1.1rem;margin:0 0 10px;line-height:1.42}
+    .pub h3 a{color:var(--ink);text-decoration:none;transition:color .2s ease}
+    .pub:hover h3 a{color:var(--leaf)}
+    .pub .authors{margin:0 0 14px;color:var(--muted);font-size:.88rem;line-height:1.5}
+    .pub-footer{margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .pub-link{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:700;color:var(--leaf);text-decoration:none;transition:all .2s ease}
+    .pub-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
+    .pub:hover .pub-link{color:var(--leaf-dark)}
+    .pub:hover .pub-link svg{transform:translate(2px,-2px)}
+    .doi-pill{font-size:.72rem;color:var(--muted);background:#edf3f0;padding:3px 8px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:14px}
+    .tag{font-size:.74rem;background:var(--mint);padding:5px 9px;border-radius:999px;color:var(--leaf-dark);font-weight:500}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .stat{background:var(--ink);color:white;padding:25px;border-radius:20px}
     .stat strong{display:block;font:700 2.3rem "Fraunces",serif}
     .stat span{color:#c8d8d2;font-size:.82rem}
-    .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .tool{border:1px solid var(--line);background:white;border-radius:20px;padding:24px}
-    .tool h3{font-size:1.08rem;margin-bottom:8px}
-    .tool p{font-size:.88rem;color:var(--muted);margin:0}
+    .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .tool{border:1px solid var(--line);background:white;border-radius:22px;padding:26px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
+    .tool:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
+    .tool-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .tool-icon{width:38px;height:38px;border-radius:10px;background:var(--mint);color:var(--leaf);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;font-family:ui-monospace,monospace}
+    .tool-badge{font-size:.72rem;background:#f0f4f2;padding:4px 8px;border-radius:999px;color:var(--muted);font-weight:600}
+    .tool h3{font-size:1.15rem;margin:0 0 10px;color:var(--ink);transition:color .2s ease}
+    .tool:hover h3{color:var(--leaf)}
+    .tool p{font-size:.89rem;color:var(--muted);margin:0 0 18px;line-height:1.55;flex-grow:1}
+    .tool-link{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:700;color:var(--leaf);margin-top:auto}
+    .tool-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
+    .tool:hover .tool-link svg{transform:translate(2px,-2px)}
     .cta{background:var(--leaf-dark);color:white;border-radius:34px;padding:55px}
     .cta-grid{display:flex;justify-content:space-between;gap:35px;align-items:center}
     .cta h2{font:600 clamp(2rem,4vw,3.3rem) "Fraunces",serif;max-width:650px}
@@ -107,8 +124,25 @@
     .photo:hover img{transform:scale(1.04)}
     .photo figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(24,51,45,.82);color:white;padding:8px 11px;border-radius:12px;font-size:.75rem;backdrop-filter:blur(8px)}
     .photo-note{color:var(--muted);font-size:.84rem;margin-top:14px}
-    @media(max-width:850px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 200px 200px}.photo:first-child{grid-row:span 1;grid-column:span 2}}
-    @media(max-width:520px){.gallery{display:block}.photo{height:240px;margin-bottom:12px}}
+    .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:24px}
+    .fig-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
+    .fig-card:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
+    .fig-img-wrap{display:block;height:270px;background:#f3f7f5;overflow:hidden;border-bottom:1px solid var(--line);position:relative;padding:12px;text-align:center;text-decoration:none}
+    .fig-img-wrap img{width:100%;height:100%;object-fit:contain;background:#fff;border-radius:12px;transition:transform .35s ease;display:block}
+    .fig-card:hover .fig-img-wrap img{transform:scale(1.02)}
+    .fig-badge{position:absolute;right:16px;bottom:16px;background:rgba(24,51,45,.82);color:white;padding:5px 11px;border-radius:999px;font-size:.72rem;display:inline-flex;align-items:center;gap:5px;backdrop-filter:blur(6px);opacity:0;transition:opacity .2s ease}
+    .fig-card:hover .fig-badge{opacity:1}
+    .fig-body{padding:22px;display:flex;flex-direction:column;flex-grow:1}
+    .fig-tag{font-size:.74rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+    .fig-card h3{font-size:1.08rem;margin:0 0 8px;line-height:1.4;color:var(--ink)}
+    .fig-card p{margin:0 0 16px;color:var(--muted);font-size:.88rem;line-height:1.55;flex-grow:1}
+    .fig-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--leaf);text-decoration:none;margin-top:auto}
+    .fig-link svg{width:13px;height:13px;fill:currentColor;flex-shrink:0;transition:transform .2s}
+    .fig-card:hover .fig-link{color:var(--leaf-dark)}
+    .fig-card:hover .fig-link svg{transform:translate(2px,-2px)}
+
+    @media(max-width:850px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 200px 200px}.photo:first-child{grid-row:span 1;grid-column:span 2}.figures-grid{grid-template-columns:1fr}}
+    @media(max-width:520px){.gallery{display:block}.photo{height:240px;margin-bottom:12px}.fig-img-wrap{height:210px}}
 
     @media(max-width:850px){
       .links{display:none}.menu{display:block}
@@ -260,12 +294,81 @@
         <p>Trabalhos selecionados do currículo, com foco em mudanças climáticas, biodiversidade, modelagem ecológica e impactos humanos.</p>
       </div>
       <div class="pubs">
-        <article class="pub"><div class="meta">2026 · Journal of Applied Entomology</div><h3>Projected climate suitable area for Apis mellifera in mining-affected landscapes in southeast Brazil</h3><p>Mota, F. M. M. e colaboradores.</p><div class="tagrow"><span class="tag">Mudanças climáticas</span><span class="tag">Abelhas</span><span class="tag">SDM</span></div></article>
-        <article class="pub"><div class="meta">2026 · Forest Ecologia and Management</div><h3>Unveiling the hidden consequences of mining tailings on ecosystem processes: Disruption of decomposition of native species in the Rio Doce watershed</h3><p>Pesquisa colaborativa sobre as consequências ecológicas dos impactos da mineração.</p><div class="tagrow"><span class="tag">Rio Doce</span><span class="tag">Mineração</span><span class="tag">Ecologia</span></div></article>
-        <article class="pub"><div class="meta">2025 · Biological Invasõess</div><h3>Clima-driven distribution shifts of invasive earthworm species in a river basin affected by mining tailings</h3><p>Pesquisa que relaciona espécies invasoras, mudanças climáticas e perturbações ambientais.</p><div class="tagrow"><span class="tag">Invasões</span><span class="tag">Clima</span><span class="tag">Rio Doce</span></div></article>
-        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Clima-driven distributional shifts of invasive earthworm species</h3><p>Avaliação espacialmente explícita das respostas de distribuição às mudanças climáticas.</p><div class="tagrow"><span class="tag">Macroecologia</span><span class="tag">SDM</span></div></article>
-        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Mudanças climáticas impacts on the multiple facets of forest bird diversity in a biodiversity hotspot within the Mata Atlântica</h3><p>Estudo dos potenciais impactos climáticos sobre a diversidade de aves florestais.</p><div class="tagrow"><span class="tag">Aves</span><span class="tag">Mata Atlântica</span></div></article>
-        <article class="pub"><div class="meta">2024 · Ecography</div><h3>divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</h3><p>Contribuição computacional aberta para análises de biodiversidade baseadas em rasters.</p><div class="tagrow"><span class="tag">R</span><span class="tag">Métricas de biodiversidade</span><span class="tag">Ferramentas abertas</span></div></article>
+        <article class="pub">
+          <div class="meta">2025 · Diversity and Distributions</div>
+          <h3><a href="https://doi.org/10.1111/ddi.70129" target="_blank" rel="noopener">Impact of Climate Change on the Multiple Facets of Forest Bird Diversity in a Biodiversity Hotspot Within the Atlantic Forest</a></h3>
+          <p class="authors">Mota, F. M. M., Morante‐Filho, J. C., Davies, R. G.</p>
+          <div class="tagrow">
+            <span class="tag">Mudanças climáticas</span>
+            <span class="tag">Aves florestais</span>
+            <span class="tag">Mata Atlântica</span>
+            <span class="tag">Diversidade multifacetada</span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.1111/ddi.70129" target="_blank" rel="noopener">
+              <span>Acessar artigo na revista</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.1111/ddi.70129</span>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="meta">2026 · Journal of Applied Entomology</div>
+          <h3><a href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener">Projected Climate-Suitable Area for <i>Apis mellifera</i> (Apidae) and Its Spatial Overlap With a Mining Tailings Footprint in South-East Brazil</a></h3>
+          <p class="authors">Mota, F. M. M., Lima‐Santos, J., Kenedy‐Siqueira, M., et al.</p>
+          <div class="tagrow">
+            <span class="tag">Apis mellifera</span>
+            <span class="tag">Rejeitos de mineração</span>
+            <span class="tag">Bacia do Rio Doce</span>
+            <span class="tag">SDM</span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener">
+              <span>Acessar artigo na revista</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.1111/jen.70102</span>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="meta">2025 · Scientific Data (Nature)</div>
+          <h3><a href="https://doi.org/10.1038/s41597-025-05615-3" target="_blank" rel="noopener">BIRDBASE: A Global Dataset of Avian Biogeography, Conservation, Ecology and Life History Traits</a></h3>
+          <p class="authors">Şekercioğlu, Ç. H., Kittelberger, K. D., Mota, F. M. M., et al.</p>
+          <div class="tagrow">
+            <span class="tag">Macroecologia</span>
+            <span class="tag">Base global</span>
+            <span class="tag">Traços funcionais</span>
+            <span class="tag">Conservação</span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.1038/s41597-025-05615-3" target="_blank" rel="noopener">
+              <span>Acessar artigo na revista</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.1038/s41597-025-05615-3</span>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="meta">2023 · Ecography</div>
+          <h3><a href="https://doi.org/10.1111/ecog.06905" target="_blank" rel="noopener">divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</a></h3>
+          <p class="authors">Mota, F. M. M., Alves‐Ferreira, G., Talora, D. C., et al.</p>
+          <div class="tagrow">
+            <span class="tag">Pacote em R</span>
+            <span class="tag">Métricas espaciais</span>
+            <span class="tag">Rasters</span>
+            <span class="tag">Código aberto</span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.1111/ecog.06905" target="_blank" rel="noopener">
+              <span>Acessar artigo na revista</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.1111/ecog.06905</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -299,6 +402,79 @@
         <figure class="photo"><img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Academic experience photograph" loading="lazy"><figcaption>Experiência acadêmica internacional</figcaption></figure>
       </div>
       <p class="photo-note">As imagens são carregadas a partir dos endereços fornecidos para este site.</p>
+
+      <div class="gallery-scientific" style="margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line);">
+        <div class="section-head">
+          <div><div class="eyebrow">Visualizações científicas</div><h2>Mapas, modelos e sínteses</h2></div>
+          <p>Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos desenvolvidos em pesquisas.</p>
+        </div>
+
+        <div class="figures-grid">
+          <article class="fig-card">
+            <a class="fig-img-wrap" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+              <img src="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" alt="Modelagem espacial das facetas de diversidade de aves florestais na Mata Atlântica" loading="lazy">
+              <span class="fig-badge">Ampliar ↗</span>
+            </a>
+            <div class="fig-body">
+              <div class="fig-tag">Modelagem Ecológica · Mata Atlântica</div>
+              <h3>Facetas da Diversidade de Aves Florestais</h3>
+              <p>Mapeamento e modelagem contínua das facetas taxonômica, funcional e filogenética da comunidade de aves sob cenários climáticos na Mata Atlântica.</p>
+              <a class="fig-link" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener">
+                <span>Ver imagem em alta resolução</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="fig-card">
+            <a class="fig-img-wrap" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+              <img src="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" alt="Mapa de uso do solo e sobreposição com rejeitos de mineração" loading="lazy">
+              <span class="fig-badge">Ampliar ↗</span>
+            </a>
+            <div class="fig-body">
+              <div class="fig-tag">Ecologia Espacial · Uso do Solo</div>
+              <h3>Uso do Solo e Pegada de Mineração</h3>
+              <p>Adequabilidade climática projetada para <i>Apis mellifera</i> e sobreposição espacial com a pegada de rejeitos de mineração e bacia hidrográfica.</p>
+              <a class="fig-link" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener">
+                <span>Ver imagem em alta resolução</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="fig-card">
+            <a class="fig-img-wrap" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+              <img src="https://i.postimg.cc/63CfdDsB/fig1.png" alt="Variação global de atributos ecológicos e história de vida de aves" loading="lazy">
+              <span class="fig-badge">Ampliar ↗</span>
+            </a>
+            <div class="fig-body">
+              <div class="fig-tag">Macroecologia · Base Global BIRDBASE</div>
+              <h3>Traços Ecológicos Globais de Aves</h3>
+              <p>Distribuição e variação comparativa de atributos ecológicos, dietéticos, biométricos e histórias de vida para aves em escala global.</p>
+              <a class="fig-link" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener">
+                <span>Ver imagem em alta resolução</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="fig-card">
+            <a class="fig-img-wrap" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+              <img src="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" alt="Framework do pacote divraster para cálculo de diversidade a partir de rasters" loading="lazy">
+              <span class="fig-badge">Ampliar ↗</span>
+            </a>
+            <div class="fig-body">
+              <div class="fig-tag">Algoritmos & Ferramentas · Pacote divraster</div>
+              <h3>Framework de Métricas de Diversidade em Rasters</h3>
+              <p>Fluxograma metodológico e computacional para integração e cálculo de índices contínuos de diversidade taxonômica, funcional e filogenética.</p>
+              <a class="fig-link" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener">
+                <span>Ver imagem em alta resolução</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -309,9 +485,42 @@
         <p>O currículo registra softwares e trabalhos técnicos que apoiam análises reprodutíveis de biodiversidade.</p>
       </div>
       <div class="tools">
-        <article class="tool"><h3>divraster</h3><p>Cálculo de métricas de diversidade para dados rasterizados — diversidade taxonômica, funcional e filogenética.</p></article>
-        <article class="tool"><h3>phyloraster</h3><p>Métricas de diversidade evolutiva para dados rasterizados.</p></article>
-        <article class="tool"><h3>SESraster</h3><p>Randomização de rasters para testes de hipóteses nulas.</p></article>
+        <a class="tool" href="https://flaviomoc.github.io/divraster" target="_blank" rel="noopener">
+          <div class="tool-header">
+            <div class="tool-icon">R</div>
+            <span class="tool-badge">CRAN / GitHub</span>
+          </div>
+          <h3>divraster</h3>
+          <p>Cálculo de métricas de diversidade contínuas para dados rasterizados — integrando diversidade taxonômica, funcional e filogenética em escala espacial.</p>
+          <div class="tool-link">
+            <span>Acessar documentação</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+          </div>
+        </a>
+        <a class="tool" href="https://gabferreira.github.io/phyloraster" target="_blank" rel="noopener">
+          <div class="tool-header">
+            <div class="tool-icon">R</div>
+            <span class="tool-badge">CRAN / GitHub</span>
+          </div>
+          <h3>phyloraster</h3>
+          <p>Cálculo rápido e computacionalmente eficiente de métricas de diversidade filogenética e endemismo evolutivo diretamente a partir de rasters.</p>
+          <div class="tool-link">
+            <span>Acessar documentação</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+          </div>
+        </a>
+        <a class="tool" href="https://hemingnm.github.io/SESraster" target="_blank" rel="noopener">
+          <div class="tool-header">
+            <div class="tool-icon">R</div>
+            <span class="tool-badge">CRAN / GitHub</span>
+          </div>
+          <h3>SESraster</h3>
+          <p>Randomização espacial de dados rasterizados e modelos nulos para testes de hipóteses ecológicas e cálculo de tamanhos de efeito padronizados (SES).</p>
+          <div class="tool-link">
+            <span>Acessar documentação</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+          </div>
+        </a>
       </div>
     </div>
   </section>
