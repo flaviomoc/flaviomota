@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic portfolio of an ecologist working at the intersection of macroecology, biodiversity conservation, climate change and ecological niche modelling.">
+  <title>Flávio Mota — Ecology & Conservation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#18332d; --muted:#60716c; --paper:#f7f8f4; --white:#fff;
+      --leaf:#2d6a57; --leaf-dark:#1e4e41; --mint:#dfece5; --line:#dce5df;
+      --sand:#eee9dc; --accent:#c88d42; --shadow:0 18px 50px rgba(24,51,45,.09);
+      --radius:24px; --max:1160px;
+    }
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    nav{position:sticky;top:0;z-index:20;background:rgba(247,248,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,223,.8)}
+    .navin{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;letter-spacing:-.02em}
+    .brand span{color:var(--leaf)}
+    .links{display:flex;gap:26px;font-size:.92rem;color:#52645e}
+    .links a:hover{color:var(--leaf)}
+    .menu{display:none;border:0;background:none;font-size:1.4rem;color:var(--ink)}
+    .hero{padding:92px 0 78px;overflow:hidden;position:relative}
+    .hero:before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;right:-220px;top:-160px;background:radial-gradient(circle,var(--mint),transparent 68%);z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--leaf);font-size:.82rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:32px;height:1px;background:var(--leaf)}
+    h1,h2,h3{margin:0;line-height:1.12}
+    h1{font:700 clamp(3.4rem,7vw,6.6rem)/.94 "Fraunces",serif;letter-spacing:-.055em;margin:18px 0 25px;max-width:760px}
+    h1 em{font-style:normal;color:var(--leaf)}
+    .lead{font-size:1.18rem;max-width:680px;color:#52645e}
+    .hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:.92rem}
+    .btn.primary{background:var(--leaf);color:white;border-color:var(--leaf)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,106,87,.12)}
+    .hero-card{background:var(--white);border:1px solid var(--line);border-radius:34px;padding:30px;box-shadow:var(--shadow);position:relative}
+    .hero-card svg{width:100%;height:auto;display:block}
+    .card-note{margin-top:12px;color:var(--muted);font-size:.82rem}
+    section{padding:88px 0}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    .section-head h2{font:600 clamp(2rem,4vw,3.3rem) "Fraunces",serif;letter-spacing:-.035em}
+    .section-head p{max-width:540px;color:var(--muted);margin:0}
+    .tint{background:#edf3ef}
+    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .quote{font:600 1.7rem/1.35 "Fraunces",serif;max-width:450px}
+    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+    .fact{background:white;border:1px solid var(--line);padding:20px;border-radius:18px}
+    .fact strong{display:block;font-size:1.35rem;color:var(--leaf)}
+    .fact span{font-size:.86rem;color:var(--muted)}
+    .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .research{padding:28px;background:white;border:1px solid var(--line);border-radius:22px;min-height:220px}
+    .num{font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:.12em}
+    .research h3{font-size:1.2rem;margin:22px 0 12px}
+    .research p{color:var(--muted);font-size:.94rem}
+    .timeline{border-left:1px solid #bfd0c8;margin-left:8px;padding-left:28px}
+    .time{position:relative;margin-bottom:32px}
+    .time:before{content:"";position:absolute;width:10px;height:10px;background:var(--leaf);border:4px solid var(--paper);border-radius:50%;left:-34px;top:5px}
+    .time .year{color:var(--leaf);font-weight:700;font-size:.86rem}
+    .time h3{font-size:1.08rem;margin:5px 0}
+    .time p{margin:0;color:var(--muted);max-width:780px}
+    .pubs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .pub{background:white;border:1px solid var(--line);border-radius:20px;padding:24px}
+    .pub .meta{font-size:.78rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .pub h3{font-size:1.05rem;margin:10px 0 8px}
+    .pub p{margin:0;color:var(--muted);font-size:.88rem}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .tag{font-size:.74rem;background:var(--mint);padding:5px 9px;border-radius:999px;color:var(--leaf-dark)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .stat{background:var(--ink);color:white;padding:25px;border-radius:20px}
+    .stat strong{display:block;font:700 2.3rem "Fraunces",serif}
+    .stat span{color:#c8d8d2;font-size:.82rem}
+    .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tool{border:1px solid var(--line);background:white;border-radius:20px;padding:24px}
+    .tool h3{font-size:1.08rem;margin-bottom:8px}
+    .tool p{font-size:.88rem;color:var(--muted);margin:0}
+    .cta{background:var(--leaf-dark);color:white;border-radius:34px;padding:55px}
+    .cta-grid{display:flex;justify-content:space-between;gap:35px;align-items:center}
+    .cta h2{font:600 clamp(2rem,4vw,3.3rem) "Fraunces",serif;max-width:650px}
+    .cta p{color:#cfe0d9;max-width:620px}
+    footer{padding:35px 0 55px;color:var(--muted);font-size:.85rem}
+    .footerin{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+    @media(max-width:850px){
+      .links{display:none}.menu{display:block}
+      .hero-grid,.about-grid{grid-template-columns:1fr}.research-grid,.tools{grid-template-columns:1fr}
+      .pubs{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}
+      .hero{padding-top:65px}.section-head{display:block}.section-head p{margin-top:15px}
+      .cta{padding:35px}.cta-grid{display:block}.cta .btn{display:inline-block;margin-top:18px}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(var(--max),calc(100% - 26px))}
+      h1{font-size:3.35rem}.stats{grid-template-columns:1fr}
+      section{padding:65px 0}.facts{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <a class="brand" href="#top">Flávio <span>Mota</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a>
+      <a href="#publications">Publications</a><a href="#tools">Tools</a>
+    </div>
+    <button class="menu" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Ecology · Conservation · Spatial Ecology</div>
+        <h1>Understanding biodiversity in a <em>changing world.</em></h1>
+        <p class="lead">Ecologist working at the intersection of macroecology, climate change, biodiversity conservation, ecological niche modelling and geospatial analysis.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#research">Explore research</a>
+          <a class="btn" href="#publications">Selected publications</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Abstract ecological illustration">
+        <svg viewBox="0 0 520 430" role="img">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="1" y2="0">
+              <stop offset="0" stop-color="#dcebe4"/><stop offset="1" stop-color="#f3eadb"/>
+            </linearGradient>
+          </defs>
+          <rect width="520" height="430" rx="26" fill="url(#g)"/>
+          <circle cx="390" cy="105" r="55" fill="#fff" opacity=".7"/>
+          <path d="M0 325 C120 270 165 350 260 310 C350 273 420 290 520 240 L520 430 L0 430Z" fill="#2d6a57" opacity=".92"/>
+          <path d="M0 355 C100 315 190 382 285 345 C370 312 435 330 520 292" fill="none" stroke="#b9d0c4" stroke-width="3"/>
+          <g fill="none" stroke="#1e4e41" stroke-width="5" stroke-linecap="round">
+            <path d="M105 325 C100 245 120 190 162 145"/>
+            <path d="M150 300 C152 232 177 187 211 160"/>
+            <path d="M380 315 C382 235 362 180 330 135"/>
+          </g>
+          <g fill="#2d6a57">
+            <ellipse cx="154" cy="190" rx="32" ry="15" transform="rotate(-40 154 190)"/>
+            <ellipse cx="118" cy="225" rx="34" ry="15" transform="rotate(25 118 225)"/>
+            <ellipse cx="205" cy="197" rx="35" ry="16" transform="rotate(18 205 197)"/>
+            <ellipse cx="350" cy="180" rx="35" ry="16" transform="rotate(35 350 180)"/>
+            <ellipse cx="385" cy="225" rx="38" ry="17" transform="rotate(-28 385 225)"/>
+          </g>
+          <g fill="#c88d42">
+            <circle cx="420" cy="95" r="4"/><circle cx="450" cy="135" r="3"/><circle cx="95" cy="105" r="3"/>
+          </g>
+          <text x="34" y="45" fill="#18332d" font-family="DM Sans" font-size="13" font-weight="700" letter-spacing="2">BIODIVERSITY • SPACE • CLIMATE</text>
+        </svg>
+        <div class="card-note">A visual identity inspired by landscapes, spatial patterns and ecological change.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="tint">
+    <div class="wrap about-grid">
+      <div>
+        <div class="eyebrow">About</div>
+        <p class="quote">Research that connects ecological theory, spatial data and conservation questions.</p>
+        <div class="facts">
+          <div class="fact"><strong>14</strong><span>articles in journals</span></div>
+          <div class="fact"><strong>1</strong><span>article accepted for publication</span></div>
+          <div class="fact"><strong>3</strong><span>R/spatial software projects</span></div>
+          <div class="fact"><strong>76</strong><span>Google Scholar citations in the CV snapshot</span></div>
+        </div>
+      </div>
+      <div>
+        <p>My work focuses on understanding how environmental change reshapes biodiversity across space and time. My research combines ecological niche modelling, macroecology, spatial analysis and biodiversity metrics to investigate species distributions, community structure and conservation priorities.</p>
+        <p>I have worked across questions involving habitat loss and fragmentation, climate-change impacts on birds and broader biodiversity, as well as ecological responses in human-impacted landscapes such as the Rio Doce basin.</p>
+        <p>The academic trajectory documented in the CV includes a PhD in Ecology and Biodiversity Conservation, a postdoctoral period, research positions and teaching activities in ecology and ecological niche modelling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Research</div><h2>Questions I work on</h2></div>
+        <p>A research portfolio centered on biodiversity responses to environmental change, with a strong spatial and quantitative component.</p>
+      </div>
+      <div class="research-grid">
+        <article class="research"><div class="num">01</div><h3>Climate change & biodiversity</h3><p>Assessing how future climatic conditions may alter species distributions, community composition and biodiversity patterns.</p></article>
+        <article class="research"><div class="num">02</div><h3>Ecological niche modelling</h3><p>Using species distribution and niche models to explore present and future suitable areas and conservation scenarios.</p></article>
+        <article class="research"><div class="num">03</div><h3>Macroecology & spatial ecology</h3><p>Investigating large-scale biodiversity patterns through spatial data, ecological traits and evolutionary information.</p></article>
+        <article class="research"><div class="num">04</div><h3>Habitat loss & fragmentation</h3><p>Studying how habitat transformation and fragmentation affect species distributions and ecological patterns.</p></article>
+        <article class="research"><div class="num">05</div><h3>Conservation planning</h3><p>Translating spatial biodiversity projections into priorities and evidence useful for conservation and restoration.</p></article>
+        <article class="research"><div class="num">06</div><h3>Geospatial biodiversity analysis</h3><p>Applying GIS, raster analysis and biodiversity metrics to connect ecological processes with landscape patterns.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Experience</div><h2>Academic path</h2></div>
+        <p>Selected milestones from the academic and professional trajectory recorded in the August 2026 CV.</p>
+      </div>
+      <div class="timeline">
+        <div class="time"><div class="year">2025 — present</div><h3>Researcher · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</h3><p>Research and geospatial analyses for biodiversity conservation, including work connected to climate change and biodiversity.</p></div>
+        <div class="time"><div class="year">2026 — present</div><h3>Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</h3><p>Teaching ecological niche modelling and species distribution.</p></div>
+        <div class="time"><div class="year">2020 — 2025</div><h3>Research & teaching · Universidade Estadual de Santa Cruz (UESC)</h3><p>Research in ecology and biodiversity conservation, alongside teaching activities in general ecology and related topics.</p></div>
+        <div class="time"><div class="year">2024 — 2025</div><h3>Postdoctoral researcher · Universidade Federal de Minas Gerais (UFMG)</h3><p>Postdoctoral research supported by FAPEMIG.</p></div>
+        <div class="time"><div class="year">2020 — 2024</div><h3>PhD in Ecology and Biodiversity Conservation · UESC</h3><p>Doctoral research on the impacts of climate change on bird diversity.</p></div>
+        <div class="time"><div class="year">2015 — 2017</div><h3>MSc in Biodiversity and Natural Resources Use · UNIMONTES</h3><p>Research on habitat fragmentation and loss of potential distribution area.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Selected publications</div><h2>From species to landscapes</h2></div>
+        <p>Selected works from the CV, prioritizing climate change, biodiversity, ecological modelling and human impacts.</p>
+      </div>
+      <div class="pubs">
+        <article class="pub"><div class="meta">2026 · Journal of Applied Entomology</div><h3>Projected climate suitable area for Apis mellifera in mining-affected landscapes in southeast Brazil</h3><p>Mota, F. M. M. and collaborators.</p><div class="tagrow"><span class="tag">Climate change</span><span class="tag">Bees</span><span class="tag">SDM</span></div></article>
+        <article class="pub"><div class="meta">2026 · Forest Ecology and Management</div><h3>Unveiling the hidden consequences of mining tailings on ecosystem processes: Disruption of decomposition of native species in the Rio Doce watershed</h3><p>Collaborative research on ecological consequences of mining impacts.</p><div class="tagrow"><span class="tag">Rio Doce</span><span class="tag">Mining</span><span class="tag">Ecology</span></div></article>
+        <article class="pub"><div class="meta">2025 · Biological Invasions</div><h3>Climate-driven distribution shifts of invasive earthworm species in a river basin affected by mining tailings</h3><p>Research connecting invasive species, climate change and environmental disturbance.</p><div class="tagrow"><span class="tag">Invasion</span><span class="tag">Climate</span><span class="tag">Rio Doce</span></div></article>
+        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Climate-driven distributional shifts of invasive earthworm species</h3><p>Spatially explicit assessment of distributional responses to changing climate.</p><div class="tagrow"><span class="tag">Macroecology</span><span class="tag">SDM</span></div></article>
+        <article class="pub"><div class="meta">2025 · Diversity and Distributions</div><h3>Climate change impacts on the multiple facets of forest bird diversity in a biodiversity hotspot within the Atlantic Forest</h3><p>Study of potential climate impacts on forest bird diversity.</p><div class="tagrow"><span class="tag">Birds</span><span class="tag">Atlantic Forest</span></div></article>
+        <article class="pub"><div class="meta">2024 · Ecography</div><h3>divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</h3><p>An open computational contribution for raster-based biodiversity analyses.</p><div class="tagrow"><span class="tag">R</span><span class="tag">Biodiversity metrics</span><span class="tag">Open tools</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Research snapshot</div><h2>At a glance</h2></div>
+        <p>Production totals reported in the CV generated on 18 August 2026.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>14</strong><span>journal articles</span></div>
+        <div class="stat"><strong>1</strong><span>accepted article</span></div>
+        <div class="stat"><strong>3</strong><span>unregistered software projects</span></div>
+        <div class="stat"><strong>3</strong><span>completed undergraduate supervisions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">Open & applied tools</div><h2>Code for biodiversity</h2></div>
+        <p>The CV records software and technical work that support reproducible biodiversity analyses.</p>
+      </div>
+      <div class="tools">
+        <article class="tool"><h3>divraster</h3><p>Diversity metrics calculations for rasterized data — taxonomic, functional and phylogenetic diversity.</p></article>
+        <article class="tool"><h3>phyloraster</h3><p>Evolutionary diversity metrics for raster data.</p></article>
+        <article class="tool"><h3>SESraster</h3><p>Raster randomization for null-hypothesis testing.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div class="cta-grid">
+          <div><h2>Interested in ecology, biodiversity and environmental change?</h2><p>This website is designed as a concise academic portfolio, complementing the full curriculum and publication record.</p></div>
+          <a class="btn" style="background:white;border-color:white;color:var(--leaf-dark)" href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footerin">
+    <span>© 2026 · Flávio Mota · Ecology & Conservation</span>
+    <span>Academic portfolio · Built with a clean, content-first approach</span>
+  </div>
+</footer>
+
+<script>
+  const menu = document.querySelector('.menu');
+  const links = document.querySelector('.links');
+  menu?.addEventListener('click', () => {
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.position = 'absolute';
+    links.style.top = '74px';
+    links.style.right = '13px';
+    links.style.flexDirection = 'column';
+    links.style.background = 'rgba(247,248,244,.98)';
+    links.style.padding = '18px';
+    links.style.border = '1px solid #dce5df';
+    links.style.borderRadius = '16px';
+  });
+</script>
+</body>
+</html>
