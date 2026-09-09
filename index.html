@@ -127,32 +127,55 @@
     .footer-socials a{color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:color .2s, transform .2s}
     .footer-socials a:hover{color:var(--leaf);transform:translateY(-1px)}
     .footer-socials svg{width:19px;height:19px;display:block;fill:currentColor}
-    .gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:250px 250px;gap:14px}
-    .photo{position:relative;overflow:hidden;border-radius:24px;background:#dfe8e3;border:1px solid var(--line)}
-    .photo:first-child{grid-row:span 2}
-    .photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-    .photo:hover img{transform:scale(1.04)}
-    .photo figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(24,51,45,.82);color:white;padding:8px 11px;border-radius:12px;font-size:.75rem;backdrop-filter:blur(8px)}
-    .photo-note{color:var(--muted);font-size:.84rem;margin-top:14px}
-    .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:24px}
-    .fig-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
-    .fig-card:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
-    .fig-img-wrap{display:block;height:270px;background:#f3f7f5;overflow:hidden;border-bottom:1px solid var(--line);position:relative;padding:12px;text-align:center;text-decoration:none}
-    .fig-img-wrap img{width:100%;height:100%;object-fit:contain;background:#fff;border-radius:12px;transition:transform .35s ease;display:block}
-    .fig-card:hover .fig-img-wrap img{transform:scale(1.02)}
+    .strip-wrapper{position:relative;width:100%;margin-top:20px;overflow:hidden;border-radius:24px}
+    .strip-track{display:flex;gap:20px;overflow-x:auto;scroll-behavior:auto;scrollbar-width:none;-ms-overflow-style:none;padding:12px 6px 20px;cursor:grab;user-select:none;-webkit-overflow-scrolling:touch}
+    .strip-track::-webkit-scrollbar{display:none}
+    .strip-track:active{cursor:grabbing}
+    .section-head-with-controls{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px;gap:20px;flex-wrap:wrap}
+    .strip-controls{display:inline-flex;align-items:center;gap:8px}
+    .strip-hint{font-size:.76rem;color:var(--muted);background:#edf3f0;padding:4px 10px;border-radius:999px;font-weight:500}
+    .strip-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:white;color:var(--leaf-dark);font-size:1.1rem;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.04)}
+    .strip-btn:hover{background:var(--mint);border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px);box-shadow:0 6px 14px rgba(45,106,87,.12)}
+
+    .photo-slide{position:relative;overflow:hidden;border-radius:20px;background:#dfe8e3;border:1px solid var(--line);width:340px;min-width:340px;max-width:340px;height:240px;flex-shrink:0;box-shadow:0 2px 8px rgba(24,51,45,.04);transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
+    .photo-slide:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 12px 24px rgba(45,106,87,.12)}
+    .photo-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+    .photo-slide:hover img{transform:scale(1.05)}
+    .photo-slide figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(24,51,45,.85);color:white;padding:8px 12px;border-radius:12px;font-size:.78rem;backdrop-filter:blur(8px);line-height:1.35}
+    .photo-note{color:var(--muted);font-size:.84rem;margin-top:10px}
+
+    .fig-slide-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;width:400px;min-width:400px;max-width:400px;flex-shrink:0;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 10px rgba(24,51,45,.04)}
+    .fig-slide-card:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.12)}
+    .fig-slide-img{display:block;height:240px;background:#f4f7f5;overflow:hidden;border-bottom:1px solid var(--line);position:relative;padding:12px;text-align:center;text-decoration:none}
+    .fig-slide-img img{width:100%;height:100%;object-fit:contain;background:#fff;border-radius:12px;transition:transform .35s ease;display:block}
+    .fig-slide-card:hover .fig-slide-img img{transform:scale(1.03)}
     .fig-badge{position:absolute;right:16px;bottom:16px;background:rgba(24,51,45,.82);color:white;padding:5px 11px;border-radius:999px;font-size:.72rem;display:inline-flex;align-items:center;gap:5px;backdrop-filter:blur(6px);opacity:0;transition:opacity .2s ease}
-    .fig-card:hover .fig-badge{opacity:1}
-    .fig-body{padding:22px;display:flex;flex-direction:column;flex-grow:1}
-    .fig-tag{font-size:.74rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-    .fig-card h3{font-size:1.08rem;margin:0 0 8px;line-height:1.4;color:var(--ink)}
-    .fig-card p{margin:0 0 16px;color:var(--muted);font-size:.88rem;line-height:1.55;flex-grow:1}
+    .fig-slide-card:hover .fig-badge{opacity:1}
+    .fig-slide-body{padding:20px;display:flex;flex-direction:column;flex-grow:1}
+    .fig-slide-body .fig-tag{font-size:.72rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+    .fig-slide-body h3{font-size:1.06rem;margin:0 0 10px;line-height:1.4;color:var(--ink)}
+    .fig-slide-caption{margin:0 0 14px;color:#384d47;font-size:.85rem;line-height:1.52;background:#f7f9f7;padding:10px 12px;border-radius:10px;border-left:3px solid var(--leaf);flex-grow:1}
+    .fig-slide-caption strong{color:var(--leaf-dark);font-weight:700;display:block;margin-bottom:4px;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
     .fig-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--leaf);text-decoration:none;margin-top:auto}
     .fig-link svg{width:13px;height:13px;fill:currentColor;flex-shrink:0;transition:transform .2s}
-    .fig-card:hover .fig-link{color:var(--leaf-dark)}
-    .fig-card:hover .fig-link svg{transform:translate(2px,-2px)}
+    .fig-slide-card:hover .fig-link{color:var(--leaf-dark)}
+    .fig-slide-card:hover .fig-link svg{transform:translate(2px,-2px)}
 
-    @media(max-width:850px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 200px 200px}.photo:first-child{grid-row:span 1;grid-column:span 2}.figures-grid{grid-template-columns:1fr}}
-    @media(max-width:520px){.gallery{display:block}.photo{height:240px;margin-bottom:12px}.fig-img-wrap{height:210px}}
+    .back-to-top-wrap{display:flex;justify-content:center;margin-top:32px}
+    .back-to-top-wrap .btn{background:white;color:var(--leaf-dark);border:1px solid var(--line);box-shadow:0 2px 8px rgba(24,51,45,.04);display:inline-flex;align-items:center;gap:8px;padding:12px 26px;font-weight:600;transition:all .2s ease}
+    .back-to-top-wrap .btn:hover{background:var(--mint);border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px);box-shadow:0 8px 18px rgba(45,106,87,.14)}
+
+    @media(max-width:850px){
+      .photo-slide{width:300px;min-width:300px;max-width:300px;height:220px}
+      .fig-slide-card{width:340px;min-width:340px;max-width:340px}
+      .fig-slide-img{height:220px}
+    }
+    @media(max-width:520px){
+      .photo-slide{width:270px;min-width:270px;max-width:270px;height:200px}
+      .fig-slide-card{width:290px;min-width:290px;max-width:290px}
+      .fig-slide-img{height:190px}
+      .strip-hint{display:none}
+    }
 
     @media(max-width:850px){
       .links{display:none}.menu{display:block}
@@ -394,89 +417,146 @@
 
   <section id="gallery" class="tint">
     <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">Campo e divulgação</div><h2>Ciência além do escritório</h2></div>
-        <p>Uma seleção visual de momentos de campo, ensino, divulgação científica e vida acadêmica.</p>
+      <div class="section-head-with-controls">
+        <div>
+          <div class="eyebrow">Campo e divulgação</div>
+          <h2>Ciência além do escritório</h2>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:.94rem">Momentos de campo, ensino, divulgação científica e vivência acadêmica.</p>
+        </div>
+        <div class="strip-controls">
+          <span class="strip-hint">Passe o cursor para pausar</span>
+          <button class="strip-btn" id="photo-prev" aria-label="Foto anterior">←</button>
+          <button class="strip-btn" id="photo-next" aria-label="Próxima foto">→</button>
+        </div>
       </div>
-      <div class="gallery">
-        <figure class="photo"><img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Fieldwork photograph" loading="lazy"><figcaption>Trabalho de campo e pesquisa em biodiversidade</figcaption></figure>
-        <figure class="photo"><img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Drone used for ecological spatial analysis" loading="lazy"><figcaption>Geoprocessamento e ecologia espacial</figcaption></figure>
-        <figure class="photo"><img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Academic event photograph" loading="lazy"><figcaption>Eventos acadêmicos</figcaption></figure>
-        <figure class="photo"><img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Workshop and outreach photograph" loading="lazy"><figcaption>Ensino e divulgação científica</figcaption></figure>
-        <figure class="photo"><img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Academic experience photograph" loading="lazy"><figcaption>Experiência acadêmica internacional</figcaption></figure>
+
+      <div class="strip-wrapper">
+        <div class="strip-track" id="photo-track">
+          <figure class="photo-slide"><img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Trabalho de campo e pesquisa em biodiversidade" loading="lazy"><figcaption>Trabalho de campo e pesquisa em biodiversidade</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Geoprocessamento e ecologia espacial" loading="lazy"><figcaption>Geoprocessamento e ecologia espacial</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Eventos acadêmicos" loading="lazy"><figcaption>Eventos acadêmicos</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Ensino e divulgação científica" loading="lazy"><figcaption>Ensino e divulgação científica</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Experiência acadêmica internacional" loading="lazy"><figcaption>Experiência acadêmica internacional</figcaption></figure>
+        </div>
       </div>
-      <p class="photo-note">As imagens são carregadas a partir dos endereços fornecidos para este site.</p>
+      <p class="photo-note">As fotos passam automaticamente para o lado. Você pode pausar com o cursor ou navegar usando as setas.</p>
 
       <div class="gallery-scientific" style="margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line);">
-        <div class="section-head">
-          <div><div class="eyebrow">Visualizações científicas</div><h2>Mapas, modelos e sínteses</h2></div>
-          <p>Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos desenvolvidos em pesquisas.</p>
+        <div class="section-head-with-controls">
+          <div>
+            <div class="eyebrow">Visualizações científicas</div>
+            <h2>Mapas, modelos e sínteses</h2>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:.94rem">Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos.</p>
+          </div>
+          <div class="strip-controls">
+            <span class="strip-hint">Passe o cursor para pausar</span>
+            <button class="strip-btn" id="fig-prev" aria-label="Figura anterior">←</button>
+            <button class="strip-btn" id="fig-next" aria-label="Próxima figura">→</button>
+          </div>
         </div>
 
-        <div class="figures-grid">
-          <article class="fig-card">
-            <a class="fig-img-wrap" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-              <img src="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" alt="Modelagem espacial das facetas de diversidade de aves florestais na Mata Atlântica" loading="lazy">
-              <span class="fig-badge">Ampliar ↗</span>
-            </a>
-            <div class="fig-body">
-              <div class="fig-tag">Modelagem Ecológica · Mata Atlântica</div>
-              <h3>Facetas da Diversidade de Aves Florestais</h3>
-              <p>Mapeamento e modelagem contínua das facetas taxonômica, funcional e filogenética da comunidade de aves sob cenários climáticos na Mata Atlântica.</p>
-              <a class="fig-link" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener">
-                <span>Ver imagem em alta resolução</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+        <div class="strip-wrapper">
+          <div class="strip-track" id="figures-track">
+            <!-- Figura 1 (Linha 1, Coluna 1) -->
+            <article class="fig-slide-card">
+              <a class="fig-slide-img" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+                <img src="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" alt="Climate-suitable area for Apis mellifera across the Doce River Basin" loading="lazy">
+                <span class="fig-badge">Ampliar ↗</span>
               </a>
-            </div>
-          </article>
+              <div class="fig-slide-body">
+                <div class="fig-tag">Apis mellifera · Bacia do Rio Doce</div>
+                <h3>Adequabilidade Climática para <em>Apis mellifera</em></h3>
+                <div class="fig-slide-caption">
+                  <strong>Legenda científica:</strong>
+                  Climate-suitable area for the honeybee (<em>Apis mellifera</em>) across the Doce River Basin, south-eastern Brazil.
+                </div>
+                <a class="fig-link" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener">
+                  <span>Ver em alta resolução</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+                </a>
+              </div>
+            </article>
 
-          <article class="fig-card">
-            <a class="fig-img-wrap" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-              <img src="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" alt="Mapa de uso do solo e sobreposição com rejeitos de mineração" loading="lazy">
-              <span class="fig-badge">Ampliar ↗</span>
-            </a>
-            <div class="fig-body">
-              <div class="fig-tag">Ecologia Espacial · Uso do Solo</div>
-              <h3>Uso do Solo e Pegada de Mineração</h3>
-              <p>Adequabilidade climática projetada para <i>Apis mellifera</i> e sobreposição espacial com a pegada de rejeitos de mineração e bacia hidrográfica.</p>
-              <a class="fig-link" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener">
-                <span>Ver imagem em alta resolução</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            <!-- Figura 2 (Linha 1, Coluna 2) -->
+            <article class="fig-slide-card">
+              <a class="fig-slide-img" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+                <img src="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" alt="Land use in the Rio Doce basin, southeastern Brazil" loading="lazy">
+                <span class="fig-badge">Ampliar ↗</span>
               </a>
-            </div>
-          </article>
+              <div class="fig-slide-body">
+                <div class="fig-tag">Uso do Solo · Bacia do Rio Doce</div>
+                <h3>Uso e Ocupação do Solo no Rio Doce</h3>
+                <div class="fig-slide-caption">
+                  <strong>Legenda científica:</strong>
+                  Land use in the Rio Doce basin, southeastern Brazil.
+                </div>
+                <a class="fig-link" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener">
+                  <span>Ver em alta resolução</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+                </a>
+              </div>
+            </article>
 
-          <article class="fig-card">
-            <a class="fig-img-wrap" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-              <img src="https://i.postimg.cc/63CfdDsB/fig1.png" alt="Variação global de atributos ecológicos e história de vida de aves" loading="lazy">
-              <span class="fig-badge">Ampliar ↗</span>
-            </a>
-            <div class="fig-body">
-              <div class="fig-tag">Macroecologia · Base Global BIRDBASE</div>
-              <h3>Traços Ecológicos Globais de Aves</h3>
-              <p>Distribuição e variação comparativa de atributos ecológicos, dietéticos, biométricos e histórias de vida para aves em escala global.</p>
-              <a class="fig-link" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener">
-                <span>Ver imagem em alta resolução</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            <!-- Figura 3 (Linha 2, Coluna 1) -->
+            <article class="fig-slide-card">
+              <a class="fig-slide-img" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+                <img src="https://i.postimg.cc/63CfdDsB/fig1.png" alt="Location of the Central Corridor of the Atlantic Forest in Brazil" loading="lazy">
+                <span class="fig-badge">Ampliar ↗</span>
               </a>
-            </div>
-          </article>
+              <div class="fig-slide-body">
+                <div class="fig-tag">Mata Atlântica · Conservação</div>
+                <h3>Corredor Central da Mata Atlântica</h3>
+                <div class="fig-slide-caption">
+                  <strong>Legenda científica:</strong>
+                  Location of the Central Corridor of the Atlantic Forest (CCAF) in Brazil.
+                </div>
+                <a class="fig-link" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener">
+                  <span>Ver em alta resolução</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+                </a>
+              </div>
+            </article>
 
-          <article class="fig-card">
-            <a class="fig-img-wrap" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-              <img src="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" alt="Framework do pacote divraster para cálculo de diversidade a partir de rasters" loading="lazy">
-              <span class="fig-badge">Ampliar ↗</span>
-            </a>
-            <div class="fig-body">
-              <div class="fig-tag">Algoritmos & Ferramentas · Pacote divraster</div>
-              <h3>Framework de Métricas de Diversidade em Rasters</h3>
-              <p>Fluxograma metodológico e computacional para integração e cálculo de índices contínuos de diversidade taxonômica, funcional e filogenética.</p>
-              <a class="fig-link" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener">
-                <span>Ver imagem em alta resolução</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            <!-- Figura 4 (Linha 2, Coluna 2) -->
+            <article class="fig-slide-card">
+              <a class="fig-slide-img" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+                <img src="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" alt="A schematic drawing inputs and outputs of divraster functions" loading="lazy">
+                <span class="fig-badge">Ampliar ↗</span>
               </a>
-            </div>
-          </article>
+              <div class="fig-slide-body">
+                <div class="fig-tag">Pacote divraster · Métricas Espaciais</div>
+                <h3>Entradas e Saídas do Pacote ‘divraster’</h3>
+                <div class="fig-slide-caption">
+                  <strong>Legenda científica:</strong>
+                  A schematic drawing of inputs and outputs of ‘divraster’ functions.
+                </div>
+                <a class="fig-link" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener">
+                  <span>Ver em alta resolução</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Figura 5 (Nova imagem) -->
+            <article class="fig-slide-card">
+              <a class="fig-slide-img" href="https://i.postimg.cc/htJtjm7c/choco-paper.webp" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
+                <img src="https://i.postimg.cc/htJtjm7c/choco-paper.webp" alt="Species richness and climate scenarios for endemic bird species across the Chocó" loading="lazy">
+                <span class="fig-badge">Ampliar ↗</span>
+              </a>
+              <div class="fig-slide-body">
+                <div class="fig-tag">Biogeografia & Mudanças Climáticas · Chocó</div>
+                <h3>Riqueza e Cenários de Aves no Chocó</h3>
+                <div class="fig-slide-caption">
+                  <strong>Legenda científica:</strong>
+                  Species richness and the difference between baseline and future scenarios for 27 endemic or near-endemic bird species across the Chocó in Colombia and Ecuador.
+                </div>
+                <a class="fig-link" href="https://i.postimg.cc/htJtjm7c/choco-paper.webp" target="_blank" rel="noopener">
+                  <span>Ver em alta resolução</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
@@ -536,22 +616,17 @@
           <div>
             <h2>Interessado em ecologia, biodiversidade e mudanças ambientais?</h2>
             <p>Aberto a colaborações acadêmicas, desenvolvimento de ferramentas e pesquisas na interface entre ecologia espacial, modelagem e conservação.</p>
-            <div class="contact-info">
-              <a href="mailto:flaviomoc@gmail.com" class="contact-pill">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                <span>flaviomoc@gmail.com</span>
-              </a>
-              <span class="contact-pill loc">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-                <span>Montes Claros - MG, Brasil</span>
-              </span>
-            </div>
           </div>
           <div class="cta-btns">
-            <a class="btn primary" href="mailto:flaviomoc@gmail.com">Enviar email</a>
-            <a class="btn" style="background:white;border-color:white;color:var(--leaf-dark)" href="#top">Voltar ao topo ↑</a>
+            <a class="btn primary" href="mailto:flaviomoc@gmail.com">Entre em contato!</a>
           </div>
         </div>
+      </div>
+      <div class="back-to-top-wrap">
+        <a class="btn" href="#top" id="btn-back-to-top">
+          <span>Voltar ao topo</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -597,6 +672,89 @@
     links.style.border = '1px solid #dce5df';
     links.style.borderRadius = '16px';
   });
+
+  // Infinite horizontal auto-scroller for image strips
+  function setupStripScroller(trackId, prevBtnId, nextBtnId, speed = 0.75) {
+    const track = document.getElementById(trackId);
+    if (!track) return;
+
+    // Clone items once for seamless endless conveyor-belt loop
+    const items = Array.from(track.children);
+    if (items.length === 0) return;
+
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    let isPaused = false;
+    let isUserActive = false;
+    let resumeTimeout = null;
+
+    function pause() {
+      isPaused = true;
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+    }
+
+    function resume(delay = 1400) {
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isPaused = false;
+        isUserActive = false;
+      }, delay);
+    }
+
+    track.addEventListener('mouseenter', pause);
+    track.addEventListener('mouseleave', () => resume(400));
+    track.addEventListener('touchstart', () => { pause(); isUserActive = true; }, { passive: true });
+    track.addEventListener('touchend', () => resume(1600));
+
+    track.addEventListener('scroll', () => {
+      const half = track.scrollWidth / 2;
+      if (half > 0 && track.scrollLeft >= half) {
+        track.scrollLeft -= half;
+      } else if (track.scrollLeft <= 0 && isUserActive) {
+        track.scrollLeft += half;
+      }
+    }, { passive: true });
+
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        pause();
+        track.scrollBy({ left: -360, behavior: 'smooth' });
+        resume(2000);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        pause();
+        track.scrollBy({ left: 360, behavior: 'smooth' });
+        resume(2000);
+      });
+    }
+
+    function autoScroll() {
+      if (!isPaused && !isUserActive) {
+        track.scrollLeft += speed;
+        const half = track.scrollWidth / 2;
+        if (half > 0 && track.scrollLeft >= half) {
+          track.scrollLeft -= half;
+        }
+      }
+      requestAnimationFrame(autoScroll);
+    }
+
+    requestAnimationFrame(autoScroll);
+  }
+
+  // Initialize both strips
+  setupStripScroller('photo-track', 'photo-prev', 'photo-next', 0.85);
+  setupStripScroller('figures-track', 'fig-prev', 'fig-next', 0.7);
 </script>
 </body>
 </html>
