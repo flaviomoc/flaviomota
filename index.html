@@ -3,8 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio acadêmico de um ecólogo que atua na interface entre macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.">
+  <meta name="description" content="Portfólio acadêmico e científico de Flávio Mota. Macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.">
   <title>Flávio Mota — Ecologia e Conservação</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Flávio Mota — Ecologia e Conservação">
+  <meta property="og:description" content="Portfólio acadêmico e científico de Flávio Mota. Macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.">
+  <meta property="og:image" content="https://i.postimg.cc/L5xDXwZM/Foto-Flavio-Mota.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flávio Mota — Ecologia e Conservação">
+  <meta name="twitter:description" content="Portfólio acadêmico e científico de Flávio Mota. Macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.">
+  <meta name="twitter:image" content="https://i.postimg.cc/L5xDXwZM/Foto-Flavio-Mota.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Flávio Mota",
+    "jobTitle": "Ecólogo e Pesquisador",
+    "description": "Pesquisador que atua na interface entre macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.",
+    "image": "https://i.postimg.cc/L5xDXwZM/Foto-Flavio-Mota.jpg",
+    "sameAs": [
+      "https://orcid.org/0000-0002-0308-7151",
+      "https://www.researchgate.net/profile/Flavio-Mota-3",
+      "https://www.linkedin.com/in/motafmm/",
+      "https://github.com/flaviomoc",
+      "http://lattes.cnpq.br/9344931186718462",
+      "https://www.instagram.com/fmota.eco/"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600;1,8..60,700&display=swap" rel="stylesheet">
@@ -26,6 +53,14 @@
     .brand span{color:var(--leaf)}
     .links{display:flex;gap:26px;font-size:1.04rem;color:#455651}
     .links a:hover{color:var(--leaf)}
+    .nav-right{display:flex;align-items:center;gap:20px}
+    .lang-switch{display:inline-flex;align-items:center;background:var(--mint);padding:2px 5px;border-radius:999px;border:1px solid rgba(45,106,87,.18);font-size:.86rem;font-weight:700}
+    .lang-btn{border:none;background:none;cursor:pointer;padding:4px 9px;border-radius:999px;color:var(--leaf-dark);font-weight:700;font-size:.86rem;font-family:inherit;transition:all .2s ease}
+    .lang-btn:hover{color:var(--leaf)}
+    .lang-btn.active{background:var(--leaf);color:white;box-shadow:0 2px 6px rgba(45,106,87,.2)}
+    .lang-divider{color:rgba(45,106,87,.35);font-size:.85rem;user-select:none}
+    html[lang="en"] .lang-pt,
+    html:not([lang="en"]) .lang-en{display:none !important}
     .menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--ink)}
     .hero{padding:92px 0 78px;overflow:hidden;position:relative}
     .hero:before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;right:-220px;top:-160px;background:radial-gradient(circle,var(--mint),transparent 68%);z-index:-1}
@@ -94,10 +129,6 @@
     .doi-pill{font-size:.92rem;color:var(--muted);background:#edf3f0;padding:5px 10px;border-radius:6px;font-family:var(--font-serif)}
     .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:14px}
     .tag{font-size:.94rem;background:var(--mint);padding:6px 12px;border-radius:999px;color:var(--leaf-dark);font-weight:600}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .stat{background:var(--ink);color:white;padding:26px;border-radius:20px}
-    .stat strong{display:block;font-size:2.5rem;font-weight:700;font-family:var(--font-serif)}
-    .stat span{color:#c8d8d2;font-size:1.02rem;line-height:1.4;display:block;margin-top:4px}
     .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .tool{border:1px solid var(--line);background:white;border-radius:22px;padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
     .tool:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
@@ -175,15 +206,10 @@
       .strip-hint{display:none}
     }
 
-    .nav-actions{display:flex;align-items:center;gap:14px}
-    .lang-switch{display:inline-flex;align-items:center;gap:6px;font-size:.92rem;font-weight:600;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--white);letter-spacing:.03em}
-    .lang-curr{color:var(--leaf);font-weight:700}
-    .lang-sep{color:var(--muted);opacity:.4}
-    .lang-opt{color:var(--muted);text-decoration:none;transition:color .2s ease}
-    .lang-opt:hover{color:var(--ink)}
-
     @media(max-width:850px){
-      .links{display:none}.menu{display:block}
+      .links{display:none;position:absolute;top:76px;right:20px;flex-direction:column;background:rgba(247,248,244,.98);padding:18px 24px;border:1px solid var(--line);border-radius:18px;box-shadow:0 14px 34px rgba(24,51,45,.14);backdrop-filter:blur(14px);gap:16px;z-index:100}
+      .links.active{display:flex}
+      .menu{display:block;cursor:pointer}
       .hero-grid,.about-grid{grid-template-columns:1fr}.research-grid,.tools{grid-template-columns:1fr}
       .about-left{gap:26px}.about-right{gap:16px}
       .pubs{grid-template-columns:1fr}
@@ -192,7 +218,7 @@
     }
     @media(max-width:520px){
       .wrap{width:min(var(--max),calc(100% - 26px))}
-      h1{font-size:3.1rem}.stats{grid-template-columns:1fr}
+      h1{font-size:3.1rem}
       section{padding:65px 0}.facts{grid-template-columns:1fr}
     }
   </style>
@@ -201,13 +227,19 @@
 <nav>
   <div class="wrap navin">
     <a class="brand" href="#top">Flávio <span>Mota</span></a>
-    <div class="links">
-      <a href="#about">Sobre</a><a href="#research">Pesquisa</a><a href="#experience">Experiência</a>
-      <a href="#publications">Publicações</a><a href="#gallery">Galeria</a><a href="#tools">Ferramentas</a>
-    </div>
-    <div class="nav-actions">
-      <div class="lang-switch" title="Mudar idioma / Switch language" aria-label="Idioma">
-        <span class="lang-curr">PT</span><span class="lang-sep">/</span><a href="/en" class="lang-opt">EN</a>
+    <div class="nav-right">
+      <div class="links">
+        <a href="#about"><span class="lang-pt">Sobre</span><span class="lang-en">About</span></a>
+        <a href="#research"><span class="lang-pt">Pesquisa</span><span class="lang-en">Research</span></a>
+        <a href="#experience"><span class="lang-pt">Experiência</span><span class="lang-en">Experience</span></a>
+        <a href="#publications"><span class="lang-pt">Publicações</span><span class="lang-en">Publications</span></a>
+        <a href="#gallery"><span class="lang-pt">Galeria</span><span class="lang-en">Gallery</span></a>
+        <a href="#tools"><span class="lang-pt">Ferramentas</span><span class="lang-en">Tools</span></a>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn active" id="btn-pt" onclick="setLang('pt')">PT</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
       </div>
       <button class="menu" aria-label="Menu">☰</button>
     </div>
@@ -219,15 +251,18 @@
     <div class="wrap hero-grid">
       <div>
         <div class="meta-pills">
-          <span class="eyebrow">Ecologia · Conservação</span>
+          <span class="eyebrow"><span class="lang-pt">Ecologia · Conservação</span><span class="lang-en">Ecology · Conservation</span></span>
         </div>
-        <h1>Compreendendo a biodiversidade em um <em>mundo em transformação.</em></h1>
+        <h1>
+          <span class="lang-pt">Compreendendo a biodiversidade em um <em>mundo em transformação.</em></span>
+          <span class="lang-en">Understanding biodiversity in a <em>changing world.</em></span>
+        </h1>
         <div class="hero-actions">
-          <a class="btn primary" href="#research">Conheça a pesquisa</a>
-          <a class="btn" href="#publications">Publicações selecionadas</a>
+          <a class="btn primary" href="#research"><span class="lang-pt">Conheça a pesquisa</span><span class="lang-en">Explore research</span></a>
+          <a class="btn" href="#publications"><span class="lang-pt">Publicações selecionadas</span><span class="lang-en">Selected publications</span></a>
           <a class="btn" href="mailto:flaviomoc@gmail.com" style="display:inline-flex;align-items:center;gap:6px">
             <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            Contato
+            <span class="lang-pt">Contato</span><span class="lang-en">Contact</span>
           </a>
         </div>
         <div class="profilebar" aria-label="Perfis acadêmicos e sociais">
@@ -242,6 +277,9 @@
           </a>
           <a class="social" href="https://www.instagram.com/fmota.eco/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a class="social" href="https://github.com/flaviomoc" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
           </a>
           <a class="social" href="http://lattes.cnpq.br/9344931186718462" target="_blank" rel="noopener" title="Currículo Lattes" aria-label="Currículo Lattes">
             <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M97.87 434.73C51.53 339.78 23.97 282.44 23.97 281.02c0-2.32 2.83-2 30.67 3.46 48.97 9.61 75.13 12.33 118.74 12.34 57.7 0.02 104.68-9.12 141.18-27.48 19.31-9.71 30.93-18.33 40.44-29.99 11.72-14.38 15.48-24.28 15.62-40.95 0.12-15.85-2.02-24.21-11.19-43.61-3.63-7.66-6.82-16.46-7.12-19.55-0.47-4.97-0.07-5.68 3.59-6.1 8-0.95 47.51 37.4 62.05 60.24 25.08 39.39 27.11 81.99 5.88 123.2-13.04 25.31-27.45 42.83-51.58 62.73-40.1 33.06-86.71 56.09-151.07 74.64C186.62 459.91 130.71 472 119.2 472c-2.44 0-7.02-8-21.3-37.28l-.03.01zM110.78 281.61C65.76 275.78 27.99 270.71 26.82 270.34c-2-.64-9.15-24.52-13.19-43.95-1.02-4.92-2.51-17.94-3.32-28.96C6.67 148.26 17.37 114.27 46.04 83.7 94.58 31.99 198.52 25.69 315.78 67.37c20.58 7.32 28.76 12.41 24.98 15.58-2.8 2.34-21.75 2.31-54.51-.1-51.2-3.76-90.18 3.36-110.27 20.18-30.59 25.6-25.92 81.72 13.53 162.68 4.27 8.77 8.58 17.34 9.56 19.09 2.29 4.02 0.63 7.75-3.36 7.56-1.7-.08-39.91-4.91-84.93-10.75zm151.02-44.05c-35.93-6.46-68.23-28.74-78.65-54.22-5-12.24-4.76-28.21.58-37.77 4.83-8.65 17.31-18.65 28.48-22.84 18.6-6.97 51.17-4.19 74.91 6.41 22.53 10.05 42.51 27.74 49.93 44.18 9.53 21.11 1.59 44.66-18.82 55.9-13.53 7.44-39.83 11.33-56.44 8.34h.02z"/></svg>
@@ -263,21 +301,31 @@
     <div class="wrap about-grid">
       <div class="about-left">
         <div>
-          <div class="eyebrow">Sobre</div>
-          <p class="quote">Pesquisa que conecta teoria ecológica, dados espaciais e questões de conservação.</p>
+          <div class="eyebrow"><span class="lang-pt">Sobre</span><span class="lang-en">About</span></div>
+          <p class="quote">
+            <span class="lang-pt">Pesquisa que conecta teoria ecológica, dados espaciais e questões de conservação.</span>
+            <span class="lang-en">Research connecting ecological theory, spatial data, and pressing conservation challenges.</span>
+          </p>
         </div>
         <div class="facts">
-          <div class="fact"><strong>14</strong><span>artigos em periódicos</span></div>
-          <div class="fact"><strong>1</strong><span>artigo aceito para publicação</span></div>
-          <div class="fact"><strong>3</strong><span>projetos de software em R/espacial</span></div>
-          <div class="fact"><strong>119</strong><span>citações no Web of Science</span></div>
+          <div class="fact"><strong>14</strong><span><span class="lang-pt">artigos em periódicos</span><span class="lang-en">peer-reviewed articles</span></span></div>
+          <div class="fact"><strong>1</strong><span><span class="lang-pt">artigo aceito para publicação</span><span class="lang-en">article accepted for publication</span></span></div>
+          <div class="fact"><strong>3</strong><span><span class="lang-pt">projetos de software em R/espacial</span><span class="lang-en">open-source R/spatial packages</span></span></div>
+          <div class="fact"><strong>119</strong><span><span class="lang-pt">citações no Web of Science</span><span class="lang-en">Web of Science citations</span></span></div>
         </div>
       </div>
       <div class="about-right">
-        <p>Meu trabalho busca compreender como as mudanças ambientais reorganizam a biodiversidade no espaço e no tempo. Minha pesquisa combina modelagem de nicho ecológico, macroecologia, análise espacial e métricas de diversidade para investigar distribuições de espécies, estrutura de comunidades e prioridades de conservação.</p>
-        <p>Tenho trabalhado com questões relacionadas à perda e fragmentação de habitat, aos impactos das mudanças climáticas sobre aves e a biodiversidade em geral, além de respostas ecológicas em paisagens impactadas por atividades humanas e desastres naturais, como a bacia do Rio Doce e o Rio Grande do Sul.</p>
-        <p>A trajetória acadêmica documentada no currículo inclui doutorado em Ecologia e Conservação da Biodiversidade, período de pós-doutorado, posições de pesquisa e atividades de ensino em ecologia e modelagem de nicho ecológico.</p>
-        <p>Na comunidade científica, atuo como editor para a revista <em>Biodiversity and Conservation</em> (Springer) e como revisor para periódicos internacionais na área de ecologia, biogeografia e conservação da biodiversidade, como <em>Diversity and Distributions</em>, <em>Ecography</em>, <em>Biological Conservation</em>, <em>Biotropica</em>, <em>Perspectives in Ecology and Conservation</em> e <em>Journal of Applied Entomology</em>.</p>
+        <p class="lang-pt">Meu trabalho busca compreender como as mudanças ambientais reorganizam a biodiversidade no espaço e no tempo. Minha pesquisa combina modelagem de nicho ecológico, macroecologia, análise espacial e métricas de diversidade para investigar distribuições de espécies, estrutura de comunidades e prioridades de conservação.</p>
+        <p class="lang-en">My work investigates how global environmental changes reorganize biodiversity across space and time. My research integrates ecological niche modeling, macroecology, geospatial analysis, and multifaceted diversity metrics to explore species distributions, community composition, and conservation priorities.</p>
+
+        <p class="lang-pt">Tenho trabalhado com questões relacionadas à perda e fragmentação de habitat, aos impactos das mudanças climáticas sobre aves e a biodiversidade em geral, além de respostas ecológicas em paisagens impactadas por atividades humanas e desastres naturais, como a bacia do Rio Doce e o Rio Grande do Sul.</p>
+        <p class="lang-en">I address topics related to habitat loss and fragmentation, the impacts of climate change on birds and global biodiversity, and ecological responses in landscapes shaped by human activities and environmental disasters, such as the Doce River basin and Rio Grande do Sul.</p>
+
+        <p class="lang-pt">A trajetória acadêmica documentada no currículo inclui doutorado em Ecologia e Conservação da Biodiversidade, período de pós-doutorado, posições de pesquisa e atividades de ensino em ecologia e modelagem de nicho ecológico.</p>
+        <p class="lang-en">My academic trajectory encompasses a Ph.D. in Ecology and Biodiversity Conservation, a postdoctoral fellowship, dedicated research appointments, and university teaching in ecology, spatial modeling, and biodiversity science.</p>
+
+        <p class="lang-pt">Na comunidade científica, atuo como editor para a revista <em>Biodiversity and Conservation</em> (Springer) e como revisor para periódicos internacionais na área de ecologia, biogeografia e conservação da biodiversidade, como <em>Diversity and Distributions</em>, <em>Ecography</em>, <em>Biological Conservation</em>, <em>Biotropica</em>, <em>Perspectives in Ecology and Conservation</em> e <em>Journal of Applied Entomology</em>.</p>
+        <p class="lang-en">Within the international scientific community, I serve as an Editor for <em>Biodiversity and Conservation</em> (Springer) and as an ad-hoc reviewer for leading international journals in ecology, biogeography, and conservation biology, including <em>Diversity and Distributions</em>, <em>Ecography</em>, <em>Biological Conservation</em>, <em>Biotropica</em>, <em>Perspectives in Ecology and Conservation</em>, and <em>Journal of Applied Entomology</em>.</p>
       </div>
     </div>
   </section>
@@ -285,16 +333,46 @@
   <section id="research">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Pesquisa</div><h2>Temas que investigo</h2></div>
-        <p>Um portfólio de pesquisa centrado nas respostas da biodiversidade às mudanças ambientais, com forte componente espacial e quantitativo.</p>
+        <div>
+          <div class="eyebrow"><span class="lang-pt">Pesquisa</span><span class="lang-en">Research</span></div>
+          <h2><span class="lang-pt">Temas que investigo</span><span class="lang-en">Core Research Themes</span></h2>
+        </div>
+        <p>
+          <span class="lang-pt">Um portfólio de pesquisa centrado nas respostas da biodiversidade às mudanças ambientais, com forte componente espacial e quantitativo.</span>
+          <span class="lang-en">A research portfolio focused on biodiversity responses to environmental change, driven by rigorous spatial and quantitative approaches.</span>
+        </p>
       </div>
       <div class="research-grid">
-        <article class="research"><div class="num">01</div><h3>Mudanças climáticas e biodiversidade</h3><p>Avaliando como as condições climáticas futuras podem alterar distribuições de espécies, composição de comunidades e padrões de biodiversidade.</p></article>
-        <article class="research"><div class="num">02</div><h3>Modelagem de nicho ecológico</h3><p>Uso de modelos de distribuição de espécies e nicho para explorar áreas adequadas atuais e futuras e cenários de conservação.</p></article>
-        <article class="research"><div class="num">03</div><h3>Macroecologia e ecologia espacial</h3><p>Investigando padrões de biodiversidade em grande escala por meio de dados espaciais, atributos ecológicos e informações evolutivas.</p></article>
-        <article class="research"><div class="num">04</div><h3>Perda e fragmentação de habitat</h3><p>Estudando como a transformação e a fragmentação de habitats afetam distribuições de espécies e padrões ecológicos.</p></article>
-        <article class="research"><div class="num">05</div><h3>Planejamento da conservação</h3><p>Transformando projeções espaciais de biodiversidade em prioridades e evidências úteis para conservação e restauração.</p></article>
-        <article class="research"><div class="num">06</div><h3>Análise geoespacial da biodiversidade</h3><p>Aplicando SIG, análise de rasters e métricas de biodiversidade para conectar processos ecológicos a padrões de paisagem.</p></article>
+        <article class="research">
+          <div class="num">01</div>
+          <h3><span class="lang-pt">Mudanças climáticas e biodiversidade</span><span class="lang-en">Climate Change & Biodiversity</span></h3>
+          <p><span class="lang-pt">Avaliando como as condições climáticas futuras podem alterar distribuições de espécies, composição de comunidades e padrões de biodiversidade.</span><span class="lang-en">Assessing how shifting future climates reorganize species distributions, community composition, and multifaceted biodiversity patterns.</span></p>
+        </article>
+        <article class="research">
+          <div class="num">02</div>
+          <h3><span class="lang-pt">Modelagem de nicho ecológico</span><span class="lang-en">Ecological Niche Modeling</span></h3>
+          <p><span class="lang-pt">Uso de modelos de distribuição de espécies e nicho para explorar áreas adequadas atuais e futuras e cenários de conservação.</span><span class="lang-en">Leveraging species distribution and niche modeling algorithms to explore present and projected climatically suitable areas under alternative conservation scenarios.</span></p>
+        </article>
+        <article class="research">
+          <div class="num">03</div>
+          <h3><span class="lang-pt">Macroecologia e ecologia espacial</span><span class="lang-en">Macroecology & Spatial Ecology</span></h3>
+          <p><span class="lang-pt">Investigando padrões de biodiversidade em grande escala por meio de dados espaciais, atributos ecológicos e informações evolutivas.</span><span class="lang-en">Investigating large-scale biodiversity gradients and macroecological patterns through spatial data, functional traits, and evolutionary lineages.</span></p>
+        </article>
+        <article class="research">
+          <div class="num">04</div>
+          <h3><span class="lang-pt">Perda e fragmentação de habitat</span><span class="lang-en">Habitat Loss & Fragmentation</span></h3>
+          <p><span class="lang-pt">Estudando como a transformação e a fragmentação de habitats afetam distribuições de espécies e padrões ecológicos.</span><span class="lang-en">Examining how landscape conversion, remnant configuration, and edge effects reshape population viability and community assembly.</span></p>
+        </article>
+        <article class="research">
+          <div class="num">05</div>
+          <h3><span class="lang-pt">Planejamento da conservação</span><span class="lang-en">Systematic Conservation Planning</span></h3>
+          <p><span class="lang-pt">Transformando projeções espaciais de biodiversidade em prioridades e evidências úteis para conservação e restauração.</span><span class="lang-en">Translating spatial biodiversity projections into actionable evidence and strategic priorities for habitat protection and ecological restoration.</span></p>
+        </article>
+        <article class="research">
+          <div class="num">06</div>
+          <h3><span class="lang-pt">Análise geoespacial da biodiversidade</span><span class="lang-en">Geospatial Biodiversity Analysis</span></h3>
+          <p><span class="lang-pt">Aplicando SIG, análise de rasters e métricas de biodiversidade para conectar processos ecológicos a padrões de paisagem.</span><span class="lang-en">Applying GIS, high-resolution raster workflows, and custom spatial diversity metrics to link underlying ecological processes with broadscale landscape patterns.</span></p>
+        </article>
       </div>
     </div>
   </section>
@@ -302,16 +380,46 @@
   <section id="experience" class="tint">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Experiência</div><h2>Trajetória acadêmica</h2></div>
-        <p>Principais marcos da trajetória acadêmica e profissional registrados no currículo de agosto de 2026.</p>
+        <div>
+          <div class="eyebrow"><span class="lang-pt">Experiência</span><span class="lang-en">Experience</span></div>
+          <h2><span class="lang-pt">Trajetória acadêmica</span><span class="lang-en">Academic Trajectory</span></h2>
+        </div>
+        <p>
+          <span class="lang-pt">Principais marcos da trajetória acadêmica e profissional em pesquisa, conservação e ensino.</span>
+          <span class="lang-en">Key academic and professional milestones across research, conservation, and university teaching.</span>
+        </p>
       </div>
       <div class="timeline">
-        <div class="time"><div class="year">2025 — atual</div><h3>Pesquisador · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</h3><p>Avaliação do impacto das mudanças climáticas sobre a biodiversidade do estado do Rio Grande do Sul.</p></div>
-        <div class="time"><div class="year">2026</div><h3>Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</h3><p>Ensino de modelagem de nicho ecológico e distribuição de espécies para a pós-graduação.</p></div>
-        <div class="time"><div class="year">2020 — 2026</div><h3>Professor Auxiliar · Universidade Estadual de Santa Cruz (UESC)</h3><p>Ensino de ecologia para a licenciatura em biologia - EaD.</p></div>
-        <div class="time"><div class="year">2024 — 2025</div><h3>Pós-doutorado · Universidade Federal de Minas Gerais (UFMG)</h3><p>Avaliação do impacto das mudanças climáticas sobre a biodiversidade da bacia do Rio Doce.</p></div>
-        <div class="time"><div class="year">2020 — 2024</div><h3>Doutorado em Ecologia e Conservação da Biodiversidade · UESC</h3><p>Avaliação do impacto das mudanças climáticas sobre aves da Mata Atlântica.</p></div>
-        <div class="time"><div class="year">2015 — 2017</div><h3>Mestrado em Biodiversidade e Uso dos Recursos Naturais · UNIMONTES</h3><p>Avaliação da fragmentação e perda de habitat para o macaco-prego-de-crista.</p></div>
+        <div class="time">
+          <div class="year"><span class="lang-pt">2025 — atual</span><span class="lang-en">2025 — Present</span></div>
+          <h3><span class="lang-pt">Pesquisador · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</span><span class="lang-en">Researcher · Chico Mendes Institute for Biodiversity Conservation (ICMBio)</span></h3>
+          <p><span class="lang-pt">Avaliação do impacto das mudanças climáticas sobre a biodiversidade do estado do Rio Grande do Sul.</span><span class="lang-en">Assessment of climate change impacts on the biodiversity of the State of Rio Grande do Sul.</span></p>
+        </div>
+        <div class="time">
+          <div class="year">2026</div>
+          <h3><span class="lang-pt">Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</span><span class="lang-en">External Lecturer · State University of Montes Claros (UNIMONTES)</span></h3>
+          <p><span class="lang-pt">Ensino de modelagem de nicho ecológico e distribuição de espécies para a pós-graduação.</span><span class="lang-en">Teaching ecological niche modeling and species distribution for graduate programs.</span></p>
+        </div>
+        <div class="time">
+          <div class="year">2020 — 2026</div>
+          <h3><span class="lang-pt">Professor Auxiliar · Universidade Estadual de Santa Cruz (UESC)</span><span class="lang-en">Assistant Professor · State University of Santa Cruz (UESC)</span></h3>
+          <p><span class="lang-pt">Ensino de ecologia para a licenciatura em biologia - EaD.</span><span class="lang-en">Teaching ecology for the undergraduate biological sciences distance-learning program.</span></p>
+        </div>
+        <div class="time">
+          <div class="year">2024 — 2025</div>
+          <h3><span class="lang-pt">Pós-doutorado · Universidade Federal de Minas Gerais (UFMG)</span><span class="lang-en">Postdoctoral Fellow · Federal University of Minas Gerais (UFMG)</span></h3>
+          <p><span class="lang-pt">Avaliação do impacto das mudanças climáticas sobre a biodiversidade da bacia do Rio Doce.</span><span class="lang-en">Assessment of climate change impacts on the biodiversity of the Doce River basin.</span></p>
+        </div>
+        <div class="time">
+          <div class="year">2020 — 2024</div>
+          <h3><span class="lang-pt">Doutorado em Ecologia e Conservação da Biodiversidade · UESC</span><span class="lang-en">Ph.D. in Ecology and Biodiversity Conservation · UESC</span></h3>
+          <p><span class="lang-pt">Avaliação do impacto das mudanças climáticas sobre aves da Mata Atlântica.</span><span class="lang-en">Assessment of climate change impacts on Atlantic Forest bird diversity.</span></p>
+        </div>
+        <div class="time">
+          <div class="year">2015 — 2017</div>
+          <h3><span class="lang-pt">Mestrado em Biodiversidade e Uso dos Recursos Naturais · UNIMONTES</span><span class="lang-en">M.Sc. in Biodiversity and Natural Resource Use · UNIMONTES</span></h3>
+          <p><span class="lang-pt">Avaliação da fragmentação e perda de habitat para o macaco-prego-de-crista.</span><span class="lang-en">Assessment of habitat fragmentation and habitat loss for the crested capuchin monkey.</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -319,8 +427,14 @@
   <section id="publications">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Publicações selecionadas</div><h2>De espécies a paisagens</h2></div>
-        <p>Trabalhos selecionados do currículo, com foco em mudanças climáticas, biodiversidade, modelagem ecológica e impactos humanos.</p>
+        <div>
+          <div class="eyebrow"><span class="lang-pt">Publicações selecionadas</span><span class="lang-en">Selected Publications</span></div>
+          <h2><span class="lang-pt">De espécies a paisagens</span><span class="lang-en">From Species to Landscapes</span></h2>
+        </div>
+        <p>
+          <span class="lang-pt">Trabalhos selecionados do currículo, com foco em mudanças climáticas, biodiversidade, modelagem ecológica e impactos humanos.</span>
+          <span class="lang-en">Selected peer-reviewed articles focusing on climate change, spatial biodiversity, ecological modeling, and human impacts.</span>
+        </p>
       </div>
       <div class="pubs">
         <article class="pub">
@@ -328,14 +442,14 @@
           <h3><a href="https://doi.org/10.1111/ddi.70129" target="_blank" rel="noopener">Impact of Climate Change on the Multiple Facets of Forest Bird Diversity in a Biodiversity Hotspot Within the Atlantic Forest</a></h3>
           <p class="authors">Mota, F. M. M., Morante‐Filho, J. C., Davies, R. G.</p>
           <div class="tagrow">
-            <span class="tag">Mudanças climáticas</span>
-            <span class="tag">Aves florestais</span>
-            <span class="tag">Mata Atlântica</span>
-            <span class="tag">Diversidade multifacetada</span>
+            <span class="tag"><span class="lang-pt">Mudanças climáticas</span><span class="lang-en">Climate change</span></span>
+            <span class="tag"><span class="lang-pt">Aves florestais</span><span class="lang-en">Forest birds</span></span>
+            <span class="tag"><span class="lang-pt">Mata Atlântica</span><span class="lang-en">Atlantic Forest</span></span>
+            <span class="tag"><span class="lang-pt">Diversidade multifacetada</span><span class="lang-en">Multifaceted diversity</span></span>
           </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1111/ddi.70129" target="_blank" rel="noopener">
-              <span>Acessar artigo na revista</span>
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
             </a>
             <span class="doi-pill">10.1111/ddi.70129</span>
@@ -348,13 +462,13 @@
           <p class="authors">Mota, F. M. M., Lima‐Santos, J., Kenedy‐Siqueira, M., et al.</p>
           <div class="tagrow">
             <span class="tag">Apis mellifera</span>
-            <span class="tag">Rejeitos de mineração</span>
-            <span class="tag">Bacia do Rio Doce</span>
+            <span class="tag"><span class="lang-pt">Rejeitos de mineração</span><span class="lang-en">Mining tailings</span></span>
+            <span class="tag"><span class="lang-pt">Bacia do Rio Doce</span><span class="lang-en">Doce River basin</span></span>
             <span class="tag">SDM</span>
           </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener">
-              <span>Acessar artigo na revista</span>
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
             </a>
             <span class="doi-pill">10.1111/jen.70102</span>
@@ -366,14 +480,14 @@
           <h3><a href="https://doi.org/10.1038/s41597-025-05615-3" target="_blank" rel="noopener">BIRDBASE: A Global Dataset of Avian Biogeography, Conservation, Ecology and Life History Traits</a></h3>
           <p class="authors">Şekercioğlu, Ç. H., Kittelberger, K. D., Mota, F. M. M., et al.</p>
           <div class="tagrow">
-            <span class="tag">Macroecologia</span>
-            <span class="tag">Base global</span>
-            <span class="tag">Traços funcionais</span>
-            <span class="tag">Conservação</span>
+            <span class="tag"><span class="lang-pt">Macroecologia</span><span class="lang-en">Macroecology</span></span>
+            <span class="tag"><span class="lang-pt">Base global</span><span class="lang-en">Global dataset</span></span>
+            <span class="tag"><span class="lang-pt">Traços funcionais</span><span class="lang-en">Functional traits</span></span>
+            <span class="tag"><span class="lang-pt">Conservação</span><span class="lang-en">Conservation</span></span>
           </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1038/s41597-025-05615-3" target="_blank" rel="noopener">
-              <span>Acessar artigo na revista</span>
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
             </a>
             <span class="doi-pill">10.1038/s41597-025-05615-3</span>
@@ -385,14 +499,14 @@
           <h3><a href="https://doi.org/10.1111/ecog.06905" target="_blank" rel="noopener">divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</a></h3>
           <p class="authors">Mota, F. M. M., Alves‐Ferreira, G., Talora, D. C., et al.</p>
           <div class="tagrow">
-            <span class="tag">Pacote em R</span>
-            <span class="tag">Métricas espaciais</span>
+            <span class="tag"><span class="lang-pt">Pacote em R</span><span class="lang-en">R package</span></span>
+            <span class="tag"><span class="lang-pt">Métricas espaciais</span><span class="lang-en">Spatial metrics</span></span>
             <span class="tag">Rasters</span>
-            <span class="tag">Código aberto</span>
+            <span class="tag"><span class="lang-pt">Código aberto</span><span class="lang-en">Open source</span></span>
           </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1111/ecog.06905" target="_blank" rel="noopener">
-              <span>Acessar artigo na revista</span>
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
             </a>
             <span class="doi-pill">10.1111/ecog.06905</span>
@@ -406,134 +520,163 @@
     <div class="wrap">
       <div class="section-head-with-controls">
         <div>
-          <div class="eyebrow">Campo e divulgação</div>
-          <h2>Ciência além do escritório</h2>
-          <p style="margin:6px 0 0;color:var(--muted);font-size:1.04rem">Momentos de campo, ensino, divulgação científica e vivência acadêmica.</p>
+          <div class="eyebrow"><span class="lang-pt">Campo e divulgação</span><span class="lang-en">Fieldwork & Outreach</span></div>
+          <h2><span class="lang-pt">Ciência além do escritório</span><span class="lang-en">Science Beyond the Office</span></h2>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:1.04rem">
+            <span class="lang-pt">Momentos de campo, ensino, divulgação científica e vivência acadêmica.</span>
+            <span class="lang-en">Field expeditions, science outreach, teaching, and academic engagements.</span>
+          </p>
         </div>
         <div class="strip-controls">
-          <span class="strip-hint">Passe o cursor para pausar</span>
-          <button class="strip-btn" id="photo-prev" aria-label="Foto anterior">←</button>
-          <button class="strip-btn" id="photo-next" aria-label="Próxima foto">→</button>
+          <span class="strip-hint"><span class="lang-pt">Passe o cursor para pausar</span><span class="lang-en">Hover to pause</span></span>
+          <button class="strip-btn" id="photo-prev" aria-label="Previous photo">←</button>
+          <button class="strip-btn" id="photo-next" aria-label="Next photo">→</button>
         </div>
       </div>
 
       <div class="strip-wrapper">
         <div class="strip-track" id="photo-track">
-          <figure class="photo-slide"><img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Trabalho de campo" loading="lazy"><figcaption>Trabalho de campo</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Geoprocessamento" loading="lazy"><figcaption>Geoprocessamento</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Eventos internacionais" loading="lazy"><figcaption>Eventos internacionais</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Eventos nacionais" loading="lazy"><figcaption>Eventos nacionais</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Experiência acadêmica internacional" loading="lazy"><figcaption>Experiência acadêmica internacional</figcaption></figure>
+          <figure class="photo-slide">
+            <img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Trabalho de campo" loading="lazy">
+            <figcaption><span class="lang-pt">Trabalho de campo</span><span class="lang-en">Fieldwork expeditions</span></figcaption>
+          </figure>
+          <figure class="photo-slide">
+            <img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Geoprocessamento" loading="lazy">
+            <figcaption><span class="lang-pt">Geoprocessamento</span><span class="lang-en">GIS & Remote Sensing</span></figcaption>
+          </figure>
+          <figure class="photo-slide">
+            <img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Eventos internacionais" loading="lazy">
+            <figcaption><span class="lang-pt">Eventos internacionais</span><span class="lang-en">International conferences</span></figcaption>
+          </figure>
+          <figure class="photo-slide">
+            <img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Eventos nacionais" loading="lazy">
+            <figcaption><span class="lang-pt">Eventos nacionais</span><span class="lang-en">National symposiums & workshops</span></figcaption>
+          </figure>
+          <figure class="photo-slide">
+            <img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Experiência acadêmica internacional" loading="lazy">
+            <figcaption><span class="lang-pt">Experiência acadêmica internacional</span><span class="lang-en">International academic experience</span></figcaption>
+          </figure>
         </div>
       </div>
-      <p class="photo-note">As fotos passam automaticamente para o lado. Você pode pausar com o cursor ou navegar usando as setas.</p>
+      <p class="photo-note">
+        <span class="lang-pt">As fotos passam automaticamente para o lado. Você pode pausar com o cursor ou navegar usando as setas.</span>
+        <span class="lang-en">Photos slide automatically. You can hover to pause or navigate using arrows.</span>
+      </p>
 
       <div class="gallery-scientific" style="margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--line);">
         <div class="section-head-with-controls">
           <div>
-            <div class="eyebrow">Visualizações científicas</div>
-            <h2>Mapas, modelos e sínteses</h2>
-            <p style="margin:6px 0 0;color:var(--muted);font-size:1.04rem">Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos.</p>
+            <div class="eyebrow"><span class="lang-pt">Visualizações científicas</span><span class="lang-en">Scientific Visualizations</span></div>
+            <h2><span class="lang-pt">Mapas, modelos e sínteses</span><span class="lang-en">Maps, Models & Syntheses</span></h2>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:1.04rem">
+              <span class="lang-pt">Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos.</span>
+              <span class="lang-en">Scientific figures, geospatial representations, ecological niche modeling, and methodological frameworks.</span>
+            </p>
           </div>
           <div class="strip-controls">
-            <span class="strip-hint">Passe o cursor para pausar</span>
-            <button class="strip-btn" id="fig-prev" aria-label="Figura anterior">←</button>
-            <button class="strip-btn" id="fig-next" aria-label="Próxima figura">→</button>
+            <span class="strip-hint"><span class="lang-pt">Passe o cursor para pausar</span><span class="lang-en">Hover to pause</span></span>
+            <button class="strip-btn" id="fig-prev" aria-label="Previous figure">←</button>
+            <button class="strip-btn" id="fig-next" aria-label="Next figure">→</button>
           </div>
         </div>
 
         <div class="strip-wrapper">
           <div class="strip-track" id="figures-track">
-            <!-- Figura 1 (Linha 1, Coluna 1) -->
+            <!-- Figura 1 -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
                 <img src="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" alt="Área de adequabilidade climática para Apis mellifera na Bacia do Rio Doce, sudeste do Brasil" loading="lazy">
-                <span class="fig-badge">Ampliar ↗</span>
+                <span class="fig-badge"><span class="lang-pt">Ampliar ↗</span><span class="lang-en">Expand ↗</span></span>
               </a>
               <div class="fig-slide-body">
-                <div class="fig-tag">Apis mellifera · Bacia do Rio Doce</div>
-                <h3>Adequabilidade Climática para <em>Apis mellifera</em></h3>
+                <div class="fig-tag"><span class="lang-pt">Apis mellifera · Bacia do Rio Doce</span><span class="lang-en">Apis mellifera · Doce River Basin</span></div>
+                <h3><span class="lang-pt">Adequabilidade Climática para <em>Apis mellifera</em></span><span class="lang-en">Climatic Suitability for <em>Apis mellifera</em></span></h3>
                 <div class="fig-slide-caption">
-                  Área de adequabilidade climática para a abelha-europeia (<em>Apis mellifera</em>) ao longo da Bacia do Rio Doce, sudeste do Brasil.
+                  <span class="lang-pt">Área de adequabilidade climática para a abelha-europeia (<em>Apis mellifera</em>) ao longo da Bacia do Rio Doce, sudeste do Brasil.</span>
+                  <span class="lang-en">Projected climate-suitable area for western honey bee (<em>Apis mellifera</em>) across the Doce River basin, southeastern Brazil.</span>
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener">
-                  <span>Ver em alta resolução</span>
+                  <span><span class="lang-pt">Ver em alta resolução</span><span class="lang-en">View high-resolution</span></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
                 </a>
               </div>
             </article>
 
-            <!-- Figura 2 (Linha 1, Coluna 2) -->
+            <!-- Figura 2 -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
                 <img src="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" alt="Uso do solo na Bacia do Rio Doce, sudeste do Brasil" loading="lazy">
-                <span class="fig-badge">Ampliar ↗</span>
+                <span class="fig-badge"><span class="lang-pt">Ampliar ↗</span><span class="lang-en">Expand ↗</span></span>
               </a>
               <div class="fig-slide-body">
-                <div class="fig-tag">Uso do Solo · Bacia do Rio Doce</div>
-                <h3>Uso e Ocupação do Solo no Rio Doce</h3>
+                <div class="fig-tag"><span class="lang-pt">Uso do Solo · Bacia do Rio Doce</span><span class="lang-en">Land Use · Doce River Basin</span></div>
+                <h3><span class="lang-pt">Uso e Ocupação do Solo no Rio Doce</span><span class="lang-en">Land Use & Land Cover in Doce River Basin</span></h3>
                 <div class="fig-slide-caption">
-                  Uso do solo na Bacia do Rio Doce, sudeste do Brasil.
+                  <span class="lang-pt">Uso do solo na Bacia do Rio Doce, sudeste do Brasil.</span>
+                  <span class="lang-en">Land use and land cover classification in the Doce River basin, southeastern Brazil.</span>
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener">
-                  <span>Ver em alta resolução</span>
+                  <span><span class="lang-pt">Ver em alta resolução</span><span class="lang-en">View high-resolution</span></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
                 </a>
               </div>
             </article>
 
-            <!-- Figura 3 (Linha 2, Coluna 1) -->
+            <!-- Figura 3 -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
                 <img src="https://i.postimg.cc/63CfdDsB/fig1.png" alt="Localização do Corredor Central da Mata Atlântica no Brasil" loading="lazy">
-                <span class="fig-badge">Ampliar ↗</span>
+                <span class="fig-badge"><span class="lang-pt">Ampliar ↗</span><span class="lang-en">Expand ↗</span></span>
               </a>
               <div class="fig-slide-body">
-                <div class="fig-tag">Mata Atlântica · Conservação</div>
-                <h3>Corredor Central da Mata Atlântica</h3>
+                <div class="fig-tag"><span class="lang-pt">Mata Atlântica · Conservação</span><span class="lang-en">Atlantic Forest · Conservation</span></div>
+                <h3><span class="lang-pt">Corredor Central da Mata Atlântica</span><span class="lang-en">Central Atlantic Forest Corridor</span></h3>
                 <div class="fig-slide-caption">
-                  Localização do Corredor Central da Mata Atlântica (CCMA) no Brasil.
+                  <span class="lang-pt">Localização do Corredor Central da Mata Atlântica (CCMA) no Brasil.</span>
+                  <span class="lang-en">Geographic location of the Central Atlantic Forest Corridor (CCMA) in eastern Brazil.</span>
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener">
-                  <span>Ver em alta resolução</span>
+                  <span><span class="lang-pt">Ver em alta resolução</span><span class="lang-en">View high-resolution</span></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
                 </a>
               </div>
             </article>
 
-            <!-- Figura 4 (Linha 2, Coluna 2) -->
+            <!-- Figura 4 -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
                 <img src="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" alt="Representação esquemática das entradas e saídas das funções do pacote divraster" loading="lazy">
-                <span class="fig-badge">Ampliar ↗</span>
+                <span class="fig-badge"><span class="lang-pt">Ampliar ↗</span><span class="lang-en">Expand ↗</span></span>
               </a>
               <div class="fig-slide-body">
-                <div class="fig-tag">Pacote divraster · Métricas Espaciais</div>
-                <h3>Entradas e Saídas do Pacote ‘divraster’</h3>
+                <div class="fig-tag"><span class="lang-pt">Pacote divraster · Métricas Espaciais</span><span class="lang-en">divraster package · Spatial Metrics</span></div>
+                <h3><span class="lang-pt">Entradas e Saídas do Pacote ‘divraster’</span><span class="lang-en">Inputs & Outputs of ‘divraster’ Package</span></h3>
                 <div class="fig-slide-caption">
-                  Representação esquemática das entradas e saídas das funções do pacote ‘divraster’.
+                  <span class="lang-pt">Representação esquemática das entradas e saídas das funções do pacote ‘divraster’.</span>
+                  <span class="lang-en">Schematic overview of workflow inputs and outputs in the ‘divraster’ R package.</span>
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener">
-                  <span>Ver em alta resolução</span>
+                  <span><span class="lang-pt">Ver em alta resolução</span><span class="lang-en">View high-resolution</span></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
                 </a>
               </div>
             </article>
 
-            <!-- Figura 5 (Nova imagem) -->
+            <!-- Figura 5 -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/htJtjm7c/choco-paper.webp" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
                 <img src="https://i.postimg.cc/htJtjm7c/choco-paper.webp" alt="Riqueza de espécies e cenários futuros para aves no Chocó" loading="lazy">
-                <span class="fig-badge">Ampliar ↗</span>
+                <span class="fig-badge"><span class="lang-pt">Ampliar ↗</span><span class="lang-en">Expand ↗</span></span>
               </a>
               <div class="fig-slide-body">
-                <div class="fig-tag">Biogeografia & Mudanças Climáticas · Chocó</div>
-                <h3>Riqueza e Cenários de Aves no Chocó</h3>
+                <div class="fig-tag"><span class="lang-pt">Biogeografia & Mudanças Climáticas · Chocó</span><span class="lang-en">Biogeography & Climate Change · Chocó</span></div>
+                <h3><span class="lang-pt">Riqueza e Cenários de Aves no Chocó</span><span class="lang-en">Bird Richness & Future Scenarios in Chocó</span></h3>
                 <div class="fig-slide-caption">
-                  Riqueza de espécies e a diferença entre o cenário de referência e os cenários futuros para 27 espécies de aves endêmicas ou quase-endêmicas no Chocó, Colômbia e Equador.
+                  <span class="lang-pt">Riqueza de espécies e a diferença entre o cenário de referência e os cenários futuros para 27 espécies de aves endêmicas ou quase-endêmicas no Chocó, Colômbia e Equador.</span>
+                  <span class="lang-en">Species richness and delta changes between baseline and projected future scenarios for 27 endemic and near-endemic birds in the Chocó hotspot (Colombia & Ecuador).</span>
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/htJtjm7c/choco-paper.webp" target="_blank" rel="noopener">
-                  <span>Ver em alta resolução</span>
+                  <span><span class="lang-pt">Ver em alta resolução</span><span class="lang-en">View high-resolution</span></span>
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
                 </a>
               </div>
@@ -547,8 +690,14 @@
   <section id="tools">
     <div class="wrap">
       <div class="section-head">
-        <div><div class="eyebrow">Ferramentas abertas e aplicadas</div><h2>Código para a biodiversidade</h2></div>
-        <p>O currículo registra softwares e trabalhos técnicos que apoiam análises reprodutíveis de biodiversidade.</p>
+        <div>
+          <div class="eyebrow"><span class="lang-pt">Ferramentas abertas e aplicadas</span><span class="lang-en">Open Science & Applied Software</span></div>
+          <h2><span class="lang-pt">Código para a biodiversidade</span><span class="lang-en">Code for Biodiversity</span></h2>
+        </div>
+        <p>
+          <span class="lang-pt">Desenvolvimento e colaboração em softwares e pacotes científicos que apoiam análises reprodutíveis de biodiversidade.</span>
+          <span class="lang-en">Development and collaboration on scientific software and R packages supporting reproducible biodiversity analytics.</span>
+        </p>
       </div>
       <div class="tools">
         <a class="tool" href="https://flaviomoc.github.io/divraster" target="_blank" rel="noopener">
@@ -557,9 +706,12 @@
             <span class="tool-badge">CRAN / GitHub</span>
           </div>
           <h3>divraster</h3>
-          <p>Cálculo de métricas de diversidade contínuas para dados rasterizados — integrando diversidade taxonômica, funcional e filogenética em escala espacial.</p>
+          <p>
+            <span class="lang-pt">Cálculo de métricas de diversidade contínuas para dados rasterizados — integrando diversidade taxonômica, funcional e filogenética em escala espacial.</span>
+            <span class="lang-en">Computation of continuous diversity metrics for raster data — integrating taxonomic, functional, and phylogenetic diversity across spatial grids.</span>
+          </p>
           <div class="tool-link">
-            <span>Acessar documentação</span>
+            <span><span class="lang-pt">Acessar documentação</span><span class="lang-en">View documentation</span></span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
           </div>
         </a>
@@ -569,9 +721,12 @@
             <span class="tool-badge">CRAN / GitHub</span>
           </div>
           <h3>phyloraster</h3>
-          <p>Cálculo rápido e computacionalmente eficiente de métricas de diversidade filogenética e endemismo evolutivo diretamente a partir de rasters.</p>
+          <p>
+            <span class="lang-pt">Cálculo rápido e computacionalmente eficiente de métricas de diversidade filogenética e endemismo evolutivo diretamente a partir de rasters.</span>
+            <span class="lang-en">Fast and memory-efficient calculation of phylogenetic diversity and evolutionary endemism metrics directly from raster layers.</span>
+          </p>
           <div class="tool-link">
-            <span>Acessar documentação</span>
+            <span><span class="lang-pt">Acessar documentação</span><span class="lang-en">View documentation</span></span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
           </div>
         </a>
@@ -581,9 +736,12 @@
             <span class="tool-badge">CRAN / GitHub</span>
           </div>
           <h3>SESraster</h3>
-          <p>Randomização espacial de dados rasterizados e modelos nulos para testes de hipóteses ecológicas e cálculo de tamanhos de efeito padronizados (SES).</p>
+          <p>
+            <span class="lang-pt">Randomização espacial de dados rasterizados e modelos nulos para testes de hipóteses ecológicas e cálculo de tamanhos de efeito padronizados (SES).</span>
+            <span class="lang-en">Spatial randomization of raster data and null model simulations for ecological hypothesis testing and standardized effect size (SES) calculations.</span>
+          </p>
           <div class="tool-link">
-            <span>Acessar documentação</span>
+            <span><span class="lang-pt">Acessar documentação</span><span class="lang-en">View documentation</span></span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
           </div>
         </a>
@@ -596,17 +754,26 @@
       <div class="cta">
         <div class="cta-grid">
           <div>
-            <h2>Interessado em ecologia, biodiversidade e mudanças ambientais?</h2>
-            <p>Aberto a colaborações acadêmicas, desenvolvimento de ferramentas e pesquisas na interface entre ecologia espacial, modelagem e conservação.</p>
+            <h2>
+              <span class="lang-pt">Interessado em ecologia, biodiversidade e mudanças ambientais?</span>
+              <span class="lang-en">Interested in ecology, biodiversity, and global environmental change?</span>
+            </h2>
+            <p>
+              <span class="lang-pt">Aberto a colaborações acadêmicas, desenvolvimento de ferramentas e pesquisas na interface entre ecologia espacial, modelagem e conservação.</span>
+              <span class="lang-en">Open to academic collaborations, open-source tool development, and research at the interface of spatial ecology, ecological niche modeling, and conservation.</span>
+            </p>
           </div>
           <div class="cta-btns">
-            <a class="btn primary" href="mailto:flaviomoc@gmail.com">Entre em contato!</a>
+            <a class="btn primary" href="mailto:flaviomoc@gmail.com">
+              <span class="lang-pt">Entre em contato!</span>
+              <span class="lang-en">Get in touch!</span>
+            </a>
           </div>
         </div>
       </div>
       <div class="back-to-top-wrap">
         <a class="btn" href="#top" id="btn-back-to-top">
-          <span>Voltar ao topo</span>
+          <span><span class="lang-pt">Voltar ao topo</span><span class="lang-en">Back to top</span></span>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
         </a>
       </div>
@@ -616,7 +783,10 @@
 
 <footer>
   <div class="wrap footerin">
-    <span>© 2026 · Flávio Mota · Montes Claros - MG · Ecologia e Conservação</span>
+    <span>
+      <span class="lang-pt">© 2026 · Flávio Mota · Montes Claros - MG · Ecologia e Conservação</span>
+      <span class="lang-en">© 2026 · Flávio Mota · Montes Claros - MG, Brazil · Ecology & Conservation</span>
+    </span>
     <span class="footer-socials" aria-label="Perfis acadêmicos e sociais">
       <a href="https://orcid.org/0000-0002-0308-7151" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID">
         <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M336.62 194.54c-7.13-3.33-13.87-5.56-20.25-6.61-6.37-1.1-16.58-1.62-30.71-1.62h-36.7v152.75h37.63c14.67 0 26.08-1.01 34.22-3.02 8.15-2 14.93-4.52 20.36-7.62 5.44-3.08 10.42-6.86 14.94-11.39 14.49-14.71 21.74-33.27 21.74-55.72 0-22.05-7.44-40.05-22.34-53.98-5.5-5.17-11.82-9.45-18.89-12.79zM256 8C119.02 8 8 119.04 8 256s111.02 248 248 248 248-111.02 248-248S392.98 8 256 8zm-82.34 357.51H144.28V160.15h29.39v205.36zm-14.71-226.82c-11.14 0-20.21-9.01-20.21-20.21 0-11.12 9.05-20.19 20.21-20.19 11.18 0 20.23 9.05 20.23 20.19-.02 11.22-9.05 20.21-20.23 20.21zm241.38 163.6c-5.29 12.54-12.83 23.58-22.65 33.09-9.98 9.83-21.6 17.19-34.84 22.2-7.75 3.01-14.84 5.06-21.31 6.11-6.49 1.02-18.83 1.51-37.08 1.51H219.5V160.15h69.23c27.96 0 50.03 4.15 66.32 12.54 16.27 8.37 29.18 20.73 38.79 36.98 9.61 16.26 14.43 34.02 14.43 53.2.02 13.76-2.67 26.9-7.94 39.43z"/></svg>
@@ -629,6 +799,9 @@
       </a>
       <a href="https://www.instagram.com/fmota.eco/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://github.com/flaviomoc" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
       </a>
       <a href="http://lattes.cnpq.br/9344931186718462" target="_blank" rel="noopener" title="Currículo Lattes" aria-label="Currículo Lattes">
         <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M97.87 434.73C51.53 339.78 23.97 282.44 23.97 281.02c0-2.32 2.83-2 30.67 3.46 48.97 9.61 75.13 12.33 118.74 12.34 57.7 0.02 104.68-9.12 141.18-27.48 19.31-9.71 30.93-18.33 40.44-29.99 11.72-14.38 15.48-24.28 15.62-40.95 0.12-15.85-2.02-24.21-11.19-43.61-3.63-7.66-6.82-16.46-7.12-19.55-0.47-4.97-0.07-5.68 3.59-6.1 8-0.95 47.51 37.4 62.05 60.24 25.08 39.39 27.11 81.99 5.88 123.2-13.04 25.31-27.45 42.83-51.58 62.73-40.1 33.06-86.71 56.09-151.07 74.64C186.62 459.91 130.71 472 119.2 472c-2.44 0-7.02-8-21.3-37.28l-.03.01zM110.78 281.61C65.76 275.78 27.99 270.71 26.82 270.34c-2-.64-9.15-24.52-13.19-43.95-1.02-4.92-2.51-17.94-3.32-28.96C6.67 148.26 17.37 114.27 46.04 83.7 94.58 31.99 198.52 25.69 315.78 67.37c20.58 7.32 28.76 12.41 24.98 15.58-2.8 2.34-21.75 2.31-54.51-.1-51.2-3.76-90.18 3.36-110.27 20.18-30.59 25.6-25.92 81.72 13.53 162.68 4.27 8.77 8.58 17.34 9.56 19.09 2.29 4.02 0.63 7.75-3.36 7.56-1.7-.08-39.91-4.91-84.93-10.75zm151.02-44.05c-35.93-6.46-68.23-28.74-78.65-54.22-5-12.24-4.76-28.21.58-37.77 4.83-8.65 17.31-18.65 28.48-22.84 18.6-6.97 51.17-4.19 74.91 6.41 22.53 10.05 42.51 27.74 49.93 44.18 9.53 21.11 1.59 44.66-18.82 55.9-13.53 7.44-39.83 11.33-56.44 8.34h.02z"/></svg>
@@ -643,17 +816,20 @@
 <script>
   const menu = document.querySelector('.menu');
   const links = document.querySelector('.links');
-  menu?.addEventListener('click', () => {
-    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    links.style.position = 'absolute';
-    links.style.top = '74px';
-    links.style.right = '13px';
-    links.style.flexDirection = 'column';
-    links.style.background = 'rgba(247,248,244,.98)';
-    links.style.padding = '18px';
-    links.style.border = '1px solid #dce5df';
-    links.style.borderRadius = '16px';
-  });
+  if (menu && links) {
+    menu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      links.classList.toggle('active');
+    });
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => links.classList.remove('active'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!links.contains(e.target) && !menu.contains(e.target)) {
+        links.classList.remove('active');
+      }
+    });
+  }
 
   // Infinite horizontal auto-scroller for image strips
   function setupStripScroller(trackId, prevBtnId, nextBtnId, speed = 0.75) {
@@ -737,6 +913,38 @@
   // Initialize both strips
   setupStripScroller('photo-track', 'photo-prev', 'photo-next', 0.85);
   setupStripScroller('figures-track', 'fig-prev', 'fig-next', 0.7);
+
+  // Bilingual language switcher
+  function setLang(lang) {
+    const isEn = lang === 'en';
+    document.documentElement.lang = isEn ? 'en' : 'pt-BR';
+    const btnPt = document.getElementById('btn-pt');
+    const btnEn = document.getElementById('btn-en');
+    if (btnPt && btnEn) {
+      btnPt.classList.toggle('active', !isEn);
+      btnEn.classList.toggle('active', isEn);
+    }
+    document.title = isEn 
+      ? 'Flávio Mota — Ecology and Conservation' 
+      : 'Flávio Mota — Ecologia e Conservação';
+    try {
+      localStorage.setItem('portfolio_lang', lang);
+    } catch (e) {}
+  }
+
+  // Detect and initialize preferred language
+  (function initLang() {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      const savedLang = localStorage.getItem('portfolio_lang');
+      const browserLang = (navigator.language && navigator.language.startsWith('en')) ? 'en' : 'pt';
+      const initialLang = urlLang || savedLang || browserLang;
+      if (initialLang === 'en') {
+        setLang('en');
+      }
+    } catch (e) {}
+  })();
 </script>
 </body>
 </html>
