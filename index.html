@@ -64,11 +64,11 @@
     .menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--ink)}
     .hero{padding:92px 0 78px;overflow:hidden;position:relative}
     .hero:before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;right:-220px;top:-160px;background:radial-gradient(circle,var(--mint),transparent 68%);z-index:-1}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.22fr .78fr;gap:56px;align-items:center}
     .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--leaf);font-size:.98rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
     .eyebrow:before{content:"";width:32px;height:2px;background:var(--leaf)}
     h1,h2,h3{margin:0;line-height:1.16;font-family:var(--font-serif)}
-    h1{font-size:clamp(2.1rem,3.4vw,2.95rem);font-weight:700;letter-spacing:-.02em;margin:16px 0 24px;line-height:1.24;max-width:580px}
+    h1{font-size:clamp(2.55rem,4.1vw,3.75rem);font-weight:700;letter-spacing:-.025em;margin:16px 0 24px;line-height:1.16;max-width:700px}
     h1 em{font-style:italic;color:var(--leaf)}
     .br-desktop{display:inline}
     @media(max-width:768px){.br-desktop{display:none}}
@@ -129,8 +129,19 @@
     .pub:hover .pub-link{color:var(--leaf-dark)}
     .pub:hover .pub-link svg{transform:translate(2px,-2px)}
     .doi-pill{font-size:.92rem;color:var(--muted);background:#edf3f0;padding:5px 10px;border-radius:6px;font-family:var(--font-serif)}
-    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:14px}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:12px}
     .tag{font-size:.94rem;background:var(--mint);padding:6px 12px;border-radius:999px;color:var(--leaf-dark);font-weight:600}
+    .pub-metrics{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 16px}
+    .metric-pill{display:inline-flex;align-items:center;gap:6px;background:#f0f5f2;border:1px solid #cfe0d7;padding:5px 11px;border-radius:8px;font-size:.88rem;color:var(--leaf-dark);font-family:var(--font-serif);transition:all .2s ease}
+    .metric-pill:hover{background:#e2eee7;border-color:var(--leaf);transform:translateY(-1px)}
+    .metric-pill svg{fill:var(--leaf);flex-shrink:0}
+    .metric-num{font-weight:700;color:var(--leaf-dark);font-size:.95rem}
+    .metric-label{color:var(--muted);font-size:.84rem;font-weight:600}
+    .metric-pill.citation-pill{background:#edf6f1;border-color:#bad6c8}
+    .metric-pill.view-pill{background:#fdf7eb;border-color:#edd5a6;color:#7a5216}
+    .metric-pill.view-pill svg{fill:#b57b28}
+    .metric-pill.view-pill .metric-num{color:#7a5216}
+    .metric-pill.view-pill .metric-label{color:#8c6527}
 
     /* Latest publication spotlight */
     .latest-spotlight{background:linear-gradient(135deg, #f2f7f4 0%, #ffffff 100%);border:2px solid var(--leaf);border-radius:24px;padding:30px;margin-bottom:30px;box-shadow:0 8px 24px rgba(45,106,87,.08);position:relative;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
@@ -238,7 +249,7 @@
     }
     @media(max-width:520px){
       .wrap{width:min(var(--max),calc(100% - 26px))}
-      h1{font-size:3.1rem}
+      h1{font-size:2.35rem;line-height:1.2}
       section{padding:65px 0}.facts{grid-template-columns:1fr}
     }
   </style>
@@ -492,6 +503,17 @@
           </a>
         </h3>
         <p class="authors" id="spotlight-authors">Mota, F. M. M., Lima‐Santos, D., Kenedy‐Siqueira, W., et al.</p>
+        <div class="pub-metrics" id="spotlight-metrics">
+          <span class="metric-pill citation-pill" title="Citações acadêmicas">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+            <strong class="metric-num" id="spotlight-citations" data-doi-citations="10.1111/jen.70102">3</strong>
+            <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span></span>
+          </span>
+          <span class="metric-pill" title="Status da publicação">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span class="metric-label"><span class="lang-pt">Publicação 2026</span><span class="lang-en">2026 publication</span></span>
+          </span>
+        </div>
         <div class="latest-spotlight-footer">
           <a class="btn primary" href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener" id="spotlight-action-btn" style="padding:10px 20px;font-size:0.96rem;gap:7px">
             <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
@@ -512,6 +534,13 @@
             <span class="tag"><span class="lang-pt">Mata Atlântica</span><span class="lang-en">Atlantic Forest</span></span>
             <span class="tag"><span class="lang-pt">Diversidade multifacetada</span><span class="lang-en">Multifaceted diversity</span></span>
           </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.1111/ddi.70129">1</strong>
+              <span class="metric-label"><span class="lang-pt">citação</span><span class="lang-en">citation</span></span>
+            </span>
+          </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1111/ddi.70129" target="_blank" rel="noopener">
               <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
@@ -530,6 +559,17 @@
             <span class="tag"><span class="lang-pt">Rejeitos de mineração</span><span class="lang-en">Mining tailings</span></span>
             <span class="tag"><span class="lang-pt">Bacia do Rio Doce</span><span class="lang-en">Doce River basin</span></span>
             <span class="tag">SDM</span>
+          </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.1111/jen.70102">3</strong>
+              <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span></span>
+            </span>
+            <span class="metric-pill" title="Status da publicação">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              <span class="metric-label"><span class="lang-pt">Artigo recente</span><span class="lang-en">Recent article</span></span>
+            </span>
           </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener">
@@ -550,6 +590,18 @@
             <span class="tag"><span class="lang-pt">Traços funcionais</span><span class="lang-en">Functional traits</span></span>
             <span class="tag"><span class="lang-pt">Conservação</span><span class="lang-en">Conservation</span></span>
           </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.1038/s41597-025-05615-3">24</strong>
+              <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span></span>
+            </span>
+            <span class="metric-pill view-pill" title="Visualizações e acessos do artigo na revista Scientific Data (Nature)">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              <strong class="metric-num"><span class="lang-pt">49 mil</span><span class="lang-en">49k</span></strong>
+              <span class="metric-label"><span class="lang-pt">visualizações</span><span class="lang-en">views</span></span>
+            </span>
+          </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1038/s41597-025-05615-3" target="_blank" rel="noopener">
               <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
@@ -568,6 +620,18 @@
             <span class="tag"><span class="lang-pt">Métricas espaciais</span><span class="lang-en">Spatial metrics</span></span>
             <span class="tag">Rasters</span>
             <span class="tag"><span class="lang-pt">Código aberto</span><span class="lang-en">Open source</span></span>
+          </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.1111/ecog.06905">18</strong>
+              <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span></span>
+            </span>
+            <span class="metric-pill" title="Downloads do pacote no repositório oficial CRAN">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+              <strong class="metric-num">>5.000</strong>
+              <span class="metric-label">downloads CRAN</span>
+            </span>
           </div>
           <div class="pub-footer">
             <a class="pub-link" href="https://doi.org/10.1111/ecog.06905" target="_blank" rel="noopener">
@@ -1033,8 +1097,8 @@
           animateCount(hIndexEl, currentVal, authorData.summary_stats.h_index);
         }
 
-        // Works query for journal articles
-        const worksRes = await fetch('https://api.openalex.org/works?filter=author.orcid:https://orcid.org/0000-0002-0308-7151,type:article&mailto=flaviomoc@gmail.com');
+        // Works query for journal articles & per-publication citation sync
+        const worksRes = await fetch('https://api.openalex.org/works?filter=author.orcid:https://orcid.org/0000-0002-0308-7151&per_page=50&mailto=flaviomoc@gmail.com');
         if (worksRes.ok) {
           const worksData = await worksRes.json();
           const articlesEl = document.getElementById('metric-articles');
@@ -1042,6 +1106,29 @@
             const currentVal = parseInt(articlesEl.textContent.replace(/\D/g, '')) || 14;
             const updatedVal = Math.max(14, worksData.meta.count);
             animateCount(articlesEl, currentVal, updatedVal);
+          }
+
+          // Dynamic update of citation counts for individual publications
+          if (worksData.results && worksData.results.length > 0) {
+            const doiMap = {};
+            worksData.results.forEach(item => {
+              if (item.doi) {
+                const clean = item.doi.replace(/^https?:\/\/doi\.org\//i, '').toLowerCase().trim();
+                doiMap[clean] = item.cited_by_count || 0;
+              }
+            });
+
+            document.querySelectorAll('[data-doi-citations]').forEach(numEl => {
+              const targetDoi = (numEl.getAttribute('data-doi-citations') || '').toLowerCase().trim();
+              if (doiMap[targetDoi] !== undefined) {
+                const current = parseInt(numEl.textContent.replace(/\D/g, '')) || 0;
+                const fresh = doiMap[targetDoi];
+                const finalVal = Math.max(current, fresh);
+                if (finalVal !== current) {
+                  numEl.textContent = finalVal;
+                }
+              }
+            });
           }
         }
 
@@ -1082,6 +1169,14 @@
                   authorsEl.textContent = `${names.slice(0, 3).join(', ')}, et al.`;
                 } else {
                   authorsEl.textContent = names.join(', ');
+                }
+              }
+
+              if (typeof pub.cited_by_count === 'number') {
+                const spotCit = document.getElementById('spotlight-citations');
+                if (spotCit) {
+                  const cur = parseInt(spotCit.textContent.replace(/\D/g, '')) || 0;
+                  spotCit.textContent = Math.max(cur, pub.cited_by_count);
                 }
               }
 
