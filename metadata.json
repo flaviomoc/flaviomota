@@ -1,0 +1,8 @@
+{
+  "name": "Flávio Mota — Ecologia e Conservação",
+  "description": "Portfólio acadêmico de um ecólogo que atua na interface entre macroecologia, conservação da biodiversidade, mudanças climáticas e modelagem de nicho ecológico.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

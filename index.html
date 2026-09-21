@@ -7,173 +7,167 @@
   <title>Flávio Mota — Ecologia e Conservação</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600;1,8..60,700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --ink:#18332d; --muted:#60716c; --paper:#f7f8f4; --white:#fff;
+      --ink:#18332d; --muted:#536660; --paper:#f7f8f4; --white:#fff;
       --leaf:#2d6a57; --leaf-dark:#1e4e41; --mint:#dfece5; --line:#dce5df;
       --sand:#eee9dc; --accent:#c88d42; --shadow:0 18px 50px rgba(24,51,45,.09);
       --radius:24px; --max:1160px;
+      --font-serif:"Cambria","Source Serif 4","Georgia","Iowan Old Style","Times New Roman",serif;
     }
     *{box-sizing:border-box;scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.65}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-serif);font-size:1.06rem;line-height:1.7}
     a{color:inherit;text-decoration:none}
     .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    nav{position:sticky;top:0;z-index:20;background:rgba(247,248,244,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,223,.8)}
-    .navin{height:74px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:700;letter-spacing:-.02em}
+    nav{position:sticky;top:0;z-index:20;background:rgba(247,248,244,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,223,.8)}
+    .navin{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-size:1.26rem;font-weight:700;letter-spacing:-.01em}
     .brand span{color:var(--leaf)}
-    .links{display:flex;gap:26px;font-size:.92rem;color:#52645e}
+    .links{display:flex;gap:26px;font-size:1.04rem;color:#455651}
     .links a:hover{color:var(--leaf)}
-    .menu{display:none;border:0;background:none;font-size:1.4rem;color:var(--ink)}
+    .menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--ink)}
     .hero{padding:92px 0 78px;overflow:hidden;position:relative}
     .hero:before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;right:-220px;top:-160px;background:radial-gradient(circle,var(--mint),transparent 68%);z-index:-1}
     .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
-    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--leaf);font-size:.82rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:32px;height:1px;background:var(--leaf)}
-    h1,h2,h3{margin:0;line-height:1.12}
-    h1{font:700 clamp(3.4rem,7vw,6.6rem)/.94 "Fraunces",serif;letter-spacing:-.055em;margin:18px 0 25px;max-width:760px}
-    h1 em{font-style:normal;color:var(--leaf)}
-    .lead{font-size:1.18rem;max-width:680px;color:#52645e}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--leaf);font-size:.98rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:32px;height:2px;background:var(--leaf)}
+    h1,h2,h3{margin:0;line-height:1.16;font-family:var(--font-serif)}
+    h1{font-size:clamp(3rem,6vw,5.2rem);font-weight:700;letter-spacing:-.025em;margin:18px 0 25px;max-width:760px}
+    h1 em{font-style:italic;color:var(--leaf)}
+    .lead{font-size:1.24rem;max-width:680px;color:#455651;line-height:1.65}
     .hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-    .btn{padding:12px 18px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:.92rem}
+    .btn{padding:13px 22px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:1.02rem;font-family:var(--font-serif);display:inline-flex;align-items:center;justify-content:center}
     .btn.primary{background:var(--leaf);color:white;border-color:var(--leaf)}
     .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(45,106,87,.12)}
     .hero-card{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:16px;box-shadow:var(--shadow);position:relative}
     .photo-container{position:relative;border-radius:20px;overflow:hidden;background:#e2ece6;aspect-ratio:4/3.8}
     .hero-photo{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;transition:transform .4s ease}
     .hero-card:hover .hero-photo{transform:scale(1.02)}
-    .photo-tag{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(24,51,45,.88);color:white;padding:10px 14px;border-radius:14px;backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px}
-    .photo-tag-name{font-weight:700;font-size:.9rem}
-    .photo-tag-loc{font-size:.76rem;color:#c6dfd4;display:inline-flex;align-items:center;gap:4px}
-    .photo-tag-loc svg{width:12px;height:12px;fill:currentColor}
-    .card-note{margin-top:12px;color:var(--muted);font-size:.82rem;line-height:1.45;padding:0 4px}
 
-    .meta-pills{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-    .loc-pill{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--leaf-dark);background:var(--mint);padding:4px 11px;border-radius:999px;letter-spacing:.02em}
-    .loc-pill svg{width:13px;height:13px;fill:currentColor}
+    .meta-pills{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 
     .contact-info{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
-    .contact-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:white;border-radius:999px;font-size:.86rem;font-weight:600;text-decoration:none;transition:all .2s ease}
+    .contact-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:white;border-radius:999px;font-size:1.02rem;font-weight:600;text-decoration:none;transition:all .2s ease;font-family:var(--font-serif)}
     .contact-pill:hover{background:rgba(255,255,255,.28);transform:translateY(-1px);color:white}
     .contact-pill svg{fill:currentColor;flex-shrink:0}
     .cta-btns{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     section{padding:88px 0}
     .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
-    .section-head h2{font:600 clamp(2rem,4vw,3.3rem) "Fraunces",serif;letter-spacing:-.035em}
-    .section-head p{max-width:540px;color:var(--muted);margin:0}
+    .section-head h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:700;letter-spacing:-.015em}
+    .section-head p{max-width:560px;color:var(--muted);margin:0;font-size:1.06rem}
     .tint{background:#edf3ef}
     .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
-    .quote{font:600 1.7rem/1.35 "Fraunces",serif;max-width:450px}
+    .quote{font-size:1.65rem;line-height:1.45;font-weight:600;max-width:460px;font-family:var(--font-serif);color:var(--leaf-dark)}
     .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-    .fact{background:white;border:1px solid var(--line);padding:20px;border-radius:18px}
-    .fact strong{display:block;font-size:1.35rem;color:var(--leaf)}
-    .fact span{font-size:.86rem;color:var(--muted)}
+    .fact{background:white;border:1px solid var(--line);padding:22px;border-radius:18px}
+    .fact strong{display:block;font-size:1.65rem;color:var(--leaf);font-family:var(--font-serif)}
+    .fact span{font-size:1.02rem;color:var(--muted);line-height:1.45;display:block;margin-top:3px}
     .research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .research{padding:28px;background:white;border:1px solid var(--line);border-radius:22px;min-height:220px}
-    .num{font-size:.78rem;color:var(--accent);font-weight:700;letter-spacing:.12em}
-    .research h3{font-size:1.2rem;margin:22px 0 12px}
-    .research p{color:var(--muted);font-size:.94rem}
-    .timeline{border-left:1px solid #bfd0c8;margin-left:8px;padding-left:28px}
+    .num{font-size:.96rem;color:var(--accent);font-weight:700;letter-spacing:.08em}
+    .research h3{font-size:1.28rem;margin:18px 0 12px}
+    .research p{color:var(--muted);font-size:1.04rem;line-height:1.6}
+    .timeline{border-left:2px solid #bfd0c8;margin-left:8px;padding-left:28px}
     .time{position:relative;margin-bottom:32px}
-    .time:before{content:"";position:absolute;width:10px;height:10px;background:var(--leaf);border:4px solid var(--paper);border-radius:50%;left:-34px;top:5px}
-    .time .year{color:var(--leaf);font-weight:700;font-size:.86rem}
-    .time h3{font-size:1.08rem;margin:5px 0}
-    .time p{margin:0;color:var(--muted);max-width:780px}
+    .time:before{content:"";position:absolute;width:10px;height:10px;background:var(--leaf);border:4px solid var(--paper);border-radius:50%;left:-35px;top:5px}
+    .time .year{color:var(--leaf);font-weight:700;font-size:1rem;letter-spacing:.02em}
+    .time h3{font-size:1.2rem;margin:5px 0}
+    .time p{margin:0;color:var(--muted);max-width:780px;font-size:1.04rem;line-height:1.6}
     .pubs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    .pub{background:white;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
+    .pub{background:white;border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
     .pub:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
-    .pub .meta{font-size:.78rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
-    .pub h3{font-size:1.1rem;margin:0 0 10px;line-height:1.42}
+    .pub .meta{font-size:.96rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+    .pub h3{font-size:1.22rem;margin:0 0 12px;line-height:1.45}
     .pub h3 a{color:var(--ink);text-decoration:none;transition:color .2s ease}
     .pub:hover h3 a{color:var(--leaf)}
-    .pub .authors{margin:0 0 14px;color:var(--muted);font-size:.88rem;line-height:1.5}
-    .pub-footer{margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    .pub-link{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:700;color:var(--leaf);text-decoration:none;transition:all .2s ease}
-    .pub-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
+    .pub .authors{margin:0 0 14px;color:var(--muted);font-size:1.02rem;line-height:1.55}
+    .pub-footer{margin-top:auto;padding-top:18px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .pub-link{display:inline-flex;align-items:center;gap:6px;font-size:1.02rem;font-weight:700;color:var(--leaf);text-decoration:none;transition:all .2s ease}
+    .pub-link svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
     .pub:hover .pub-link{color:var(--leaf-dark)}
     .pub:hover .pub-link svg{transform:translate(2px,-2px)}
-    .doi-pill{font-size:.72rem;color:var(--muted);background:#edf3f0;padding:3px 8px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    .doi-pill{font-size:.92rem;color:var(--muted);background:#edf3f0;padding:5px 10px;border-radius:6px;font-family:var(--font-serif)}
     .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:14px}
-    .tag{font-size:.74rem;background:var(--mint);padding:5px 9px;border-radius:999px;color:var(--leaf-dark);font-weight:500}
+    .tag{font-size:.94rem;background:var(--mint);padding:6px 12px;border-radius:999px;color:var(--leaf-dark);font-weight:600}
     .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .stat{background:var(--ink);color:white;padding:25px;border-radius:20px}
-    .stat strong{display:block;font:700 2.3rem "Fraunces",serif}
-    .stat span{color:#c8d8d2;font-size:.82rem}
+    .stat{background:var(--ink);color:white;padding:26px;border-radius:20px}
+    .stat strong{display:block;font-size:2.5rem;font-weight:700;font-family:var(--font-serif)}
+    .stat span{color:#c8d8d2;font-size:1.02rem;line-height:1.4;display:block;margin-top:4px}
     .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .tool{border:1px solid var(--line);background:white;border-radius:22px;padding:26px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
+    .tool{border:1px solid var(--line);background:white;border-radius:22px;padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
     .tool:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
     .tool-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-    .tool-icon{width:38px;height:38px;border-radius:10px;background:var(--mint);color:var(--leaf);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;font-family:ui-monospace,monospace}
-    .tool-badge{font-size:.72rem;background:#f0f4f2;padding:4px 8px;border-radius:999px;color:var(--muted);font-weight:600}
-    .tool h3{font-size:1.15rem;margin:0 0 10px;color:var(--ink);transition:color .2s ease}
+    .tool-icon{width:40px;height:40px;border-radius:10px;background:var(--mint);color:var(--leaf);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;font-family:var(--font-serif)}
+    .tool-badge{font-size:.92rem;background:#f0f4f2;padding:5px 11px;border-radius:999px;color:var(--muted);font-weight:600}
+    .tool h3{font-size:1.24rem;margin:0 0 10px;color:var(--ink);transition:color .2s ease}
     .tool:hover h3{color:var(--leaf)}
-    .tool p{font-size:.89rem;color:var(--muted);margin:0 0 18px;line-height:1.55;flex-grow:1}
-    .tool-link{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:700;color:var(--leaf);margin-top:auto}
-    .tool-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
+    .tool p{font-size:1.04rem;color:var(--muted);margin:0 0 18px;line-height:1.6;flex-grow:1}
+    .tool-link{display:inline-flex;align-items:center;gap:6px;font-size:1.02rem;font-weight:700;color:var(--leaf);margin-top:auto}
+    .tool-link svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
     .tool:hover .tool-link svg{transform:translate(2px,-2px)}
     .cta{background:var(--leaf-dark);color:white;border-radius:34px;padding:55px}
     .cta-grid{display:flex;justify-content:space-between;gap:35px;align-items:center}
-    .cta h2{font:600 clamp(2rem,4vw,3.3rem) "Fraunces",serif;max-width:650px}
-    .cta p{color:#cfe0d9;max-width:620px}
-    footer{padding:35px 0 55px;color:var(--muted);font-size:.85rem}
+    .cta h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:700;letter-spacing:-.015em;max-width:650px;font-family:var(--font-serif)}
+    .cta p{color:#cfe0d9;max-width:620px;font-size:1.12rem;line-height:1.65}
+    footer{padding:35px 0 55px;color:var(--muted);font-size:1.02rem}
     .footerin{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
 
     .profilebar{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;align-items:center}
-    .social{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);background:white;border-radius:50%;color:var(--leaf-dark);transition:all .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.04)}
+    .social{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);background:white;border-radius:50%;color:var(--leaf-dark);transition:all .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.04)}
     .social:hover{background:var(--mint);color:var(--leaf);transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,106,87,.14);border-color:var(--leaf)}
-    .social svg{width:20px;height:20px;display:block;fill:currentColor}
+    .social svg{width:22px;height:22px;display:block;fill:currentColor}
     .footer-socials{display:inline-flex;gap:16px;align-items:center}
     .footer-socials a{color:var(--muted);display:inline-flex;align-items:center;justify-content:center;transition:color .2s, transform .2s}
     .footer-socials a:hover{color:var(--leaf);transform:translateY(-1px)}
-    .footer-socials svg{width:19px;height:19px;display:block;fill:currentColor}
+    .footer-socials svg{width:21px;height:21px;display:block;fill:currentColor}
     .strip-wrapper{position:relative;width:100%;margin-top:20px;overflow:hidden;border-radius:24px}
     .strip-track{display:flex;gap:20px;overflow-x:auto;scroll-behavior:auto;scrollbar-width:none;-ms-overflow-style:none;padding:12px 6px 20px;cursor:grab;user-select:none;-webkit-overflow-scrolling:touch}
     .strip-track::-webkit-scrollbar{display:none}
     .strip-track:active{cursor:grabbing}
     .section-head-with-controls{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px;gap:20px;flex-wrap:wrap}
-    .strip-controls{display:inline-flex;align-items:center;gap:8px}
-    .strip-hint{font-size:.76rem;color:var(--muted);background:#edf3f0;padding:4px 10px;border-radius:999px;font-weight:500}
-    .strip-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:white;color:var(--leaf-dark);font-size:1.1rem;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.04)}
+    .strip-controls{display:inline-flex;align-items:center;gap:10px}
+    .strip-hint{font-size:.94rem;color:var(--muted);background:#edf3f0;padding:6px 12px;border-radius:999px;font-weight:600}
+    .strip-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:white;color:var(--leaf-dark);font-size:1.2rem;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.04);font-family:var(--font-serif)}
     .strip-btn:hover{background:var(--mint);border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px);box-shadow:0 6px 14px rgba(45,106,87,.12)}
 
-    .photo-slide{position:relative;overflow:hidden;border-radius:20px;background:#dfe8e3;border:1px solid var(--line);width:340px;min-width:340px;max-width:340px;height:240px;flex-shrink:0;box-shadow:0 2px 8px rgba(24,51,45,.04);transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
+    .photo-slide{position:relative;overflow:hidden;border-radius:20px;background:#dfe8e3;border:1px solid var(--line);width:360px;min-width:360px;max-width:360px;height:250px;flex-shrink:0;box-shadow:0 2px 8px rgba(24,51,45,.04);transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
     .photo-slide:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 12px 24px rgba(45,106,87,.12)}
     .photo-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
     .photo-slide:hover img{transform:scale(1.05)}
-    .photo-slide figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(24,51,45,.85);color:white;padding:8px 12px;border-radius:12px;font-size:.78rem;backdrop-filter:blur(8px);line-height:1.35}
-    .photo-note{color:var(--muted);font-size:.84rem;margin-top:10px}
+    .photo-slide figcaption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(24,51,45,.88);color:white;padding:10px 14px;border-radius:12px;font-size:.96rem;backdrop-filter:blur(8px);line-height:1.42}
+    .photo-note{color:var(--muted);font-size:1.02rem;margin-top:10px}
 
-    .fig-slide-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;width:400px;min-width:400px;max-width:400px;flex-shrink:0;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 10px rgba(24,51,45,.04)}
+    .fig-slide-card{background:white;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;width:420px;min-width:420px;max-width:420px;flex-shrink:0;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 10px rgba(24,51,45,.04)}
     .fig-slide-card:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.12)}
-    .fig-slide-img{display:block;height:240px;background:#f4f7f5;overflow:hidden;border-bottom:1px solid var(--line);position:relative;padding:12px;text-align:center;text-decoration:none}
+    .fig-slide-img{display:block;height:250px;background:#f4f7f5;overflow:hidden;border-bottom:1px solid var(--line);position:relative;padding:12px;text-align:center;text-decoration:none}
     .fig-slide-img img{width:100%;height:100%;object-fit:contain;background:#fff;border-radius:12px;transition:transform .35s ease;display:block}
     .fig-slide-card:hover .fig-slide-img img{transform:scale(1.03)}
-    .fig-badge{position:absolute;right:16px;bottom:16px;background:rgba(24,51,45,.82);color:white;padding:5px 11px;border-radius:999px;font-size:.72rem;display:inline-flex;align-items:center;gap:5px;backdrop-filter:blur(6px);opacity:0;transition:opacity .2s ease}
+    .fig-badge{position:absolute;right:16px;bottom:16px;background:rgba(24,51,45,.86);color:white;padding:6px 12px;border-radius:999px;font-size:.92rem;display:inline-flex;align-items:center;gap:6px;backdrop-filter:blur(6px);opacity:0;transition:opacity .2s ease;font-weight:600}
     .fig-slide-card:hover .fig-badge{opacity:1}
-    .fig-slide-body{padding:20px;display:flex;flex-direction:column;flex-grow:1}
-    .fig-slide-body .fig-tag{font-size:.72rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-    .fig-slide-body h3{font-size:1.06rem;margin:0 0 10px;line-height:1.4;color:var(--ink)}
-    .fig-slide-caption{margin:0 0 14px;color:#384d47;font-size:.85rem;line-height:1.52;background:#f7f9f7;padding:10px 12px;border-radius:10px;border-left:3px solid var(--leaf);flex-grow:1}
-    .fig-slide-caption strong{color:var(--leaf-dark);font-weight:700;display:block;margin-bottom:4px;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
-    .fig-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--leaf);text-decoration:none;margin-top:auto}
-    .fig-link svg{width:13px;height:13px;fill:currentColor;flex-shrink:0;transition:transform .2s}
+    .fig-slide-body{padding:22px;display:flex;flex-direction:column;flex-grow:1}
+    .fig-slide-body .fig-tag{font-size:.96rem;color:var(--leaf);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+    .fig-slide-body h3{font-size:1.2rem;margin:0 0 12px;line-height:1.42;color:var(--ink)}
+    .fig-slide-caption{margin:0 0 16px;color:#384d47;font-size:1.02rem;line-height:1.6;background:#f7f9f7;padding:12px 14px;border-radius:12px;border-left:3px solid var(--leaf);flex-grow:1}
+    .fig-slide-caption strong{color:var(--leaf-dark);font-weight:700;display:block;margin-bottom:6px;font-size:.94rem;text-transform:uppercase;letter-spacing:.04em}
+    .fig-link{display:inline-flex;align-items:center;gap:6px;font-size:1.02rem;font-weight:700;color:var(--leaf);text-decoration:none;margin-top:auto}
+    .fig-link svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;transition:transform .2s}
     .fig-slide-card:hover .fig-link{color:var(--leaf-dark)}
     .fig-slide-card:hover .fig-link svg{transform:translate(2px,-2px)}
 
-    .back-to-top-wrap{display:flex;justify-content:center;margin-top:32px}
-    .back-to-top-wrap .btn{background:white;color:var(--leaf-dark);border:1px solid var(--line);box-shadow:0 2px 8px rgba(24,51,45,.04);display:inline-flex;align-items:center;gap:8px;padding:12px 26px;font-weight:600;transition:all .2s ease}
+    .back-to-top-wrap{display:flex;justify-content:center;margin-top:34px}
+    .back-to-top-wrap .btn{background:white;color:var(--leaf-dark);border:1px solid var(--line);box-shadow:0 2px 8px rgba(24,51,45,.04);display:inline-flex;align-items:center;gap:8px;padding:13px 28px;font-weight:600;font-size:1.02rem;transition:all .2s ease}
     .back-to-top-wrap .btn:hover{background:var(--mint);border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px);box-shadow:0 8px 18px rgba(45,106,87,.14)}
 
     @media(max-width:850px){
-      .photo-slide{width:300px;min-width:300px;max-width:300px;height:220px}
-      .fig-slide-card{width:340px;min-width:340px;max-width:340px}
-      .fig-slide-img{height:220px}
+      .photo-slide{width:320px;min-width:320px;max-width:320px;height:230px}
+      .fig-slide-card{width:360px;min-width:360px;max-width:360px}
+      .fig-slide-img{height:230px}
     }
     @media(max-width:520px){
-      .photo-slide{width:270px;min-width:270px;max-width:270px;height:200px}
-      .fig-slide-card{width:290px;min-width:290px;max-width:290px}
-      .fig-slide-img{height:190px}
+      .photo-slide{width:280px;min-width:280px;max-width:280px;height:210px}
+      .fig-slide-card{width:300px;min-width:300px;max-width:300px}
+      .fig-slide-img{height:200px}
       .strip-hint{display:none}
     }
 
@@ -186,7 +180,7 @@
     }
     @media(max-width:520px){
       .wrap{width:min(var(--max),calc(100% - 26px))}
-      h1{font-size:3.35rem}.stats{grid-template-columns:1fr}
+      h1{font-size:3.1rem}.stats{grid-template-columns:1fr}
       section{padding:65px 0}.facts{grid-template-columns:1fr}
     }
   </style>
@@ -208,11 +202,7 @@
     <div class="wrap hero-grid">
       <div>
         <div class="meta-pills">
-          <span class="eyebrow">Ecologia · Conservação · Ecologia Espacial</span>
-          <span class="loc-pill">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-            Montes Claros - MG
-          </span>
+          <span class="eyebrow">Ecologia · Conservação</span>
         </div>
         <h1>Compreendendo a biodiversidade em um <em>mundo em transformação.</em></h1>
         <div class="hero-actions">
@@ -247,15 +237,7 @@
       <div class="hero-card" aria-label="Foto de Flávio Mota">
         <div class="photo-container">
           <img src="https://i.postimg.cc/L5xDXwZM/Foto-Flavio-Mota.jpg" alt="Flávio Mota — Ecólogo e Pesquisador" class="hero-photo" loading="eager">
-          <div class="photo-tag">
-            <span class="photo-tag-name">Flávio Mota, Dr.</span>
-            <span class="photo-tag-loc">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-              Montes Claros - MG
-            </span>
-          </div>
         </div>
-        <div class="card-note">Ecólogo e pesquisador atuando na interface entre biodiversidade, mudanças climáticas e análise geoespacial em Montes Claros - MG.</div>
       </div>
     </div>
   </section>
@@ -421,7 +403,7 @@
         <div>
           <div class="eyebrow">Campo e divulgação</div>
           <h2>Ciência além do escritório</h2>
-          <p style="margin:6px 0 0;color:var(--muted);font-size:.94rem">Momentos de campo, ensino, divulgação científica e vivência acadêmica.</p>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:1.04rem">Momentos de campo, ensino, divulgação científica e vivência acadêmica.</p>
         </div>
         <div class="strip-controls">
           <span class="strip-hint">Passe o cursor para pausar</span>
@@ -446,7 +428,7 @@
           <div>
             <div class="eyebrow">Visualizações científicas</div>
             <h2>Mapas, modelos e sínteses</h2>
-            <p style="margin:6px 0 0;color:var(--muted);font-size:.94rem">Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos.</p>
+            <p style="margin:6px 0 0;color:var(--muted);font-size:1.04rem">Figuras científicas, representações espaciais, modelagens de nicho ecológico e frameworks metodológicos.</p>
           </div>
           <div class="strip-controls">
             <span class="strip-hint">Passe o cursor para pausar</span>
@@ -460,15 +442,14 @@
             <!-- Figura 1 (Linha 1, Coluna 1) -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-                <img src="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" alt="Climate-suitable area for Apis mellifera across the Doce River Basin" loading="lazy">
+                <img src="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" alt="Área de adequabilidade climática para Apis mellifera na Bacia do Rio Doce, sudeste do Brasil" loading="lazy">
                 <span class="fig-badge">Ampliar ↗</span>
               </a>
               <div class="fig-slide-body">
                 <div class="fig-tag">Apis mellifera · Bacia do Rio Doce</div>
                 <h3>Adequabilidade Climática para <em>Apis mellifera</em></h3>
                 <div class="fig-slide-caption">
-                  <strong>Legenda científica:</strong>
-                  Climate-suitable area for the honeybee (<em>Apis mellifera</em>) across the Doce River Basin, south-eastern Brazil.
+                  Área de adequabilidade climática para a abelha-europeia (<em>Apis mellifera</em>) ao longo da Bacia do Rio Doce, sudeste do Brasil.
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/Z5YsJYGX/fig1-fev-2026.png" target="_blank" rel="noopener">
                   <span>Ver em alta resolução</span>
@@ -480,15 +461,14 @@
             <!-- Figura 2 (Linha 1, Coluna 2) -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-                <img src="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" alt="Land use in the Rio Doce basin, southeastern Brazil" loading="lazy">
+                <img src="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" alt="Uso do solo na Bacia do Rio Doce, sudeste do Brasil" loading="lazy">
                 <span class="fig-badge">Ampliar ↗</span>
               </a>
               <div class="fig-slide-body">
                 <div class="fig-tag">Uso do Solo · Bacia do Rio Doce</div>
                 <h3>Uso e Ocupação do Solo no Rio Doce</h3>
                 <div class="fig-slide-caption">
-                  <strong>Legenda científica:</strong>
-                  Land use in the Rio Doce basin, southeastern Brazil.
+                  Uso do solo na Bacia do Rio Doce, sudeste do Brasil.
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/hvyzxrGB/mapa-uso-solo.png" target="_blank" rel="noopener">
                   <span>Ver em alta resolução</span>
@@ -500,15 +480,14 @@
             <!-- Figura 3 (Linha 2, Coluna 1) -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-                <img src="https://i.postimg.cc/63CfdDsB/fig1.png" alt="Location of the Central Corridor of the Atlantic Forest in Brazil" loading="lazy">
+                <img src="https://i.postimg.cc/63CfdDsB/fig1.png" alt="Localização do Corredor Central da Mata Atlântica no Brasil" loading="lazy">
                 <span class="fig-badge">Ampliar ↗</span>
               </a>
               <div class="fig-slide-body">
                 <div class="fig-tag">Mata Atlântica · Conservação</div>
                 <h3>Corredor Central da Mata Atlântica</h3>
                 <div class="fig-slide-caption">
-                  <strong>Legenda científica:</strong>
-                  Location of the Central Corridor of the Atlantic Forest (CCAF) in Brazil.
+                  Localização do Corredor Central da Mata Atlântica (CCMA) no Brasil.
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/63CfdDsB/fig1.png" target="_blank" rel="noopener">
                   <span>Ver em alta resolução</span>
@@ -520,15 +499,14 @@
             <!-- Figura 4 (Linha 2, Coluna 2) -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-                <img src="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" alt="A schematic drawing inputs and outputs of divraster functions" loading="lazy">
+                <img src="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" alt="Representação esquemática das entradas e saídas das funções do pacote divraster" loading="lazy">
                 <span class="fig-badge">Ampliar ↗</span>
               </a>
               <div class="fig-slide-body">
                 <div class="fig-tag">Pacote divraster · Métricas Espaciais</div>
                 <h3>Entradas e Saídas do Pacote ‘divraster’</h3>
                 <div class="fig-slide-caption">
-                  <strong>Legenda científica:</strong>
-                  A schematic drawing of inputs and outputs of ‘divraster’ functions.
+                  Representação esquemática das entradas e saídas das funções do pacote ‘divraster’.
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/1zQt8TKW/ecog13059-fig-0001-m.jpg" target="_blank" rel="noopener">
                   <span>Ver em alta resolução</span>
@@ -540,15 +518,14 @@
             <!-- Figura 5 (Nova imagem) -->
             <article class="fig-slide-card">
               <a class="fig-slide-img" href="https://i.postimg.cc/htJtjm7c/choco-paper.webp" target="_blank" rel="noopener" title="Clique para abrir imagem em alta resolução">
-                <img src="https://i.postimg.cc/htJtjm7c/choco-paper.webp" alt="Species richness and climate scenarios for endemic bird species across the Chocó" loading="lazy">
+                <img src="https://i.postimg.cc/htJtjm7c/choco-paper.webp" alt="Riqueza de espécies e cenários futuros para aves no Chocó" loading="lazy">
                 <span class="fig-badge">Ampliar ↗</span>
               </a>
               <div class="fig-slide-body">
                 <div class="fig-tag">Biogeografia & Mudanças Climáticas · Chocó</div>
                 <h3>Riqueza e Cenários de Aves no Chocó</h3>
                 <div class="fig-slide-caption">
-                  <strong>Legenda científica:</strong>
-                  Species richness and the difference between baseline and future scenarios for 27 endemic or near-endemic bird species across the Chocó in Colombia and Ecuador.
+                  Riqueza de espécies e a diferença entre o cenário de referência e os cenários futuros para 27 espécies de aves endêmicas ou quase-endêmicas no Chocó, Colômbia e Equador.
                 </div>
                 <a class="fig-link" href="https://i.postimg.cc/htJtjm7c/choco-paper.webp" target="_blank" rel="noopener">
                   <span>Ver em alta resolução</span>
