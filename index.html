@@ -129,6 +129,23 @@
     .doi-pill{font-size:.92rem;color:var(--muted);background:#edf3f0;padding:5px 10px;border-radius:6px;font-family:var(--font-serif)}
     .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;margin-bottom:14px}
     .tag{font-size:.94rem;background:var(--mint);padding:6px 12px;border-radius:999px;color:var(--leaf-dark);font-weight:600}
+
+    /* Latest publication spotlight */
+    .latest-spotlight{background:linear-gradient(135deg, #f2f7f4 0%, #ffffff 100%);border:2px solid var(--leaf);border-radius:24px;padding:30px;margin-bottom:30px;box-shadow:0 8px 24px rgba(45,106,87,.08);position:relative;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
+    .latest-spotlight:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(45,106,87,.14)}
+    .latest-spotlight:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--leaf),var(--accent),var(--leaf))}
+    .latest-badge-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+    .pulse-badge{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--leaf-dark);font-size:.86rem;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase}
+    .pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 0 rgba(45,106,87,.7);animation:pulse-green 2s infinite}
+    @keyframes pulse-green{0%{transform:scale(.95);box-shadow:0 0 0 0 rgba(45,106,87,.7)}70%{transform:scale(1);box-shadow:0 0 0 8px rgba(45,106,87,0)}100%{transform:scale(.95);box-shadow:0 0 0 0 rgba(45,106,87,0)}}
+    .latest-journal-tag{font-size:.96rem;font-weight:700;color:var(--leaf);font-family:var(--font-serif)}
+    .latest-spotlight h3{font-size:1.36rem;margin:0 0 12px;line-height:1.4}
+    .latest-spotlight h3 a{color:var(--ink);text-decoration:none;transition:color .2s ease}
+    .latest-spotlight:hover h3 a{color:var(--leaf)}
+    .latest-spotlight .authors{color:var(--muted);font-size:1.02rem;margin:0 0 16px;line-height:1.55}
+    .latest-spotlight-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:16px;border-top:1px dashed var(--line)}
+    .pub.is-latest{border-color:var(--leaf);box-shadow:0 6px 20px rgba(45,106,87,.1)}
+    .latest-pill-flag{display:inline-flex;align-items:center;gap:4px;background:var(--mint);color:var(--leaf-dark);font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;vertical-align:middle;text-transform:none;letter-spacing:normal}
     .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .tool{border:1px solid var(--line);background:white;border-radius:22px;padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;box-shadow:0 2px 8px rgba(24,51,45,.03)}
     .tool:hover{transform:translateY(-4px);border-color:var(--leaf);box-shadow:0 14px 30px rgba(45,106,87,.1)}
@@ -453,6 +470,32 @@
           <span class="lang-en">Selected peer-reviewed articles focusing on climate change, spatial biodiversity, ecological modeling, and human impacts.</span>
         </p>
       </div>
+
+      <!-- Spotlight: Publicação Mais Recente / Latest Publication -->
+      <article class="latest-spotlight" id="latest-spotlight">
+        <div class="latest-badge-bar">
+          <span class="pulse-badge">
+            <span class="pulse-dot"></span>
+            <span class="lang-pt">Publicação Mais Recente</span>
+            <span class="lang-en">Latest Publication</span>
+          </span>
+          <span class="latest-journal-tag" id="spotlight-journal">2026 · Journal of Applied Entomology</span>
+        </div>
+        <h3 id="spotlight-title">
+          <a href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener" id="spotlight-link">
+            Projected Climate-Suitable Area for <em>Apis mellifera</em> (Apidae) and Its Spatial Overlap With a Mining Tailings Footprint in South-East Brazil
+          </a>
+        </h3>
+        <p class="authors" id="spotlight-authors">Mota, F. M. M., Lima‐Santos, D., Kenedy‐Siqueira, W., et al.</p>
+        <div class="latest-spotlight-footer">
+          <a class="btn primary" href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener" id="spotlight-action-btn" style="padding:10px 20px;font-size:0.96rem;gap:7px">
+            <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span></span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+          </a>
+          <span class="doi-pill" id="spotlight-doi">10.1111/jen.70102</span>
+        </div>
+      </article>
+
       <div class="pubs">
         <article class="pub">
           <div class="meta">2025 · Diversity and Distributions</div>
@@ -996,6 +1039,65 @@
             animateCount(articlesEl, currentVal, updatedVal);
           }
         }
+
+        // Latest publication query & spotlight sync
+        try {
+          const latestRes = await fetch('https://api.openalex.org/works?filter=author.orcid:https://orcid.org/0000-0002-0308-7151,type:article&sort=publication_date:desc&per_page=1&mailto=flaviomoc@gmail.com');
+          if (latestRes.ok) {
+            const latestData = await latestRes.json();
+            if (latestData.results && latestData.results.length > 0) {
+              const pub = latestData.results[0];
+              const year = pub.publication_year || (pub.publication_date ? pub.publication_date.split('-')[0] : '');
+              const journal = pub.primary_location?.source?.display_name || '';
+              const doi = pub.doi || (pub.ids?.doi ? pub.ids.doi : '');
+              const cleanDoi = doi ? doi.replace(/^https?:\/\/doi\.org\//, '') : '';
+
+              const journalEl = document.getElementById('spotlight-journal');
+              const titleLink = document.getElementById('spotlight-link');
+              const authorsEl = document.getElementById('spotlight-authors');
+              const actionBtn = document.getElementById('spotlight-action-btn');
+              const doiEl = document.getElementById('spotlight-doi');
+
+              if (journalEl && (year || journal)) {
+                journalEl.textContent = `${year}${year && journal ? ' · ' : ''}${journal}`;
+              }
+              if (titleLink && pub.title) {
+                titleLink.innerHTML = pub.title;
+                if (doi) titleLink.href = doi;
+              }
+              if (actionBtn && doi) {
+                actionBtn.href = doi;
+              }
+              if (doiEl && cleanDoi) {
+                doiEl.textContent = cleanDoi;
+              }
+              if (authorsEl && pub.authorships && pub.authorships.length) {
+                const names = pub.authorships.map(a => a.author?.display_name).filter(Boolean);
+                if (names.length > 3) {
+                  authorsEl.textContent = `${names.slice(0, 3).join(', ')}, et al.`;
+                } else {
+                  authorsEl.textContent = names.join(', ');
+                }
+              }
+
+              // Highlight corresponding card in the list
+              if (cleanDoi) {
+                document.querySelectorAll('.pub').forEach(card => {
+                  if ((card.textContent || '').includes(cleanDoi)) {
+                    card.classList.add('is-latest');
+                    const meta = card.querySelector('.meta');
+                    if (meta && !card.querySelector('.latest-pill-flag')) {
+                      const flag = document.createElement('span');
+                      flag.className = 'latest-pill-flag';
+                      flag.innerHTML = '<span class="lang-pt">★ Mais Recente</span><span class="lang-en">★ Latest</span>';
+                      meta.appendChild(flag);
+                    }
+                  }
+                });
+              }
+            }
+          }
+        } catch (e) {}
       }
     } catch (err) {
       // Graceful fallback: default values in HTML remain visible
