@@ -57,7 +57,11 @@
     .section-head h2{font-size:clamp(2rem,3.8vw,3.1rem);font-weight:700;letter-spacing:-.015em}
     .section-head p{max-width:560px;color:var(--muted);margin:0;font-size:1.06rem}
     .tint{background:#edf3ef}
-    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:56px;align-items:stretch}
+    .about-left{display:flex;flex-direction:column;justify-content:space-between}
+    .about-right{display:flex;flex-direction:column;justify-content:space-between}
+    .about-right p{margin:0 0 16px;line-height:1.7}
+    .about-right p:last-child{margin-bottom:0}
     .quote{font-size:1.65rem;line-height:1.45;font-weight:600;max-width:460px;font-family:var(--font-serif);color:var(--leaf-dark)}
     .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
     .fact{background:white;border:1px solid var(--line);padding:22px;border-radius:18px}
@@ -174,7 +178,8 @@
     @media(max-width:850px){
       .links{display:none}.menu{display:block}
       .hero-grid,.about-grid{grid-template-columns:1fr}.research-grid,.tools{grid-template-columns:1fr}
-      .pubs{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}
+      .about-left{gap:26px}.about-right{gap:16px}
+      .pubs{grid-template-columns:1fr}
       .hero{padding-top:65px}.section-head{display:block}.section-head p{margin-top:15px}
       .cta{padding:35px}.cta-grid{display:block}.cta .btn{display:inline-block;margin-top:18px}
     }
@@ -244,20 +249,23 @@
 
   <section id="about" class="tint">
     <div class="wrap about-grid">
-      <div>
-        <div class="eyebrow">Sobre</div>
-        <p class="quote">Pesquisa que conecta teoria ecológica, dados espaciais e questões de conservação.</p>
+      <div class="about-left">
+        <div>
+          <div class="eyebrow">Sobre</div>
+          <p class="quote">Pesquisa que conecta teoria ecológica, dados espaciais e questões de conservação.</p>
+        </div>
         <div class="facts">
           <div class="fact"><strong>14</strong><span>artigos em periódicos</span></div>
           <div class="fact"><strong>1</strong><span>artigo aceito para publicação</span></div>
           <div class="fact"><strong>3</strong><span>projetos de software em R/espacial</span></div>
-          <div class="fact"><strong>76</strong><span>citações no Google Scholar no registro do currículo</span></div>
+          <div class="fact"><strong>119</strong><span>citações no Web of Science</span></div>
         </div>
       </div>
-      <div>
-        <p>Meu trabalho busca compreender como as mudanças ambientais reorganizam a biodiversidade no espaço e no tempo. Minha pesquisa combina modelagem de nicho ecológico, macroecologia, análise espacial e métricas de biodiversidade para investigar distribuições de espécies, estrutura de comunidades e prioridades de conservação.</p>
-        <p>Tenho trabalhado com questões relacionadas à perda e fragmentação de habitat, aos impactos das mudanças climáticas sobre aves e a biodiversidade em geral, além de respostas ecológicas em paisagens impactadas por atividades humanas, como a bacia do Rio Doce.</p>
+      <div class="about-right">
+        <p>Meu trabalho busca compreender como as mudanças ambientais reorganizam a biodiversidade no espaço e no tempo. Minha pesquisa combina modelagem de nicho ecológico, macroecologia, análise espacial e métricas de diversidade para investigar distribuições de espécies, estrutura de comunidades e prioridades de conservação.</p>
+        <p>Tenho trabalhado com questões relacionadas à perda e fragmentação de habitat, aos impactos das mudanças climáticas sobre aves e a biodiversidade em geral, além de respostas ecológicas em paisagens impactadas por atividades humanas e desastres naturais, como a bacia do Rio Doce e o Rio Grande do Sul.</p>
         <p>A trajetória acadêmica documentada no currículo inclui doutorado em Ecologia e Conservação da Biodiversidade, período de pós-doutorado, posições de pesquisa e atividades de ensino em ecologia e modelagem de nicho ecológico.</p>
+        <p>Na comunidade científica, atuo como editor para a revista <em>Biodiversity and Conservation</em> (Springer) e como revisor para periódicos internacionais na área de ecologia, biogeografia e conservação da biodiversidade, como <em>Diversity and Distributions</em>, <em>Ecography</em>, <em>Biological Conservation</em>, <em>Biotropica</em>, <em>Perspectives in Ecology and Conservation</em> e <em>Journal of Applied Entomology</em>.</p>
       </div>
     </div>
   </section>
@@ -286,12 +294,12 @@
         <p>Principais marcos da trajetória acadêmica e profissional registrados no currículo de agosto de 2026.</p>
       </div>
       <div class="timeline">
-        <div class="time"><div class="year">2025 — atual</div><h3>Pesquisador · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</h3><p>Pesquisa e análises geoespaciais voltadas à conservação da biodiversidade, incluindo estudos relacionados às mudanças climáticas.</p></div>
-        <div class="time"><div class="year">2026 — atual</div><h3>Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</h3><p>Ensino de modelagem de nicho ecológico e distribuição de espécies.</p></div>
-        <div class="time"><div class="year">2020 — 2025</div><h3>Pesquisa e ensino · Universidade Estadual de Santa Cruz (UESC)</h3><p>Pesquisa em ecologia e conservação da biodiversidade, associada a atividades de ensino em ecologia geral e temas relacionados.</p></div>
-        <div class="time"><div class="year">2024 — 2025</div><h3>Pesquisador de pós-doutorado · Universidade Federal de Minas Gerais (UFMG)</h3><p>Pesquisa de pós-doutorado apoiada pela FAPEMIG.</p></div>
-        <div class="time"><div class="year">2020 — 2024</div><h3>Doutorado em Ecologia e Conservação da Biodiversidade · UESC</h3><p>Pesquisa de doutorado sobre os impactos das mudanças climáticas na diversidade de aves.</p></div>
-        <div class="time"><div class="year">2015 — 2017</div><h3>Mestrado em Biodiversidade e Uso dos Recursos Naturais · UNIMONTES</h3><p>Pesquisa sobre fragmentação de habitat e perda de área de distribuição potencial.</p></div>
+        <div class="time"><div class="year">2025 — atual</div><h3>Pesquisador · Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio)</h3><p>Avaliação do impacto das mudanças climáticas sobre a biodiversidade do estado do Rio Grande do Sul.</p></div>
+        <div class="time"><div class="year">2026</div><h3>Professor Externo · Universidade Estadual de Montes Claros (UNIMONTES)</h3><p>Ensino de modelagem de nicho ecológico e distribuição de espécies para a pós-graduação.</p></div>
+        <div class="time"><div class="year">2020 — 2026</div><h3>Professor Auxiliar · Universidade Estadual de Santa Cruz (UESC)</h3><p>Ensino de ecologia para a licenciatura em biologia - EaD.</p></div>
+        <div class="time"><div class="year">2024 — 2025</div><h3>Pós-doutorado · Universidade Federal de Minas Gerais (UFMG)</h3><p>Avaliação do impacto das mudanças climáticas sobre a biodiversidade da bacia do Rio Doce.</p></div>
+        <div class="time"><div class="year">2020 — 2024</div><h3>Doutorado em Ecologia e Conservação da Biodiversidade · UESC</h3><p>Avaliação do impacto das mudanças climáticas sobre aves da Mata Atlântica.</p></div>
+        <div class="time"><div class="year">2015 — 2017</div><h3>Mestrado em Biodiversidade e Uso dos Recursos Naturais · UNIMONTES</h3><p>Avaliação da fragmentação e perda de habitat para o macaco-prego-de-crista.</p></div>
       </div>
     </div>
   </section>
@@ -382,21 +390,6 @@
     </div>
   </section>
 
-  <section class="tint">
-    <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">Panorama da pesquisa</div><h2>Em números</h2></div>
-        <p>Totais de produção registrados no currículo gerado em 18 de agosto de 2026.</p>
-      </div>
-      <div class="stats">
-        <div class="stat"><strong>14</strong><span>artigos em periódicos</span></div>
-        <div class="stat"><strong>1</strong><span>artigo aceito</span></div>
-        <div class="stat"><strong>3</strong><span>projetos de software não registrados</span></div>
-        <div class="stat"><strong>3</strong><span>orientações de graduação concluídas</span></div>
-      </div>
-    </div>
-  </section>
-
   <section id="gallery" class="tint">
     <div class="wrap">
       <div class="section-head-with-controls">
@@ -414,10 +407,10 @@
 
       <div class="strip-wrapper">
         <div class="strip-track" id="photo-track">
-          <figure class="photo-slide"><img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Trabalho de campo e pesquisa em biodiversidade" loading="lazy"><figcaption>Trabalho de campo e pesquisa em biodiversidade</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Geoprocessamento e ecologia espacial" loading="lazy"><figcaption>Geoprocessamento e ecologia espacial</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Eventos acadêmicos" loading="lazy"><figcaption>Eventos acadêmicos</figcaption></figure>
-          <figure class="photo-slide"><img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Ensino e divulgação científica" loading="lazy"><figcaption>Ensino e divulgação científica</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/fL4m8BZY/Whats-App-Image-2026-08-22-at-9-19-59-AM.jpg" alt="Trabalho de campo" loading="lazy"><figcaption>Trabalho de campo</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/Z5bSdSdv/drone.jpg" alt="Geoprocessamento" loading="lazy"><figcaption>Geoprocessamento</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/LshFx3vh/fsd2024.jpg" alt="Eventos internacionais" loading="lazy"><figcaption>Eventos internacionais</figcaption></figure>
+          <figure class="photo-slide"><img src="https://i.postimg.cc/fycGV2WG/oficinars.jpg" alt="Eventos nacionais" loading="lazy"><figcaption>Eventos nacionais</figcaption></figure>
           <figure class="photo-slide"><img src="https://i.postimg.cc/VkLxNWxh/uofu.jpg" alt="Experiência acadêmica internacional" loading="lazy"><figcaption>Experiência acadêmica internacional</figcaption></figure>
         </div>
       </div>
