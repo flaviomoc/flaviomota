@@ -308,10 +308,27 @@
           </p>
         </div>
         <div class="facts">
-          <div class="fact"><strong>14</strong><span><span class="lang-pt">artigos em periódicos</span><span class="lang-en">peer-reviewed articles</span></span></div>
-          <div class="fact"><strong>1</strong><span><span class="lang-pt">artigo aceito para publicação</span><span class="lang-en">article accepted for publication</span></span></div>
-          <div class="fact"><strong>3</strong><span><span class="lang-pt">projetos de software em R/espacial</span><span class="lang-en">open-source R/spatial packages</span></span></div>
-          <div class="fact"><strong>119</strong><span><span class="lang-pt">citações no Web of Science</span><span class="lang-en">Web of Science citations</span></span></div>
+          <div class="fact">
+            <strong id="metric-articles">14</strong>
+            <span><span class="lang-pt">artigos em periódicos</span><span class="lang-en">peer-reviewed articles</span></span>
+          </div>
+          <div class="fact">
+            <strong id="metric-citations">151</strong>
+            <span><span class="lang-pt">citações acadêmicas</span><span class="lang-en">academic citations</span></span>
+          </div>
+          <div class="fact">
+            <strong id="metric-hindex">7</strong>
+            <span><span class="lang-pt">índice h (h-index)</span><span class="lang-en">h-index</span></span>
+          </div>
+          <div class="fact">
+            <strong id="metric-packages">3</strong>
+            <span><span class="lang-pt">projetos de software em R/espacial</span><span class="lang-en">open-source R/spatial packages</span></span>
+          </div>
+        </div>
+        <div class="facts-status" id="facts-status" style="margin-top:14px;font-size:0.86rem;color:var(--muted);display:inline-flex;align-items:center;gap:7px;background:#edf3f0;padding:4px 10px;border-radius:999px">
+          <span class="status-dot" style="width:7px;height:7px;border-radius:50%;background:#2d6a57;display:inline-block"></span>
+          <span class="lang-pt">Métricas atualizadas dinamicamente via OpenAlex / ORCID</span>
+          <span class="lang-en">Metrics dynamically synced via OpenAlex / ORCID</span>
         </div>
       </div>
       <div class="about-right">
@@ -703,7 +720,7 @@
         <a class="tool" href="https://flaviomoc.github.io/divraster" target="_blank" rel="noopener">
           <div class="tool-header">
             <div class="tool-icon">R</div>
-            <span class="tool-badge">CRAN / GitHub</span>
+            <span class="tool-badge" id="stars-divraster">CRAN · ★ 13</span>
           </div>
           <h3>divraster</h3>
           <p>
@@ -718,7 +735,7 @@
         <a class="tool" href="https://gabferreira.github.io/phyloraster" target="_blank" rel="noopener">
           <div class="tool-header">
             <div class="tool-icon">R</div>
-            <span class="tool-badge">CRAN / GitHub</span>
+            <span class="tool-badge" id="stars-phyloraster">CRAN · ★ 10</span>
           </div>
           <h3>phyloraster</h3>
           <p>
@@ -733,7 +750,7 @@
         <a class="tool" href="https://hemingnm.github.io/SESraster" target="_blank" rel="noopener">
           <div class="tool-header">
             <div class="tool-icon">R</div>
-            <span class="tool-badge">CRAN / GitHub</span>
+            <span class="tool-badge" id="stars-sesraster">CRAN · ★ 8</span>
           </div>
           <h3>SESraster</h3>
           <p>
@@ -945,6 +962,97 @@
       }
     } catch (e) {}
   })();
+
+  // Dynamic Academic Metrics via OpenAlex & GitHub
+  async function updateDynamicMetrics() {
+    // 1. Fetch live metrics from OpenAlex (ORCID)
+    try {
+      const authorRes = await fetch('https://api.openalex.org/authors/https://orcid.org/0000-0002-0308-7151?mailto=flaviomoc@gmail.com');
+      if (authorRes.ok) {
+        const authorData = await authorRes.json();
+
+        // Total citations
+        const citationsEl = document.getElementById('metric-citations');
+        if (citationsEl && typeof authorData.cited_by_count === 'number') {
+          const currentVal = parseInt(citationsEl.textContent.replace(/\D/g, '')) || 119;
+          animateCount(citationsEl, currentVal, authorData.cited_by_count);
+        }
+
+        // H-index
+        const hIndexEl = document.getElementById('metric-hindex');
+        if (hIndexEl && authorData.summary_stats && typeof authorData.summary_stats.h_index === 'number') {
+          const currentVal = parseInt(hIndexEl.textContent.replace(/\D/g, '')) || 7;
+          animateCount(hIndexEl, currentVal, authorData.summary_stats.h_index);
+        }
+
+        // Works query for journal articles
+        const worksRes = await fetch('https://api.openalex.org/works?filter=author.orcid:https://orcid.org/0000-0002-0308-7151,type:article&mailto=flaviomoc@gmail.com');
+        if (worksRes.ok) {
+          const worksData = await worksRes.json();
+          const articlesEl = document.getElementById('metric-articles');
+          if (articlesEl && worksData.meta && typeof worksData.meta.count === 'number') {
+            const currentVal = parseInt(articlesEl.textContent.replace(/\D/g, '')) || 14;
+            const updatedVal = Math.max(14, worksData.meta.count);
+            animateCount(articlesEl, currentVal, updatedVal);
+          }
+        }
+      }
+    } catch (err) {
+      // Graceful fallback: default values in HTML remain visible
+    }
+
+    // 2. Fetch live GitHub Stars for R packages
+    const packageRepos = [
+      { id: 'stars-divraster', repo: 'flaviomoc/divraster' },
+      { id: 'stars-phyloraster', repo: 'gabferreira/phyloraster' },
+      { id: 'stars-sesraster', repo: 'hemingnm/SESraster' }
+    ];
+
+    packageRepos.forEach(async ({ id, repo }) => {
+      try {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const res = await fetch(`https://api.github.com/repos/${repo}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (typeof data.stargazers_count === 'number') {
+            el.textContent = `CRAN · ★ ${data.stargazers_count}`;
+          }
+        }
+      } catch (err) {
+        // Keep default badge
+      }
+    });
+  }
+
+  // Smooth number counter animation
+  function animateCount(el, start, end, duration = 800) {
+    if (start === end) {
+      el.textContent = end;
+      return;
+    }
+    const startTime = performance.now();
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(start + (end - start) * ease);
+      el.textContent = current;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = end;
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Auto-run dynamic metrics
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateDynamicMetrics);
+  } else {
+    updateDynamicMetrics();
+  }
 </script>
 </body>
 </html>
