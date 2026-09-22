@@ -228,11 +228,51 @@
     .fig-slide-card:hover .fig-link{color:var(--leaf-dark)}
     .fig-slide-card:hover .fig-link svg{transform:translate(2px,-2px)}
 
+    .time-subbadge{display:inline-flex;align-items:center;gap:6px;background:#eef6f2;color:var(--leaf-dark);border:1px solid #c7ded3;font-size:.9rem;font-weight:600;padding:4px 12px;border-radius:8px;margin-top:8px}
+
+    /* Complementary training & Volunteering */
+    .section-subhead{margin-top:44px;padding-top:36px;border-top:1px solid var(--line);margin-bottom:24px}
+    .section-subhead h3{font-size:1.4rem;margin:0 0 6px;color:var(--ink);font-family:var(--font-serif)}
+    .section-subhead p{color:var(--muted);font-size:1.02rem;margin:0}
+
+    .training-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+    .training-card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.03)}
+    .training-card:hover{transform:translateY(-3px);border-color:var(--leaf);box-shadow:0 10px 24px rgba(45,106,87,.08)}
+    .training-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .training-year{font-size:.92rem;font-weight:700;color:var(--leaf);font-family:var(--font-serif)}
+    .training-hours{font-size:.82rem;font-weight:700;background:var(--mint);color:var(--leaf-dark);padding:3px 9px;border-radius:999px}
+    .training-card h4{font-size:1.05rem;margin:0 0 8px;line-height:1.42;color:var(--ink)}
+    .training-inst{font-size:.92rem;color:var(--muted);margin-top:auto;display:flex;align-items:center;gap:6px}
+
+    .vol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .vol-card{background:white;border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;box-shadow:0 2px 6px rgba(24,51,45,.03)}
+    .vol-card:hover{transform:translateY(-3px);border-color:var(--leaf);box-shadow:0 10px 24px rgba(45,106,87,.08)}
+    .vol-badge{display:inline-flex;align-items:center;gap:6px;background:#eef5f1;color:var(--leaf);font-size:.82rem;font-weight:700;padding:4px 10px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;width:fit-content}
+    .vol-card h4{font-size:1.16rem;margin:0 0 8px;line-height:1.4;color:var(--ink)}
+    .vol-meta{font-size:.94rem;color:var(--leaf);font-weight:600;margin-bottom:10px}
+    .vol-card p{font-size:1rem;color:var(--muted);line-height:1.55;margin:0}
+
+    /* Book showcase card */
+    .book-showcase{background:linear-gradient(135deg, #fbfdfc 0%, #f1f7f4 100%);border:2px solid #bad8cb;border-radius:24px;padding:28px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;box-shadow:0 6px 20px rgba(45,106,87,.07);transition:all .25s ease;position:relative;overflow:hidden}
+    .book-showcase:hover{transform:translateY(-3px);border-color:var(--leaf);box-shadow:0 14px 34px rgba(45,106,87,.12)}
+    .book-showcase:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--leaf),var(--accent),var(--leaf))}
+    .book-icon-col{width:88px;height:114px;background:linear-gradient(135deg,#235344 0%,#2d6a57 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 8px 18px rgba(45,106,87,.25);flex-shrink:0;position:relative;border:1px solid rgba(255,255,255,.2)}
+    .book-icon-col svg{width:40px;height:40px;fill:currentColor}
+    .book-spine{position:absolute;left:5px;top:0;bottom:0;width:3px;background:rgba(255,255,255,.3)}
+    .book-content h3{font-size:1.32rem;margin:6px 0 10px;line-height:1.4}
+    .book-content h3 a{color:var(--ink);text-decoration:none;transition:color .2s}
+    .book-showcase:hover h3 a{color:var(--leaf)}
+    .book-authors{font-size:.98rem;color:var(--muted);margin-bottom:10px;line-height:1.5}
+    .book-footer{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+
     .back-to-top-wrap{display:flex;justify-content:center;margin-top:34px}
     .back-to-top-wrap .btn{background:white;color:var(--leaf-dark);border:1px solid var(--line);box-shadow:0 2px 8px rgba(24,51,45,.04);display:inline-flex;align-items:center;gap:8px;padding:13px 28px;font-weight:600;font-size:1.02rem;transition:all .2s ease}
     .back-to-top-wrap .btn:hover{background:var(--mint);border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px);box-shadow:0 8px 18px rgba(45,106,87,.14)}
 
     @media(max-width:850px){
+      .vol-grid{grid-template-columns:1fr}
+      .book-showcase{grid-template-columns:1fr}
+      .book-icon-col{width:70px;height:90px;margin:0 auto}
       .photo-slide{width:320px;min-width:320px;max-width:320px;height:230px}
       .fig-slide-card{width:360px;min-width:360px;max-width:360px}
       .fig-slide-img{height:230px}
@@ -486,13 +526,170 @@
         </div>
         <div class="time">
           <div class="year">2020 — 2024</div>
-          <h3><span class="lang-pt">Doutorado em Ecologia e Conservação da Biodiversidade · UESC</span><span class="lang-en">Ph.D. in Ecology and Biodiversity Conservation · UESC</span><span class="lang-es">Doctorado en Ecología y Conservación de la Biodiversidad · UESC</span></h3>
+          <h3><span class="lang-pt">Doutorado em Ecologia e Conservação da Biodiversidade · Universidade Estadual de Santa Cruz (UESC)</span><span class="lang-en">Ph.D. in Ecology and Biodiversity Conservation · State University of Santa Cruz (UESC)</span><span class="lang-es">Doctorado en Ecología y Conservación de la Biodiversidad · Universidad Estadual de Santa Cruz (UESC)</span></h3>
           <p><span class="lang-pt">Avaliação do impacto das mudanças climáticas sobre aves da Mata Atlântica.</span><span class="lang-en">Assessment of climate change impacts on Atlantic Forest bird diversity.</span><span class="lang-es">Evaluación del impacto del cambio climático sobre las aves del Bosque Atlántico.</span></p>
+          <div class="time-subbadge">
+            <span class="lang-pt">🏛️ Período no exterior: Universidade de Utah (University of Utah), EUA (2024 — 2025)</span>
+            <span class="lang-en">🏛️ Period abroad: University of Utah, USA (2024 — 2025)</span>
+            <span class="lang-es">🏛️ Estancia en el extranjero: University of Utah, EE. UU. (2024 — 2025)</span>
+          </div>
         </div>
         <div class="time">
           <div class="year">2015 — 2017</div>
-          <h3><span class="lang-pt">Mestrado em Biodiversidade e Uso dos Recursos Naturais · UNIMONTES</span><span class="lang-en">M.Sc. in Biodiversity and Natural Resource Use · UNIMONTES</span><span class="lang-es">Maestría en Biodiversidad y Uso de los Recursos Naturales · UNIMONTES</span></h3>
-          <p><span class="lang-pt">Avaliação da fragmentação e perda de habitat para o macaco-prego-de-crista.</span><span class="lang-en">Assessment of habitat fragmentation and habitat loss for the crested capuchin monkey.</span><span class="lang-es">Evaluación de la fragmentación y pérdida de hábitat para el capuchino crestado (<em>Sapajus robustus</em>).</span></p>
+          <h3><span class="lang-pt">Mestrado em Biodiversidade e Uso dos Recursos Naturais · Universidade Estadual de Montes Claros (UNIMONTES)</span><span class="lang-en">M.Sc. in Biodiversity and Natural Resource Use · State University of Montes Claros (UNIMONTES)</span><span class="lang-es">Maestría en Biodiversidad y Uso de los Recursos Naturales · Universidad Estadual de Montes Claros (UNIMONTES)</span></h3>
+          <p><span class="lang-pt">Avaliação da fragmentação e perda de habitat para o macaco-prego-de-crista (<em>Sapajus robustus</em>).</span><span class="lang-en">Assessment of habitat fragmentation and habitat loss for the crested capuchin monkey (<em>Sapajus robustus</em>).</span><span class="lang-es">Evaluación de la fragmentación y pérdida de hábitat para el capuchino crestado (<em>Sapajus robustus</em>).</span></p>
+        </div>
+        <div class="time">
+          <div class="year">2010 — 2015</div>
+          <h3><span class="lang-pt">Graduação em Ciências Biológicas · Universidade Estadual de Montes Claros (UNIMONTES)</span><span class="lang-en">B.Sc. in Biological Sciences · State University of Montes Claros (UNIMONTES)</span><span class="lang-es">Licenciatura en Ciencias Biológicas · Universidad Estadual de Montes Claros (UNIMONTES)</span></h3>
+          <p><span class="lang-pt">Formação em Ciências Biológicas com ênfase em ecologia, conservação, zoologia e biodiversidade.</span><span class="lang-en">Undergraduate degree in Biological Sciences with emphasis on ecology, conservation, zoology, and biodiversity.</span><span class="lang-es">Grado en Ciencias Biológicas con énfasis en ecología, conservación, zoología y biodiversidad.</span></p>
+          <div class="time-subbadge">
+            <span class="lang-pt">🍁 Período no exterior: Universidade de Alberta (University of Alberta), Canadá (2012 — 2013)</span>
+            <span class="lang-en">🍁 Period abroad: University of Alberta, Canada (2012 — 2013)</span>
+            <span class="lang-es">🍁 Estancia académica en el extranjero: University of Alberta, Canadá (2012 — 2013)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formação Complementar -->
+      <div class="section-subhead">
+        <div class="eyebrow"><span class="lang-pt">Capacitação contínua</span><span class="lang-en">Continuous Training</span><span class="lang-es">Capacitación continua</span></div>
+        <h3><span class="lang-pt">Formação complementar</span><span class="lang-en">Complementary Training</span><span class="lang-es">Formación complementaria</span></h3>
+        <p><span class="lang-pt">Cursos de aperfeiçoamento, extensão, modelagem de dados e geotecnologias aplicadas.</span><span class="lang-en">Advanced short courses, data science training, extension programs, and geotechnologies.</span><span class="lang-es">Cursos de perfeccionamiento, extensión universitaria, análisis de datos y geotecnologías aplicadas.</span></p>
+      </div>
+
+      <div class="training-grid">
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2025</span>
+            <span class="training-hours">20h</span>
+          </div>
+          <h4><span class="lang-pt">Análise de Dados em Linguagem R</span><span class="lang-en">Data Analysis in R Language</span><span class="lang-es">Análisis de Datos en Lenguaje R</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>Escola Nacional de Administração Pública (ENAP), Brasil</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2025</span>
+            <span class="training-hours">20h</span>
+          </div>
+          <h4><span class="lang-pt">Operação de VANT/VTOL Trinity Pro com Câmera Multiespectral</span><span class="lang-en">UAV/VTOL Trinity Pro Operation with Multispectral Camera</span><span class="lang-es">Operación de VANT/VTOL Trinity Pro con Cámara Multiespectral</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>Tecnosat, TECNOSAT, Brasil</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2025</span>
+            <span class="training-hours">8h</span>
+          </div>
+          <h4><span class="lang-pt">Modelagem de Dados</span><span class="lang-en">Data Modeling</span><span class="lang-es">Modelado de Datos</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>Fundação Bradesco, BRADESCO, Brasil</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2025</span>
+            <span class="training-hours">7h</span>
+          </div>
+          <h4><span class="lang-pt">Abelhas Sem Ferrão: Biodiversidade e Sustentabilidade</span><span class="lang-en">Stingless Bees: Biodiversity & Sustainability</span><span class="lang-es">Abejas sin Aguijón: Biodiversidad y Sostenibilidad</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>Universidade Estadual de Montes Claros (UNIMONTES), Brasil</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2024</span>
+            <span class="training-hours">16h</span>
+          </div>
+          <h4><span class="lang-pt">Extensão Universitária em Avaliação Ecológica Rápida em Bacias Hidrográficas</span><span class="lang-en">Rapid Ecological Assessment in Watersheds (Extension Course)</span><span class="lang-es">Extensión Universitaria en Evaluación Ecológica Rápida en Cuencas Hidrográficas</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>Universidade Federal de Minas Gerais (UFMG), Brasil</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2023</span>
+            <span class="training-hours">18h</span>
+          </div>
+          <h4><span class="lang-pt">Climate Change</span><span class="lang-en">Climate Change</span><span class="lang-es">Cambio Climático</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>The Open University, OPEN, Inglaterra</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2023</span>
+            <span class="training-hours">12h</span>
+          </div>
+          <h4><span class="lang-pt">Curso Online Introdutório sobre Mudança Climática</span><span class="lang-en">Introductory Course on Climate Change</span><span class="lang-es">Curso Virtual Introductorio sobre Cambio Climático</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>UNESCO (Organização das Nações Unidas), Brasil</span>
+          </div>
+        </div>
+
+        <div class="training-card">
+          <div class="training-header">
+            <span class="training-year">2022</span>
+            <span class="training-hours">25h</span>
+          </div>
+          <h4><span class="lang-pt">Extensão Universitária em Meliponicultura e Ciência Cidadã</span><span class="lang-en">Meliponiculture and Citizen Science (Extension Course)</span><span class="lang-es">Extensión Universitaria en Meliponicultura y Ciencia Ciudadana</span></h4>
+          <div class="training-inst">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13.54L4.82 12 3 12.82l9 4.09 9-4.09-1.82-.82L12 15.54z"/></svg>
+            <span>Universidade de São Paulo (USP), Brasil</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Atuação em Eventos & Voluntariado -->
+      <div class="section-subhead">
+        <div class="eyebrow"><span class="lang-pt">Engajamento comunitário</span><span class="lang-en">Community Engagement</span><span class="lang-es">Compromiso comunitario</span></div>
+        <h3><span class="lang-pt">Voluntariado em eventos científicos</span><span class="lang-en">Scientific Volunteering & Events</span><span class="lang-es">Voluntariado en eventos científicos</span></h3>
+        <p><span class="lang-pt">Contribuição voluntária e apoio na organização de congressos e cúpulas socioambientais.</span><span class="lang-en">Voluntary service and organizational support at international symposia and climate summits.</span><span class="lang-es">Contribución voluntaria y apoyo organizativo en simposios internacionales y cumbres climáticas.</span></p>
+      </div>
+
+      <div class="vol-grid">
+        <div class="vol-card">
+          <span class="vol-badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span class="lang-pt">Voluntariado</span><span class="lang-en">Volunteering</span><span class="lang-es">Voluntariado</span>
+          </span>
+          <h4><span class="lang-pt">Simpósio de Frugivoria e Dispersão de Sementes (FSD)</span><span class="lang-en">Frugivory and Seed Dispersal Symposium (FSD)</span><span class="lang-es">Simposio de Frugivoría y Dispersión de Semillas (FSD)</span></h4>
+          <div class="vol-meta">4 a 8 de agosto de 2024 · Ilhéus, Bahia, Brasil</div>
+          <p>
+            <span class="lang-pt">Atuação como voluntário durante a realização do simpósio internacional, prestando suporte operacional, recepção de pesquisadores e assistência às sessões técnicas de apresentações sobre ecologia e dispersão de sementes.</span>
+            <span class="lang-en">Served as a volunteer during this international scientific symposium, providing operational support, welcoming international delegates, and assisting sessions on plant-animal ecological interactions.</span>
+            <span class="lang-es">Participación como voluntario durante el simposio científico internacional, brindando soporte operativo, recepción de investigadores y asistencia en sesiones técnicas sobre ecología y dispersión de semillas.</span>
+          </p>
+        </div>
+
+        <div class="vol-card">
+          <span class="vol-badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span class="lang-pt">Voluntariado</span><span class="lang-en">Volunteering</span><span class="lang-es">Voluntariado</span>
+          </span>
+          <h4><span class="lang-pt">Cúpula Global da Juventude sobre o Clima</span><span class="lang-en">Global Youth Climate Summit</span><span class="lang-es">Cumbre Global de la Juventud sobre el Clima</span></h4>
+          <div class="vol-meta">2 a 5 de abril de 2025 · Belo Horizonte, Minas Gerais, Brasil</div>
+          <p>
+            <span class="lang-pt">Atuação voluntária no apoio às atividades da cúpula, engajando jovens líderes, pesquisadores e gestores ambientais em debates sobre ação climática, mitigação e conservação.</span>
+            <span class="lang-en">Volunteered in supporting summit operations, engaging youth leaders, researchers, and environmental policy practitioners in dialogues on climate action, mitigation, and sustainability.</span>
+            <span class="lang-es">Actuación voluntaria en apoyo a las actividades de la cumbre, facilitando el diálogo entre jóvenes líderes, investigadores y gestores ambientales sobre acción climática, mitigación y conservación.</span>
+          </p>
         </div>
       </div>
     </div>
@@ -546,6 +743,49 @@
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
           </a>
           <span class="doi-pill" id="spotlight-doi">10.1111/jen.70102</span>
+        </div>
+      </article>
+
+      <!-- Livro Publicado / Published Book -->
+      <article class="book-showcase">
+        <div class="book-icon-col" aria-hidden="true">
+          <div class="book-spine"></div>
+          <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h12c1.2 0 2-.8 2-2V4c0-1.2-.8-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+          <span style="font-size:0.75rem;font-weight:700;margin-top:4px;letter-spacing:0.04em">LIVRO</span>
+        </div>
+        <div class="book-content">
+          <div class="tagrow" style="margin-bottom:8px">
+            <span class="tag" style="background:var(--mint);color:var(--leaf-dark);font-weight:700">
+              <span class="lang-pt">Livro Publicado</span><span class="lang-en">Published Book</span><span class="lang-es">Libro Publicado</span>
+            </span>
+            <span class="tag">
+              <span class="lang-pt">Acesso Aberto (Open Access)</span><span class="lang-en">Open Access</span><span class="lang-es">Acceso Abierto</span>
+            </span>
+            <span class="tag">2024 · 113 p.</span>
+            <span class="tag">Stricto Sensu Editora</span>
+          </div>
+          <h3>
+            <a href="https://sseditora.com.br/wp-content/uploads/Aves-da-Serra-Bonita.pdf" target="_blank" rel="noopener">
+              Aves da Serra Bonita, Camacã, Sul da Bahia
+            </a>
+          </h3>
+          <p class="book-authors">
+            <strong><span class="lang-pt">Autores:</span><span class="lang-en">Authors:</span><span class="lang-es">Autores:</span></strong> Carvalho, D. F.; Nascimento, F. L.; Mota, F. M. M.; Ovalle, J. M. R.; Souza, M. S.; Morante-Filho, J. C.
+          </p>
+          <p style="font-size:1.02rem;color:var(--muted);line-height:1.55;margin:0 0 10px">
+            <span class="lang-pt">Obra que reúne levantamento de espécies e guia ilustrado das aves registradas no Complexo da Serra Bonita em Camacã, sul da Bahia — uma das áreas de maior relevância biológica e endemismo da Mata Atlântica. 1. ed. Rio Branco: Stricto Sensu, 2024. v. 1. 113p.</span>
+            <span class="lang-en">Comprehensive inventory and photographic natural history guide of bird species in the Serra Bonita Complex, southern Bahia — one of the key biodiversity and endemism hotspots in the Brazilian Atlantic Forest. 1st ed. Rio Branco: Stricto Sensu, 2024. v. 1. 113p.</span>
+            <span class="lang-es">Obra que reúne el inventario y guía ilustrada de las aves registradas en el Complejo de la Serra Bonita en Camacã, sur de Bahía — una de las áreas de mayor relevancia biológica y endemismo del Bosque Atlántico. 1. ed. Rio Branco: Stricto Sensu, 2024. v. 1. 113p.</span>
+          </p>
+          <div class="book-footer">
+            <a class="btn primary" href="https://sseditora.com.br/wp-content/uploads/Aves-da-Serra-Bonita.pdf" target="_blank" rel="noopener" style="padding:10px 22px;font-size:0.96rem;gap:8px;display:inline-flex;align-items:center">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              <span><span class="lang-pt">Baixar livro em PDF (Gratuito)</span><span class="lang-en">Download full book (PDF)</span><span class="lang-es">Descargar libro en PDF (Gratis)</span></span>
+            </a>
+            <span style="font-size:0.9rem;color:var(--muted);font-weight:600">
+              Rio Branco: Stricto Sensu (2024) · 113p.
+            </span>
+          </div>
         </div>
       </article>
 
