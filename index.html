@@ -129,6 +129,8 @@
     .pub h3 a{color:var(--ink);text-decoration:none;transition:color .2s ease}
     .pub:hover h3 a{color:var(--leaf)}
     .pub .authors{margin:0 0 14px;color:var(--muted);font-size:1.02rem;line-height:1.55}
+    .author-highlight{font-weight:700;color:var(--leaf-dark);text-decoration:underline;text-decoration-color:rgba(45,106,87,.45);text-underline-offset:3px}
+    .pub.pub-book{border-left:3px solid var(--leaf)}
     .pub-footer{margin-top:auto;padding-top:18px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
     .pub-link{display:inline-flex;align-items:center;gap:6px;font-size:1.02rem;font-weight:700;color:var(--leaf);text-decoration:none;transition:all .2s ease}
     .pub-link svg{width:15px;height:15px;fill:currentColor;flex-shrink:0;transition:transform .2s ease}
@@ -524,9 +526,9 @@
           <h3><span class="lang-pt">Doutorado em Ecologia e Conservação da Biodiversidade · Universidade Estadual de Santa Cruz (UESC)</span><span class="lang-en">Ph.D. in Ecology and Biodiversity Conservation · State University of Santa Cruz (UESC)</span><span class="lang-es">Doctorado en Ecología y Conservación de la Biodiversidad · Universidad Estadual de Santa Cruz (UESC)</span></h3>
           <p><span class="lang-pt">Avaliação do impacto das mudanças climáticas sobre aves da Mata Atlântica.</span><span class="lang-en">Assessment of climate change impacts on Atlantic Forest bird diversity.</span><span class="lang-es">Evaluación del impacto del cambio climático sobre las aves del Bosque Atlántico.</span></p>
           <div class="time-subbadge">
-            <span class="lang-pt">🏛️ Período no exterior: Universidade de Utah (University of Utah), EUA (2024 — 2025)</span>
-            <span class="lang-en">🏛️ Period abroad: University of Utah, USA (2024 — 2025)</span>
-            <span class="lang-es">🏛️ Estancia en el extranjero: University of Utah, EE. UU. (2024 — 2025)</span>
+            <span class="lang-pt">🏛️ Período no exterior: Universidade de Utah (University of Utah), EUA (2023 — 2024)</span>
+            <span class="lang-en">🏛️ Period abroad: University of Utah, USA (2023 — 2024)</span>
+            <span class="lang-es">🏛️ Estancia en el extranjero: University of Utah, EE. UU. (2023 — 2024)</span>
           </div>
         </div>
         <div class="time">
@@ -720,7 +722,7 @@
             Projected Climate-Suitable Area for <em>Apis mellifera</em> (Apidae) and Its Spatial Overlap With a Mining Tailings Footprint in South-East Brazil
           </a>
         </h3>
-        <p class="authors" id="spotlight-authors">Mota, F. M. M., Lima‐Santos, D., Kenedy‐Siqueira, W., et al.</p>
+        <p class="authors" id="spotlight-authors"><strong class="author-highlight">Mota, F. M. M.</strong>, Lima‐Santos, D., Kenedy‐Siqueira, W., Vieira, K. I. C., Fernandes, G. W.</p>
         <div class="pub-metrics" id="spotlight-metrics">
           <span class="metric-pill citation-pill" title="Citações acadêmicas">
             <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
@@ -741,54 +743,11 @@
         </div>
       </article>
 
-      <!-- Livro Publicado / Published Book -->
-      <article class="book-showcase">
-        <div class="book-icon-col" aria-hidden="true">
-          <div class="book-spine"></div>
-          <svg viewBox="0 0 24 24"><path d="M18 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h12c1.2 0 2-.8 2-2V4c0-1.2-.8-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
-          <span style="font-size:0.75rem;font-weight:700;margin-top:4px;letter-spacing:0.04em">LIVRO</span>
-        </div>
-        <div class="book-content">
-          <div class="tagrow" style="margin-bottom:8px">
-            <span class="tag" style="background:var(--mint);color:var(--leaf-dark);font-weight:700">
-              <span class="lang-pt">Livro Publicado</span><span class="lang-en">Published Book</span><span class="lang-es">Libro Publicado</span>
-            </span>
-            <span class="tag">
-              <span class="lang-pt">Acesso Aberto (Open Access)</span><span class="lang-en">Open Access</span><span class="lang-es">Acceso Abierto</span>
-            </span>
-            <span class="tag">2024 · 113 p.</span>
-            <span class="tag">Stricto Sensu Editora</span>
-          </div>
-          <h3>
-            <a href="https://sseditora.com.br/wp-content/uploads/Aves-da-Serra-Bonita.pdf" target="_blank" rel="noopener">
-              Aves da Serra Bonita, Camacã, Sul da Bahia
-            </a>
-          </h3>
-          <p class="book-authors">
-            <strong><span class="lang-pt">Autores:</span><span class="lang-en">Authors:</span><span class="lang-es">Autores:</span></strong> Carvalho, D. F.; Nascimento, F. L.; Mota, F. M. M.; Ovalle, J. M. R.; Souza, M. S.; Morante-Filho, J. C.
-          </p>
-          <p style="font-size:1.02rem;color:var(--muted);line-height:1.55;margin:0 0 10px">
-            <span class="lang-pt">Obra que reúne levantamento de espécies e guia ilustrado das aves registradas no Complexo da Serra Bonita em Camacã, sul da Bahia — uma das áreas de maior relevância biológica e endemismo da Mata Atlântica. 1. ed. Rio Branco: Stricto Sensu, 2024. v. 1. 113p.</span>
-            <span class="lang-en">Comprehensive inventory and photographic natural history guide of bird species in the Serra Bonita Complex, southern Bahia — one of the key biodiversity and endemism hotspots in the Brazilian Atlantic Forest. 1st ed. Rio Branco: Stricto Sensu, 2024. v. 1. 113p.</span>
-            <span class="lang-es">Obra que reúne el inventario y guía ilustrada de las aves registradas en el Complejo de la Serra Bonita en Camacã, sur de Bahía — una de las áreas de mayor relevancia biológica y endemismo del Bosque Atlántico. 1. ed. Rio Branco: Stricto Sensu, 2024. v. 1. 113p.</span>
-          </p>
-          <div class="book-footer">
-            <a class="btn primary" href="https://sseditora.com.br/wp-content/uploads/Aves-da-Serra-Bonita.pdf" target="_blank" rel="noopener" style="padding:10px 22px;font-size:0.96rem;gap:8px;display:inline-flex;align-items:center">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-              <span><span class="lang-pt">Baixar livro em PDF (Gratuito)</span><span class="lang-en">Download full book (PDF)</span><span class="lang-es">Descargar libro en PDF (Gratis)</span></span>
-            </a>
-            <span style="font-size:0.9rem;color:var(--muted);font-weight:600">
-              Rio Branco: Stricto Sensu (2024) · 113p.
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <div class="pubs">
+      <div class="pubs" id="pubs-container">
         <article class="pub">
           <div class="meta">2025 · Diversity and Distributions</div>
           <h3><a href="https://doi.org/10.1111/ddi.70129" target="_blank" rel="noopener">Impact of Climate Change on the Multiple Facets of Forest Bird Diversity in a Biodiversity Hotspot Within the Atlantic Forest</a></h3>
-          <p class="authors">Mota, F. M. M., Morante‐Filho, J. C., Davies, R. G., et al.</p>
+          <p class="authors"><strong class="author-highlight">Mota, F. M. M.</strong>, Morante‐Filho, J. C., Davies, R. G., Şekercioğlu, Ç. H., Heming, N. M., Talora, D. C.</p>
           <div class="tagrow">
             <span class="tag"><span class="lang-pt">Mudanças climáticas</span><span class="lang-en">Climate change</span><span class="lang-es">Cambio climático</span></span>
             <span class="tag"><span class="lang-pt">Aves florestais</span><span class="lang-en">Forest birds</span><span class="lang-es">Aves de bosque</span></span>
@@ -812,39 +771,61 @@
         </article>
 
         <article class="pub">
-          <div class="meta">2026 · Journal of Applied Entomology</div>
-          <h3><a href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener">Projected Climate-Suitable Area for <i>Apis mellifera</i> (Apidae) and Its Spatial Overlap With a Mining Tailings Footprint in South-East Brazil</a></h3>
-          <p class="authors">Mota, F. M. M., Lima‐Santos, D., Kenedy‐Siqueira, W., et al.</p>
+          <div class="meta">2025 · Diversity and Distributions</div>
+          <h3><a href="https://doi.org/10.1111/ddi.70026" target="_blank" rel="noopener">From Hot to Cold Spots: Climate Change is Projected to Modify Diversity Patterns of Small Mammals in a Biodiversity Hotspot</a></h3>
+          <p class="authors">Alves‐Ferreira, G., et al.</p>
           <div class="tagrow">
-            <span class="tag">Apis mellifera</span>
-            <span class="tag"><span class="lang-pt">Rejeitos de mineração</span><span class="lang-en">Mining tailings</span><span class="lang-es">Residuos mineros</span></span>
-            <span class="tag"><span class="lang-pt">Bacia do Rio Doce</span><span class="lang-en">Doce River basin</span><span class="lang-es">Cuenca del Río Doce</span></span>
-            <span class="tag">SDM</span>
+            <span class="tag"><span class="lang-pt">Pequenos mamíferos</span><span class="lang-en">Small mammals</span><span class="lang-es">Pequeños mamíferos</span></span>
+            <span class="tag"><span class="lang-pt">Mudanças climáticas</span><span class="lang-en">Climate change</span><span class="lang-es">Cambio climático</span></span>
+            <span class="tag"><span class="lang-pt">Mata Atlântica</span><span class="lang-en">Atlantic Forest</span><span class="lang-es">Bosque Atlántico</span></span>
+            <span class="tag"><span class="lang-pt">Filogenética</span><span class="lang-en">Phylogenetics</span><span class="lang-es">Filogenética</span></span>
           </div>
           <div class="pub-metrics">
             <span class="metric-pill citation-pill" title="Citações acadêmicas">
               <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-              <strong class="metric-num" data-doi-citations="10.1111/jen.70102">3</strong>
+              <strong class="metric-num" data-doi-citations="10.1111/ddi.70026">3</strong>
               <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span><span class="lang-es">citas</span></span>
-            </span>
-            <span class="metric-pill" title="Status da publicação">
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span class="metric-label"><span class="lang-pt">Artigo recente</span><span class="lang-en">Recent article</span><span class="lang-es">Artículo reciente</span></span>
             </span>
           </div>
           <div class="pub-footer">
-            <a class="pub-link" href="https://doi.org/10.1111/jen.70102" target="_blank" rel="noopener">
+            <a class="pub-link" href="https://doi.org/10.1111/ddi.70026" target="_blank" rel="noopener">
               <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span><span class="lang-es">Acceder al artículo en la revista</span></span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
             </a>
-            <span class="doi-pill">10.1111/jen.70102</span>
+            <span class="doi-pill">10.1111/ddi.70026</span>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="meta">2024 · Frontiers in Conservation Science</div>
+          <h3><a href="https://doi.org/10.3389/fcosc.2024.1412440" target="_blank" rel="noopener">Climate-driven distributional shifts in Chocó endemic birds of southwest Colombia</a></h3>
+          <p class="authors"><strong class="author-highlight">Mota, F. M. M.</strong>, Kittelberger, K. D., Flórez‐Paí, C., Şekercioğlu, Ç. H.</p>
+          <div class="tagrow">
+            <span class="tag"><span class="lang-pt">Aves do Chocó</span><span class="lang-en">Chocó birds</span><span class="lang-es">Aves del Chocó</span></span>
+            <span class="tag"><span class="lang-pt">Endemismo</span><span class="lang-en">Endemism</span><span class="lang-es">Endemismo</span></span>
+            <span class="tag"><span class="lang-pt">Mudanças climáticas</span><span class="lang-en">Climate change</span><span class="lang-es">Cambio climático</span></span>
+            <span class="tag"><span class="lang-pt">Colômbia</span><span class="lang-en">Colombia</span><span class="lang-es">Colombia</span></span>
+          </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.3389/fcosc.2024.1412440">3</strong>
+              <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span><span class="lang-es">citas</span></span>
+            </span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.3389/fcosc.2024.1412440" target="_blank" rel="noopener">
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span><span class="lang-es">Acceder al artículo en la revista</span></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.3389/fcosc.2024.1412440</span>
           </div>
         </article>
 
         <article class="pub">
           <div class="meta">2025 · Scientific Data (Nature)</div>
           <h3><a href="https://doi.org/10.1038/s41597-025-05615-3" target="_blank" rel="noopener">BIRDBASE: A Global Dataset of Avian Biogeography, Conservation, Ecology and Life History Traits</a></h3>
-          <p class="authors">Şekercioğlu, Ç. H., Kittelberger, K. D., Mota, F. M. M., et al.</p>
+          <p class="authors">Şekercioğlu, Ç. H., et al.</p>
           <div class="tagrow">
             <span class="tag"><span class="lang-pt">Macroecologia</span><span class="lang-en">Macroecology</span><span class="lang-es">Macroecología</span></span>
             <span class="tag"><span class="lang-pt">Base global</span><span class="lang-en">Global dataset</span><span class="lang-es">Base global</span></span>
@@ -873,9 +854,35 @@
         </article>
 
         <article class="pub">
+          <div class="meta">2023 · American Journal of Primatology</div>
+          <h3><a href="https://doi.org/10.1002/ajp.23562" target="_blank" rel="noopener">Impacts of climate change and habitat loss on the distribution of the endangered crested capuchin monkey (<em>Sapajus robustus</em>)</a></h3>
+          <p class="authors">Heming, N. M., <strong class="author-highlight">Mota, F. M. M.</strong>, Talora, D. C., Martins, W. P.</p>
+          <div class="tagrow">
+            <span class="tag"><em>Sapajus robustus</em></span>
+            <span class="tag"><span class="lang-pt">Primatologia</span><span class="lang-en">Primatology</span><span class="lang-es">Primatología</span></span>
+            <span class="tag"><span class="lang-pt">Mudanças climáticas</span><span class="lang-en">Climate change</span><span class="lang-es">Cambio climático</span></span>
+            <span class="tag"><span class="lang-pt">Perda de habitat</span><span class="lang-en">Habitat loss</span><span class="lang-es">Pérdida de hábitat</span></span>
+          </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.1002/ajp.23562">3</strong>
+              <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span><span class="lang-es">citas</span></span>
+            </span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.1002/ajp.23562" target="_blank" rel="noopener">
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span><span class="lang-es">Acceder al artículo en la revista</span></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.1002/ajp.23562</span>
+          </div>
+        </article>
+
+        <article class="pub">
           <div class="meta">2023 · Ecography</div>
           <h3><a href="https://doi.org/10.1111/ecog.06905" target="_blank" rel="noopener">divraster: an R package to calculate taxonomic, functional and phylogenetic diversity from rasters</a></h3>
-          <p class="authors">Mota, F. M. M., Alves‐Ferreira, G., Talora, D. C., et al.</p>
+          <p class="authors"><strong class="author-highlight">Mota, F. M. M.</strong>, Alves‐Ferreira, G., Talora, D. C., Heming, N. M.</p>
           <div class="tagrow">
             <span class="tag"><span class="lang-pt">Pacote em R</span><span class="lang-en">R package</span><span class="lang-es">Paquete en R</span></span>
             <span class="tag"><span class="lang-pt">Métricas espaciais</span><span class="lang-en">Spatial metrics</span><span class="lang-es">Métricas espaciales</span></span>
@@ -900,6 +907,74 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
             </a>
             <span class="doi-pill">10.1111/ecog.06905</span>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="meta">2022 · Frontiers in Ecology and Evolution</div>
+          <h3><a href="https://doi.org/10.3389/fevo.2022.987204" target="_blank" rel="noopener">Amount of bird suitable areas under climate change is modulated by morphological, ecological and geographical traits</a></h3>
+          <p class="authors"><strong class="author-highlight">Mota, F. M. M.</strong>, Heming, N. M., Morante‐Filho, J. C., Talora, D. C.</p>
+          <div class="tagrow">
+            <span class="tag"><span class="lang-pt">Macroecologia</span><span class="lang-en">Macroecology</span><span class="lang-es">Macroecología</span></span>
+            <span class="tag"><span class="lang-pt">Aves</span><span class="lang-en">Birds</span><span class="lang-es">Aves</span></span>
+            <span class="tag"><span class="lang-pt">Mudanças climáticas</span><span class="lang-en">Climate change</span><span class="lang-es">Cambio climático</span></span>
+            <span class="tag"><span class="lang-pt">Traços ecológicos</span><span class="lang-en">Ecological traits</span><span class="lang-es">Rasgos ecológicos</span></span>
+          </div>
+          <div class="pub-metrics">
+            <span class="metric-pill citation-pill" title="Citações acadêmicas">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <strong class="metric-num" data-doi-citations="10.3389/fevo.2022.987204">17</strong>
+              <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span><span class="lang-es">citas</span></span>
+            </span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://doi.org/10.3389/fevo.2022.987204" target="_blank" rel="noopener">
+              <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span><span class="lang-es">Acceder al artículo en la revista</span></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+            </a>
+            <span class="doi-pill">10.3389/fevo.2022.987204</span>
+          </div>
+        </article>
+
+        <!-- Livro Publicado / Published Book -->
+        <article class="pub pub-book">
+          <div class="meta">
+            <span class="lang-pt">2024 · Stricto Sensu Editora · Livro</span>
+            <span class="lang-en">2024 · Stricto Sensu Editora · Book</span>
+            <span class="lang-es">2024 · Stricto Sensu Editora · Libro</span>
+          </div>
+          <h3>
+            <a href="https://sseditora.com.br/wp-content/uploads/Aves-da-Serra-Bonita.pdf" target="_blank" rel="noopener">
+              Aves da Serra Bonita, Camacã, Sul da Bahia
+            </a>
+          </h3>
+          <p class="authors">Carvalho, D. F., Nascimento, F. L., <strong class="author-highlight">Mota, F. M. M.</strong>, Ovalle, J. M. R., Souza, M. S., Morante-Filho, J. C.</p>
+          <div class="tagrow">
+            <span class="tag" style="background:var(--mint);color:var(--leaf-dark);font-weight:700">
+              <span class="lang-pt">Livro Publicado</span><span class="lang-en">Published Book</span><span class="lang-es">Libro Publicado</span>
+            </span>
+            <span class="tag">
+              <span class="lang-pt">Acesso Aberto</span><span class="lang-en">Open Access</span><span class="lang-es">Acceso Abierto</span>
+            </span>
+            <span class="tag">113 p.</span>
+            <span class="tag"><span class="lang-pt">Mata Atlântica</span><span class="lang-en">Atlantic Forest</span><span class="lang-es">Bosque Atlántico</span></span>
+          </div>
+          <div class="pub-metrics">
+            <span class="metric-pill" title="Livro em Acesso Aberto">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M18 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h12c1.2 0 2-.8 2-2V4c0-1.2-.8-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+              <span class="metric-label"><span class="lang-pt">Acesso Aberto (PDF)</span><span class="lang-en">Open Access (PDF)</span><span class="lang-es">Acceso Abierto (PDF)</span></span>
+            </span>
+            <span class="metric-pill" title="Extensão da obra">
+              <strong class="metric-num">113</strong>
+              <span class="metric-label"><span class="lang-pt">páginas</span><span class="lang-en">pages</span><span class="lang-es">páginas</span></span>
+            </span>
+          </div>
+          <div class="pub-footer">
+            <a class="pub-link" href="https://sseditora.com.br/wp-content/uploads/Aves-da-Serra-Bonita.pdf" target="_blank" rel="noopener">
+              <span><span class="lang-pt">Baixar livro em PDF</span><span class="lang-en">Download book (PDF)</span><span class="lang-es">Descargar libro en PDF</span></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            </a>
+            <span class="doi-pill">1. ed. (2024) · 113p.</span>
           </div>
         </article>
       </div>
@@ -1433,14 +1508,78 @@
               const year = pub.publication_year || (pub.publication_date ? pub.publication_date.split('-')[0] : '');
               const journal = pub.primary_location?.source?.display_name || '';
               const doi = pub.doi || (pub.ids?.doi ? pub.ids.doi : '');
-              const cleanDoi = doi ? doi.replace(/^https?:\/\/doi\.org\//, '') : '';
+              const cleanDoi = doi ? doi.replace(/^https?:\/\/doi\.org\//, '').trim() : '';
 
               const journalEl = document.getElementById('spotlight-journal');
               const titleLink = document.getElementById('spotlight-link');
               const authorsEl = document.getElementById('spotlight-authors');
               const actionBtn = document.getElementById('spotlight-action-btn');
               const doiEl = document.getElementById('spotlight-doi');
+              const pubsContainer = document.getElementById('pubs-container');
 
+              function formatDynamicAuthors(authorships) {
+                if (!authorships || !authorships.length) return '';
+                const names = authorships.map(a => a.author?.display_name || '').filter(Boolean);
+                if (!names.length) return '';
+
+                const formatOne = (raw) => {
+                  const isFlavio = /fl[aá]vio.*mota/i.test(raw) || /mota.*f/i.test(raw);
+                  const parts = raw.trim().split(/\s+/);
+                  let out = raw;
+                  if (parts.length > 1) {
+                    const last = parts[parts.length - 1];
+                    const initials = parts.slice(0, -1).map(p => p[0].toUpperCase() + '.').join(' ');
+                    out = `${last}, ${initials}`;
+                  }
+                  return isFlavio ? `<strong class="author-highlight">${out}</strong>` : out;
+                };
+
+                // Regra: mostrar ate 6 autores; se houver mais que 6, apenas o primeiro + et al.
+                if (names.length > 6) {
+                  return `${formatOne(names[0])}, et al.`;
+                } else {
+                  return names.map(formatOne).join(', ');
+                }
+              }
+
+              const prevSpotlightDoi = (doiEl?.textContent || '').trim().toLowerCase();
+              const newDoiLower = cleanDoi.toLowerCase();
+
+              // Se uma nova publicação for identificada (com DOI diferente do destaque atual):
+              // a anterior sai do destaque e é arquivada no grid de publicações gerais.
+              if (newDoiLower && prevSpotlightDoi && newDoiLower !== prevSpotlightDoi && pubsContainer) {
+                const prevTitle = titleLink ? titleLink.innerHTML : '';
+                const prevHref = titleLink ? titleLink.href : '';
+                const prevAuthors = authorsEl ? authorsEl.innerHTML : '';
+                const prevJournal = journalEl ? journalEl.textContent : '';
+                const prevCitEl = document.getElementById('spotlight-citations');
+                const prevCitations = prevCitEl ? prevCitEl.textContent : '0';
+
+                const archivedCard = document.createElement('article');
+                archivedCard.className = 'pub';
+                archivedCard.innerHTML = `
+                  <div class="meta">${prevJournal}</div>
+                  <h3><a href="${prevHref}" target="_blank" rel="noopener">${prevTitle}</a></h3>
+                  <p class="authors">${prevAuthors}</p>
+                  <div class="pub-metrics">
+                    <span class="metric-pill citation-pill" title="Citações acadêmicas">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                      <strong class="metric-num">${prevCitations}</strong>
+                      <span class="metric-label"><span class="lang-pt">citações</span><span class="lang-en">citations</span><span class="lang-es">citas</span></span>
+                    </span>
+                  </div>
+                  <div class="pub-footer">
+                    <a class="pub-link" href="${prevHref}" target="_blank" rel="noopener">
+                      <span><span class="lang-pt">Acessar artigo na revista</span><span class="lang-en">Access article in journal</span><span class="lang-es">Acceder al artículo en la revista</span></span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"/></svg>
+                    </a>
+                    <span class="doi-pill">${prevSpotlightDoi}</span>
+                  </div>
+                `;
+                pubsContainer.prepend(archivedCard);
+              }
+
+              // Atualiza o destaque com a publicação mais recente
               if (journalEl && (year || journal)) {
                 journalEl.textContent = `${year}${year && journal ? ' · ' : ''}${journal}`;
               }
@@ -1455,12 +1594,7 @@
                 doiEl.textContent = cleanDoi;
               }
               if (authorsEl && pub.authorships && pub.authorships.length) {
-                const names = pub.authorships.map(a => a.author?.display_name).filter(Boolean);
-                if (names.length > 3) {
-                  authorsEl.textContent = `${names.slice(0, 3).join(', ')}, et al.`;
-                } else {
-                  authorsEl.textContent = names.join(', ');
-                }
+                authorsEl.innerHTML = formatDynamicAuthors(pub.authorships);
               }
 
               if (typeof pub.cited_by_count === 'number') {
@@ -1471,18 +1605,12 @@
                 }
               }
 
-              // Highlight corresponding card in the list
-              if (cleanDoi) {
-                document.querySelectorAll('.pub').forEach(card => {
-                  if ((card.textContent || '').includes(cleanDoi)) {
-                    card.classList.add('is-latest');
-                    const meta = card.querySelector('.meta');
-                    if (meta && !card.querySelector('.latest-pill-flag')) {
-                      const flag = document.createElement('span');
-                      flag.className = 'latest-pill-flag';
-                      flag.innerHTML = '<span class="lang-pt">★ Mais Recente</span><span class="lang-en">★ Latest</span>';
-                      meta.appendChild(flag);
-                    }
+              // Garantia absoluta contra duplicação: remove do grid qualquer card que repita o artigo do destaque
+              const activeSpotlightDoi = (doiEl?.textContent || cleanDoi || '').trim().toLowerCase();
+              if (activeSpotlightDoi && pubsContainer) {
+                pubsContainer.querySelectorAll('.pub').forEach(card => {
+                  if ((card.textContent || '').toLowerCase().includes(activeSpotlightDoi)) {
+                    card.remove();
                   }
                 });
               }
